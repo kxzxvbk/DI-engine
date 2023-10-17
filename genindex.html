@@ -319,6 +319,7 @@
  | <a href="#U"><strong>U</strong></a>
  | <a href="#V"><strong>V</strong></a>
  | <a href="#W"><strong>W</strong></a>
+ | <a href="#X"><strong>X</strong></a>
  
 </div>
 <h2 id="_">_</h2>
@@ -335,11 +336,9 @@
 </li>
         <li><a href="05_api_doc/framework/middleware/learner.html#ding.framework.middleware.learner.OffPolicyLearner.__call__">(ding.framework.middleware.learner.OffPolicyLearner method)</a>
 </li>
-        <li><a href="05_api_doc/rl_utils/exploration.html#ding.rl_utils.exploration.BaseNoise.__call__">(ding.rl_utils.exploration.BaseNoise method)</a>
+        <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.exploration.BaseNoise.__call__">(ding.rl_utils.exploration.BaseNoise method)</a>
 </li>
-        <li><a href="05_api_doc/rl_utils/exploration.html#ding.rl_utils.exploration.GaussianNoise.__call__">(ding.rl_utils.exploration.GaussianNoise method)</a>
-</li>
-        <li><a href="05_api_doc/rl_utils/exploration.html#ding.rl_utils.exploration.OUNoise.__call__">(ding.rl_utils.exploration.OUNoise method)</a>
+        <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.exploration.GaussianNoise.__call__">(ding.rl_utils.exploration.GaussianNoise method)</a>
 </li>
         <li><a href="05_api_doc/utils/design_helper.html#ding.utils.design_helper.SingletonMetaclass.__call__">(ding.utils.design_helper.SingletonMetaclass method)</a>
 </li>
@@ -573,11 +572,9 @@
 </li>
         <li><a href="05_api_doc/reward_model/red_irl_model.html#ding.reward_model.red_irl_model.RedRewardModel.__init__">(ding.reward_model.red_irl_model.RedRewardModel method)</a>
 </li>
-        <li><a href="05_api_doc/rl_utils/exploration.html#ding.rl_utils.exploration.BaseNoise.__init__">(ding.rl_utils.exploration.BaseNoise method)</a>
+        <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.exploration.BaseNoise.__init__">(ding.rl_utils.exploration.BaseNoise method)</a>
 </li>
-        <li><a href="05_api_doc/rl_utils/exploration.html#ding.rl_utils.exploration.GaussianNoise.__init__">(ding.rl_utils.exploration.GaussianNoise method)</a>
-</li>
-        <li><a href="05_api_doc/rl_utils/exploration.html#ding.rl_utils.exploration.OUNoise.__init__">(ding.rl_utils.exploration.OUNoise method)</a>
+        <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.exploration.GaussianNoise.__init__">(ding.rl_utils.exploration.GaussianNoise method)</a>
 </li>
         <li><a href="05_api_doc/utils/data/dataloader.html#ding.utils.data.dataloader.AsyncDataLoader.__init__">(ding.utils.data.dataloader.AsyncDataLoader method)</a>
 </li>
@@ -746,6 +743,8 @@
 </li>
       <li><a href="05_api_doc/policy/ppg.html#ding.policy.ppg.PPGPolicy._get_batch_size">_get_batch_size() (ding.policy.ppg.PPGPolicy method)</a>
 </li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.adder.Adder._get_null_transition">_get_null_transition() (ding.rl_utils.adder.Adder class method)</a>
+</li>
       <li><a href="05_api_doc/reward_model/pwil_irl_model.html#ding.reward_model.pwil_irl_model.PwilRewardModel._get_state_distance">_get_state_distance() (ding.reward_model.pwil_irl_model.PwilRewardModel method)</a>
 </li>
       <li><a href="05_api_doc/policy/a2c.html#ding.policy.a2c.A2CPolicy._get_train_sample">_get_train_sample() (ding.policy.a2c.A2CPolicy method)</a>
@@ -912,7 +911,17 @@
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.a2c_error">a2c_error() (in module ding.rl_utils)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.a2c_error_continuous">a2c_error_continuous() (in module ding.rl_utils)</a>
+</li>
       <li><a href="05_api_doc/policy/a2c.html#ding.policy.a2c.A2CPolicy">A2CPolicy (class in ding.policy.a2c)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.acer_policy_error">acer_policy_error() (in module ding.rl_utils)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.acer_trust_region_update">acer_trust_region_update() (in module ding.rl_utils)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.acer_value_error">acer_value_error() (in module ding.rl_utils)</a>
 </li>
       <li><a href="05_api_doc/utils/default_helper.html#ding.utils.default_helper.LimitedSpaceContainer.acquire_space">acquire_space() (ding.utils.default_helper.LimitedSpaceContainer method)</a>
 </li>
@@ -932,19 +941,21 @@
 </li>
       <li><a href="05_api_doc/torch_utils/checkpoint_helper.html#ding.torch_utils.checkpoint_helper.CountVar.add">add() (ding.torch_utils.checkpoint_helper.CountVar method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="05_api_doc/league/payoff.html#ding.league.shared_payoff.BattleSharedPayoff.add_player">add_player() (ding.league.shared_payoff.BattleSharedPayoff method)</a>
 </li>
       <li><a href="05_api_doc/worker/replay_buffer/buffer.html#ding.worker.replay_buffer.utils.UsedDataRemover.add_used_data">add_used_data() (ding.worker.replay_buffer.utils.UsedDataRemover method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="05_api_doc/rl_utils/adder.html#ding.rl_utils.adder.Adder">Adder (class in ding.rl_utils.adder)</a>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.adder.Adder">Adder (class in ding.rl_utils.adder)</a>
 </li>
       <li><a href="05_api_doc/worker/replay_buffer/buffer.html#ding.worker.replay_buffer.advanced_buffer.AdvancedReplayBuffer">AdvancedReplayBuffer (class in ding.worker.replay_buffer.advanced_buffer)</a>
 </li>
       <li><a href="05_api_doc/env.html#ding.envs.AllinObsWrapper">AllinObsWrapper (class in ding.envs)</a>
 </li>
       <li><a href="05_api_doc/worker/collector/base_serial_collector.html#ding.worker.collector.base_serial_collector.TrajBuffer.append">append() (ding.worker.collector.base_serial_collector.TrajBuffer method)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.sampler.ArgmaxSampler">ArgmaxSampler (class in ding.rl_utils.sampler)</a>
 </li>
       <li><a href="05_api_doc/model.html#ding.model.wrapper.model_wrappers.ArgmaxSampleWrapper">ArgmaxSampleWrapper (class in ding.model.wrapper.model_wrappers)</a>
 </li>
@@ -986,10 +997,10 @@
 </li>
       <li><a href="05_api_doc/model.html#ding.model.wrapper.model_wrappers.BaseModelWrapper">BaseModelWrapper (class in ding.model.wrapper.model_wrappers)</a>
 </li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.exploration.BaseNoise">BaseNoise (class in ding.rl_utils.exploration)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="05_api_doc/rl_utils/exploration.html#ding.rl_utils.exploration.BaseNoise">BaseNoise (class in ding.rl_utils.exploration)</a>
-</li>
       <li><a href="05_api_doc/reward_model/base_reward_estimate.html#ding.reward_model.base_reward_model.BaseRewardModel">BaseRewardModel (class in ding.reward_model.base_reward_model)</a>
 
       <ul>
@@ -1005,6 +1016,10 @@
       <li><a href="05_api_doc/model.html#ding.model.BCQ">BCQ (class in ding.model)</a>
 </li>
       <li><a href="05_api_doc/model.html#ding.model.BDQ">BDQ (class in ding.model)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.bdq_nstep_td_error">bdq_nstep_td_error() (in module ding.rl_utils.td)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.beta_function_map">beta_function_map (ding.rl_utils attribute)</a>
 </li>
       <li><a href="05_api_doc/torch_utils/torch_utils_network.html#ding.torch_utils.network.nn_module.BilinearUpsample">BilinearUpsample (class in ding.torch_utils.network.nn_module)</a>
 </li>
@@ -1114,8 +1129,6 @@
         <li><a href="05_api_doc/worker/replay_buffer/buffer.html#ding.worker.replay_buffer.utils.UsedDataRemover.close">(ding.worker.replay_buffer.utils.UsedDataRemover method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="05_api_doc/env.html#ding.envs.BaseEnvManager.closed">closed (ding.envs.BaseEnvManager property)</a>
 
       <ul>
@@ -1124,6 +1137,8 @@
       </ul></li>
       <li><a href="05_api_doc/policy/collaq.html#ding.policy.collaq.CollaQPolicy">CollaQPolicy (class in ding.policy.collaq)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="05_api_doc/worker/collector/base_serial_collector.html#ding.worker.collector.base_serial_collector.ISerialCollector.collect">collect() (ding.worker.collector.base_serial_collector.ISerialCollector method)</a>
 
       <ul>
@@ -1145,6 +1160,8 @@
 </li>
       </ul></li>
       <li><a href="05_api_doc/worker/collector/comm.html#ding.worker.collector.comm.flask_fs_collector.CollectorSlave">CollectorSlave (class in ding.worker.collector.comm.flask_fs_collector)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.coma_error">coma_error() (in module ding.rl_utils)</a>
 </li>
       <li><a href="05_api_doc/policy/coma.html#ding.policy.coma.COMAPolicy">COMAPolicy (class in ding.policy.coma)</a>
 </li>
@@ -1174,6 +1191,10 @@
         <li><a href="05_api_doc/model.html#ding.model.VAC.compute_critic">(ding.model.VAC method)</a>
 </li>
       </ul></li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.isw.compute_importance_weights">compute_importance_weights() (in module ding.rl_utils.isw)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.retrace.compute_q_retraces">compute_q_retraces() (in module ding.rl_utils.retrace)</a>
+</li>
       <li><a href="05_api_doc/config.html#ding.config.Config">Config (class in ding.config)</a>
 </li>
       <li><a href="05_api_doc/framework/context.html#ding.framework.context.Context">Context (class in ding.framework.context)</a>
@@ -1202,6 +1223,8 @@
       </ul></li>
       <li><a href="05_api_doc/torch_utils/checkpoint_helper.html#ding.torch_utils.checkpoint_helper.CountVar">CountVar (class in ding.torch_utils.checkpoint_helper)</a>
 </li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.beta_function.cpw">cpw() (in module ding.rl_utils.beta_function)</a>
+</li>
       <li><a href="05_api_doc/env.html#ding.envs.BaseEnv.create_collector_env_cfg">create_collector_env_cfg() (ding.envs.BaseEnv static method)</a>
 
       <ul>
@@ -1222,7 +1245,11 @@
 </li>
       <li><a href="05_api_doc/model.html#ding.model.create_model">create_model() (in module ding.model)</a>
 </li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.exploration.create_noise_generator">create_noise_generator() (in module ding.rl_utils.exploration)</a>
+</li>
       <li><a href="05_api_doc/torch_utils/data_helper.html#ding.torch_utils.data_helper.CudaFetcher">CudaFetcher (class in ding.torch_utils.data_helper)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.beta_function.CVaR">CVaR() (in module ding.rl_utils.beta_function)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -1335,139 +1362,6 @@
 
       <ul>
         <li><a href="05_api_doc/reward_model/pwil_irl_model.html#module-ding.reward_model.pwil_irl_model.collect_state_action_pairs">module</a>
-</li>
-      </ul></li>
-      <li>
-    ding.rl_utils.a2c.a2c_error
-
-      <ul>
-        <li><a href="05_api_doc/rl_utils/a2c.html#module-ding.rl_utils.a2c.a2c_error">module</a>
-</li>
-      </ul></li>
-      <li>
-    ding.rl_utils.coma.coma_error
-
-      <ul>
-        <li><a href="05_api_doc/rl_utils/coma.html#module-ding.rl_utils.coma.coma_error">module</a>
-</li>
-      </ul></li>
-      <li>
-    ding.rl_utils.exploration.create_noise_generator
-
-      <ul>
-        <li><a href="05_api_doc/rl_utils/exploration.html#module-ding.rl_utils.exploration.create_noise_generator">module</a>
-</li>
-      </ul></li>
-      <li>
-    ding.rl_utils.exploration.get_epsilon_greedy_fn
-
-      <ul>
-        <li><a href="05_api_doc/rl_utils/exploration.html#module-ding.rl_utils.exploration.get_epsilon_greedy_fn">module</a>
-</li>
-      </ul></li>
-      <li>
-    ding.rl_utils.gae.gae
-
-      <ul>
-        <li><a href="05_api_doc/rl_utils/gae.html#module-ding.rl_utils.gae.gae">module</a>
-</li>
-      </ul></li>
-      <li>
-    ding.rl_utils.isw.compute_importance_weights
-
-      <ul>
-        <li><a href="05_api_doc/rl_utils/isw.html#module-ding.rl_utils.isw.compute_importance_weights">module</a>
-</li>
-      </ul></li>
-      <li>
-    ding.rl_utils.ppo.ppo_error
-
-      <ul>
-        <li><a href="05_api_doc/rl_utils/ppo.html#module-ding.rl_utils.ppo.ppo_error">module</a>
-</li>
-      </ul></li>
-      <li>
-    ding.rl_utils.td.dist_nstep_td_error
-
-      <ul>
-        <li><a href="05_api_doc/rl_utils/td.html#module-ding.rl_utils.td.dist_nstep_td_error">module</a>
-</li>
-      </ul></li>
-      <li>
-    ding.rl_utils.td.generalized_lambda_returns
-
-      <ul>
-        <li><a href="05_api_doc/rl_utils/td.html#module-ding.rl_utils.td.generalized_lambda_returns">module</a>
-</li>
-      </ul></li>
-      <li>
-    ding.rl_utils.td.multistep_forward_view
-
-      <ul>
-        <li><a href="05_api_doc/rl_utils/td.html#module-ding.rl_utils.td.multistep_forward_view">module</a>
-</li>
-      </ul></li>
-      <li>
-    ding.rl_utils.td.q_nstep_td_error
-
-      <ul>
-        <li><a href="05_api_doc/rl_utils/td.html#module-ding.rl_utils.td.q_nstep_td_error">module</a>
-</li>
-      </ul></li>
-      <li>
-    ding.rl_utils.td.q_nstep_td_error_with_rescale
-
-      <ul>
-        <li><a href="05_api_doc/rl_utils/td.html#module-ding.rl_utils.td.q_nstep_td_error_with_rescale">module</a>
-</li>
-      </ul></li>
-      <li>
-    ding.rl_utils.td.td_lambda_error
-
-      <ul>
-        <li><a href="05_api_doc/rl_utils/td.html#module-ding.rl_utils.td.td_lambda_error">module</a>
-</li>
-      </ul></li>
-      <li>
-    ding.rl_utils.upgo.upgo_loss
-
-      <ul>
-        <li><a href="05_api_doc/rl_utils/upgo.html#module-ding.rl_utils.upgo.upgo_loss">module</a>
-</li>
-      </ul></li>
-      <li>
-    ding.rl_utils.upgo.upgo_returns
-
-      <ul>
-        <li><a href="05_api_doc/rl_utils/upgo.html#module-ding.rl_utils.upgo.upgo_returns">module</a>
-</li>
-      </ul></li>
-      <li>
-    ding.rl_utils.value_rescale.value_inv_transform
-
-      <ul>
-        <li><a href="05_api_doc/rl_utils/value_rescale.html#module-ding.rl_utils.value_rescale.value_inv_transform">module</a>
-</li>
-      </ul></li>
-      <li>
-    ding.rl_utils.value_rescale.value_transform
-
-      <ul>
-        <li><a href="05_api_doc/rl_utils/value_rescale.html#module-ding.rl_utils.value_rescale.value_transform">module</a>
-</li>
-      </ul></li>
-      <li>
-    ding.rl_utils.vtrace.vtrace_error_continuous_action
-
-      <ul>
-        <li><a href="05_api_doc/rl_utils/vtrace.html#module-ding.rl_utils.vtrace.vtrace_error_continuous_action">module</a>
-</li>
-      </ul></li>
-      <li>
-    ding.rl_utils.vtrace.vtrace_error_discrete_action
-
-      <ul>
-        <li><a href="05_api_doc/rl_utils/vtrace.html#module-ding.rl_utils.vtrace.vtrace_error_discrete_action">module</a>
 </li>
       </ul></li>
       <li>
@@ -1708,8 +1602,6 @@
         <li><a href="05_api_doc/utils/compression_helper.html#module-ding.utils.compression_helper.lz4_data_compressor">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     ding.utils.compression_helper.lz4_data_decompressor
 
@@ -1787,6 +1679,8 @@
         <li><a href="05_api_doc/utils/default_helper.html#module-ding.utils.default_helper.dicts_to_lists">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     ding.utils.default_helper.error_wrapper
 
@@ -2196,6 +2090,14 @@
 </li>
       <li><a href="05_api_doc/model.html#ding.model.DiscreteQAC">DiscreteQAC (class in ding.model)</a>
 </li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.dist_1step_td_data">dist_1step_td_data (class in ding.rl_utils.td)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.dist_1step_td_error">dist_1step_td_error() (in module ding.rl_utils.td)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.dist_nstep_td_data">dist_nstep_td_data (in module ding.rl_utils.td)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.dist_nstep_td_error">dist_nstep_td_error() (in module ding.rl_utils.td)</a>
+</li>
       <li><a href="05_api_doc/model.html#ding.model.DistributionHead">DistributionHead (class in ding.model)</a>
 </li>
       <li><a href="05_api_doc/env.html#ding.envs.BaseEnvManager.done">done (ding.envs.BaseEnvManager property)</a>
@@ -2204,6 +2106,12 @@
         <li><a href="05_api_doc/env.html#ding.envs.BaseEnvManagerV2.done">(ding.envs.BaseEnvManagerV2 property)</a>
 </li>
       </ul></li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.dqfd_nstep_td_data">dqfd_nstep_td_data (class in ding.rl_utils.td)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.dqfd_nstep_td_error">dqfd_nstep_td_error() (in module ding.rl_utils.td)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.dqfd_nstep_td_error_with_rescale">dqfd_nstep_td_error_with_rescale() (in module ding.rl_utils.td)</a>
+</li>
       <li><a href="05_api_doc/model.html#ding.model.DQN">DQN (class in ding.model)</a>
 </li>
       <li><a href="05_api_doc/policy/dqn.html#ding.policy.dqn.DQNPolicy">DQNPolicy (class in ding.policy.dqn)</a>
@@ -2268,14 +2176,14 @@
         <li><a href="05_api_doc/env.html#ding.envs.BaseEnvManagerV2.env_num">(ding.envs.BaseEnvManagerV2 property)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="05_api_doc/env.html#ding.envs.BaseEnvManager.env_ref">env_ref (ding.envs.BaseEnvManager property)</a>
 
       <ul>
         <li><a href="05_api_doc/env.html#ding.envs.BaseEnvManagerV2.env_ref">(ding.envs.BaseEnvManagerV2 property)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="05_api_doc/worker/collector/base_serial_collector.html#ding.worker.collector.base_serial_collector.ISerialCollector.envstep">envstep (ding.worker.collector.base_serial_collector.ISerialCollector property)</a>
 
       <ul>
@@ -2315,6 +2223,8 @@
 </li>
       </ul></li>
       <li><a href="05_api_doc/env.html#ding.envs.EvalEpisodeReturnWrapper">EvalEpisodeReturnWrapper (class in ding.envs)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.evaluate_quantile_at_action">evaluate_quantile_at_action() (in module ding.rl_utils.td)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -2518,6 +2428,12 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="05_api_doc/model.html#ding.model.FQF">FQF (class in ding.model)</a>
 </li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.fqf_calculate_fraction_loss">fqf_calculate_fraction_loss() (in module ding.rl_utils.td)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.fqf_nstep_td_data">fqf_nstep_td_data (class in ding.rl_utils.td)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.fqf_nstep_td_error">fqf_nstep_td_error() (in module ding.rl_utils.td)</a>
+</li>
       <li><a href="05_api_doc/model.html#ding.model.FQFHead">FQFHead (class in ding.model)</a>
 </li>
       <li><a href="05_api_doc/env.html#ding.envs.FrameStackWrapper">FrameStackWrapper (class in ding.envs)</a>
@@ -2528,11 +2444,17 @@
 <h2 id="G">G</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.gae.gae">gae() (in module ding.rl_utils.gae)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.gae.gae_data">gae_data (class in ding.rl_utils.gae)</a>
+</li>
       <li><a href="05_api_doc/framework/middleware/functional/advantage_estimator.html#ding.framework.middleware.functional.advantage_estimator.gae_estimator">gae_estimator() (in module ding.framework.middleware.functional.advantage_estimator)</a>
 </li>
       <li><a href="12_policies/gail.html#ding.reward_model.gail_irl_model.GailRewardModel">GailRewardModel (class in ding.reward_model.gail_irl_model)</a>
 </li>
-      <li><a href="05_api_doc/rl_utils/exploration.html#ding.rl_utils.exploration.GaussianNoise">GaussianNoise (class in ding.rl_utils.exploration)</a>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.exploration.GaussianNoise">GaussianNoise (class in ding.rl_utils.exploration)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.generalized_lambda_returns">generalized_lambda_returns() (in module ding.rl_utils.td)</a>
 </li>
       <li><a href="05_api_doc/data/buffer/buffer.html#ding.data.buffer.buffer.Buffer.get">get() (ding.data.buffer.buffer.Buffer method)</a>
 
@@ -2566,10 +2488,20 @@
 </li>
       <li><a href="05_api_doc/worker/collector/base_serial_evaluator.html#ding.worker.collector.base_serial_evaluator.VectorEvalMonitor.get_episode_return">get_episode_return() (ding.worker.collector.base_serial_evaluator.VectorEvalMonitor method)</a>
 </li>
-      <li><a href="05_api_doc/rl_utils/adder.html#ding.rl_utils.adder.Adder.get_gae">get_gae() (ding.rl_utils.adder.Adder class method)</a>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.exploration.get_epsilon_greedy_fn">get_epsilon_greedy_fn() (in module ding.rl_utils.exploration)</a>
 </li>
-      <li><a href="05_api_doc/rl_utils/adder.html#ding.rl_utils.adder.Adder.get_gae_with_default_last_value">get_gae_with_default_last_value() (ding.rl_utils.adder.Adder class method)</a>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.adder.Adder.get_gae">get_gae() (ding.rl_utils.adder.Adder class method)</a>
+
+      <ul>
+        <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.adder.get_gae">(in module ding.rl_utils.adder)</a>
 </li>
+      </ul></li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.adder.Adder.get_gae_with_default_last_value">get_gae_with_default_last_value() (ding.rl_utils.adder.Adder class method)</a>
+
+      <ul>
+        <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.adder.get_gae_with_default_last_value">(in module ding.rl_utils.adder)</a>
+</li>
+      </ul></li>
       <li><a href="05_api_doc/league/player.html#ding.league.player.NaiveSpPlayer.get_job">get_job() (ding.league.player.NaiveSpPlayer method)</a>
 
       <ul>
@@ -2600,8 +2532,12 @@
       </ul></li>
       <li><a href="05_api_doc/model.html#ding.model.GTrXLDQN.get_memory">get_memory() (ding.model.GTrXLDQN method)</a>
 </li>
-      <li><a href="05_api_doc/rl_utils/adder.html#ding.rl_utils.adder.Adder.get_nstep_return_data">get_nstep_return_data() (ding.rl_utils.adder.Adder class method)</a>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.adder.Adder.get_nstep_return_data">get_nstep_return_data() (ding.rl_utils.adder.Adder class method)</a>
+
+      <ul>
+        <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.adder.get_nstep_return_data">(in module ding.rl_utils.adder)</a>
 </li>
+      </ul></li>
       <li><a href="05_api_doc/worker/collector/comm.html#ding.worker.collector.comm.base_comm_collector.BaseCommCollector.get_policy_update_info">get_policy_update_info() (ding.worker.collector.comm.base_comm_collector.BaseCommCollector method)</a>
 
       <ul>
@@ -2612,8 +2548,12 @@
 </li>
       <li><a href="05_api_doc/utils/log_helper.html#ding.utils.log_helper.LoggerFactory.get_tabulate_vars">get_tabulate_vars() (in module ding.utils.log_helper.LoggerFactory)</a>
 </li>
-      <li><a href="05_api_doc/rl_utils/adder.html#ding.rl_utils.adder.Adder.get_train_sample">get_train_sample() (ding.rl_utils.adder.Adder class method)</a>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.adder.Adder.get_train_sample">get_train_sample() (ding.rl_utils.adder.Adder class method)</a>
+
+      <ul>
+        <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.adder.get_train_sample">(in module ding.rl_utils.adder)</a>
 </li>
+      </ul></li>
       <li><a href="05_api_doc/env.html#ding.envs.get_vec_env_setting">get_vec_env_setting() (in module ding.envs)</a>
 </li>
       <li><a href="05_api_doc/torch_utils/torch_utils_network.html#ding.torch_utils.network.activation.GLU">GLU (class in ding.torch_utils.network.activation)</a>
@@ -2644,17 +2584,21 @@
 </li>
       <li><a href="05_api_doc/worker/learner/learner.html#ding.worker.learner.learner_hook.Hook">Hook (class in ding.worker.learner.learner_hook)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="05_api_doc/model.html#ding.model.wrapper.model_wrappers.HybridArgmaxSampleWrapper">HybridArgmaxSampleWrapper (class in ding.model.wrapper.model_wrappers)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="05_api_doc/model.html#ding.model.wrapper.model_wrappers.HybridDeterministicArgmaxSampleWrapper">HybridDeterministicArgmaxSampleWrapper (class in ding.model.wrapper.model_wrappers)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.sampler.HybridDeterminsticSampler">HybridDeterminsticSampler (class in ding.rl_utils.sampler)</a>
 </li>
       <li><a href="05_api_doc/model.html#ding.model.wrapper.model_wrappers.HybridEpsGreedyMultinomialSampleWrapper">HybridEpsGreedyMultinomialSampleWrapper (class in ding.model.wrapper.model_wrappers)</a>
 </li>
       <li><a href="05_api_doc/model.html#ding.model.wrapper.model_wrappers.HybridEpsGreedySampleWrapper">HybridEpsGreedySampleWrapper (class in ding.model.wrapper.model_wrappers)</a>
 </li>
       <li><a href="05_api_doc/model.html#ding.model.wrapper.model_wrappers.HybridReparamMultinomialSampleWrapper">HybridReparamMultinomialSampleWrapper (class in ding.model.wrapper.model_wrappers)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.sampler.HybridStochasticSampler">HybridStochasticSampler (class in ding.rl_utils.sampler)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -2692,7 +2636,11 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="05_api_doc/framework/middleware/functional/evaluator.html#ding.framework.middleware.functional.evaluator.interaction_evaluator">interaction_evaluator() (in module ding.framework.middleware.functional.evaluator)</a>
 </li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.value_rescale.inv_symlog">inv_symlog() (in module ding.rl_utils.value_rescale)</a>
+</li>
       <li><a href="05_api_doc/model.html#ding.model.IQN">IQN (class in ding.model)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.iqn_nstep_td_data">iqn_nstep_td_data (class in ding.rl_utils.td)</a>
 </li>
       <li><a href="05_api_doc/worker/collector/base_serial_evaluator.html#ding.worker.collector.base_serial_evaluator.VectorEvalMonitor.is_finished">is_finished() (ding.worker.collector.base_serial_evaluator.VectorEvalMonitor method)</a>
 </li>
@@ -2808,6 +2756,10 @@
 <h2 id="M">M</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.m_q_1step_td_data">m_q_1step_td_data (class in ding.rl_utils.td)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.m_q_1step_td_error">m_q_1step_td_error() (in module ding.rl_utils.td)</a>
+</li>
       <li><a href="05_api_doc/league/player.html#ding.league.starcraft_player.MainExploiter">MainExploiter (class in ding.league.starcraft_player)</a>
 </li>
       <li><a href="05_api_doc/league/player.html#ding.league.starcraft_player.MainPlayer">MainPlayer (class in ding.league.starcraft_player)</a>
@@ -2849,44 +2801,6 @@
         <li><a href="05_api_doc/reward_model/base_reward_estimate.html#module-ding.reward_model.base_reward_model.create_reward_model">ding.reward_model.base_reward_model.create_reward_model</a>
 </li>
         <li><a href="05_api_doc/reward_model/pwil_irl_model.html#module-ding.reward_model.pwil_irl_model.collect_state_action_pairs">ding.reward_model.pwil_irl_model.collect_state_action_pairs</a>
-</li>
-        <li><a href="05_api_doc/rl_utils/a2c.html#module-ding.rl_utils.a2c.a2c_error">ding.rl_utils.a2c.a2c_error</a>
-</li>
-        <li><a href="05_api_doc/rl_utils/coma.html#module-ding.rl_utils.coma.coma_error">ding.rl_utils.coma.coma_error</a>
-</li>
-        <li><a href="05_api_doc/rl_utils/exploration.html#module-ding.rl_utils.exploration.create_noise_generator">ding.rl_utils.exploration.create_noise_generator</a>
-</li>
-        <li><a href="05_api_doc/rl_utils/exploration.html#module-ding.rl_utils.exploration.get_epsilon_greedy_fn">ding.rl_utils.exploration.get_epsilon_greedy_fn</a>
-</li>
-        <li><a href="05_api_doc/rl_utils/gae.html#module-ding.rl_utils.gae.gae">ding.rl_utils.gae.gae</a>
-</li>
-        <li><a href="05_api_doc/rl_utils/isw.html#module-ding.rl_utils.isw.compute_importance_weights">ding.rl_utils.isw.compute_importance_weights</a>
-</li>
-        <li><a href="05_api_doc/rl_utils/ppo.html#module-ding.rl_utils.ppo.ppo_error">ding.rl_utils.ppo.ppo_error</a>
-</li>
-        <li><a href="05_api_doc/rl_utils/td.html#module-ding.rl_utils.td.dist_nstep_td_error">ding.rl_utils.td.dist_nstep_td_error</a>
-</li>
-        <li><a href="05_api_doc/rl_utils/td.html#module-ding.rl_utils.td.generalized_lambda_returns">ding.rl_utils.td.generalized_lambda_returns</a>
-</li>
-        <li><a href="05_api_doc/rl_utils/td.html#module-ding.rl_utils.td.multistep_forward_view">ding.rl_utils.td.multistep_forward_view</a>
-</li>
-        <li><a href="05_api_doc/rl_utils/td.html#module-ding.rl_utils.td.q_nstep_td_error">ding.rl_utils.td.q_nstep_td_error</a>
-</li>
-        <li><a href="05_api_doc/rl_utils/td.html#module-ding.rl_utils.td.q_nstep_td_error_with_rescale">ding.rl_utils.td.q_nstep_td_error_with_rescale</a>
-</li>
-        <li><a href="05_api_doc/rl_utils/td.html#module-ding.rl_utils.td.td_lambda_error">ding.rl_utils.td.td_lambda_error</a>
-</li>
-        <li><a href="05_api_doc/rl_utils/upgo.html#module-ding.rl_utils.upgo.upgo_loss">ding.rl_utils.upgo.upgo_loss</a>
-</li>
-        <li><a href="05_api_doc/rl_utils/upgo.html#module-ding.rl_utils.upgo.upgo_returns">ding.rl_utils.upgo.upgo_returns</a>
-</li>
-        <li><a href="05_api_doc/rl_utils/value_rescale.html#module-ding.rl_utils.value_rescale.value_inv_transform">ding.rl_utils.value_rescale.value_inv_transform</a>
-</li>
-        <li><a href="05_api_doc/rl_utils/value_rescale.html#module-ding.rl_utils.value_rescale.value_transform">ding.rl_utils.value_rescale.value_transform</a>
-</li>
-        <li><a href="05_api_doc/rl_utils/vtrace.html#module-ding.rl_utils.vtrace.vtrace_error_continuous_action">ding.rl_utils.vtrace.vtrace_error_continuous_action</a>
-</li>
-        <li><a href="05_api_doc/rl_utils/vtrace.html#module-ding.rl_utils.vtrace.vtrace_error_discrete_action">ding.rl_utils.vtrace.vtrace_error_discrete_action</a>
 </li>
         <li><a href="05_api_doc/torch_utils/checkpoint_helper.html#module-ding.torch_utils.checkpoint_helper.auto_checkpoint">ding.torch_utils.checkpoint_helper.auto_checkpoint</a>
 </li>
@@ -3099,9 +3013,15 @@
 </li>
       <li><a href="05_api_doc/torch_utils/torch_utils_loss.html#ding.torch_utils.loss.multi_logits_loss.MultiLogitsLoss">MultiLogitsLoss (class in ding.torch_utils.loss.multi_logits_loss)</a>
 </li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.sampler.MultinomialSampler">MultinomialSampler (class in ding.rl_utils.sampler)</a>
+</li>
       <li><a href="05_api_doc/model.html#ding.model.wrapper.model_wrappers.MultinomialSampleWrapper">MultinomialSampleWrapper (class in ding.model.wrapper.model_wrappers)</a>
 </li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.multistep_forward_view">multistep_forward_view() (in module ding.rl_utils.td)</a>
+</li>
       <li><a href="05_api_doc/framework/middleware/functional/trainer.html#ding.framework.middleware.functional.trainer.multistep_trainer">multistep_trainer() (in module ding.framework.middleware.functional.trainer)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.sampler.MuSampler">MuSampler (class in ding.rl_utils.sampler)</a>
 </li>
       <li><a href="05_api_doc/league/player.html#ding.league.player.NaiveSpPlayer.mutate">mutate() (ding.league.player.NaiveSpPlayer method)</a>
 
@@ -3139,6 +3059,8 @@
         <li><a href="05_api_doc/torch_utils/distribution.html#ding.torch_utils.distribution.Pd.neglogp">(ding.torch_utils.distribution.Pd method)</a>
 </li>
       </ul></li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.exploration.noise_mapping">noise_mapping (ding.rl_utils.exploration attribute)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="05_api_doc/torch_utils/distribution.html#ding.torch_utils.distribution.CategoricalPd.noise_mode">noise_mode() (ding.torch_utils.distribution.CategoricalPd method)</a>
@@ -3163,6 +3085,10 @@
         <li><a href="05_api_doc/worker/coordinator/commander.html#ding.worker.coordinator.solo_parallel_commander.SoloCommander.notify_fail_learner_task">(ding.worker.coordinator.solo_parallel_commander.SoloCommander method)</a>
 </li>
       </ul></li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.nstep_return">nstep_return() (in module ding.rl_utils.td)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.nstep_return_data">nstep_return_data (class in ding.rl_utils.td)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -3209,7 +3135,7 @@
 </li>
       <li><a href="05_api_doc/league/league.html#ding.league.one_vs_one_league.OneVsOneLeague">OneVsOneLeague (class in ding.league.one_vs_one_league)</a>
 </li>
-      <li><a href="05_api_doc/rl_utils/exploration.html#ding.rl_utils.exploration.OUNoise">OUNoise (class in ding.rl_utils.exploration)</a>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.exploration.OUNoise">OUNoise (class in ding.rl_utils.exploration)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -3235,16 +3161,38 @@
 </li>
       <li><a href="05_api_doc/model.html#ding.model.PPG">PPG (class in ding.model)</a>
 </li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.ppg.ppg_data">ppg_data (class in ding.rl_utils.ppg)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.ppg.ppg_joint_error">ppg_joint_error() (in module ding.rl_utils.ppg)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.ppg.ppg_joint_loss">ppg_joint_loss (class in ding.rl_utils.ppg)</a>
+</li>
       <li><a href="05_api_doc/policy/ppg.html#ding.policy.ppg.PPGPolicy">PPGPolicy (class in ding.policy.ppg)</a>
 </li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.ppo.ppo_data">ppo_data (class in ding.rl_utils.ppo)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.ppo.ppo_error">ppo_error() (in module ding.rl_utils.ppo)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.ppo.ppo_error_continuous">ppo_error_continuous() (in module ding.rl_utils.ppo)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.ppo.ppo_info">ppo_info (class in ding.rl_utils.ppo)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.ppo.ppo_loss">ppo_loss (class in ding.rl_utils.ppo)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.ppo.ppo_policy_data">ppo_policy_data (class in ding.rl_utils.ppo)</a>
+</li>
       <li><a href="12_policies/ppo.html#ding.rl_utils.ppo.ppo_policy_error">ppo_policy_error() (in module ding.rl_utils.ppo)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.ppo.ppo_policy_error_continuous">ppo_policy_error_continuous() (in module ding.rl_utils.ppo)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.ppo.ppo_policy_loss">ppo_policy_loss (class in ding.rl_utils.ppo)</a>
 </li>
       <li><a href="12_policies/ppo.html#ding.rl_utils.ppo.ppo_value_error">ppo_value_error() (in module ding.rl_utils.ppo)</a>
 </li>
       <li><a href="12_policies/ppo.html#ding.policy.ppo.PPOPolicy">PPOPolicy (class in ding.policy.ppo)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="05_api_doc/data/buffer/middleware/priority.html#ding.data.buffer.middleware.priority.PriorityExperienceReplay">PriorityExperienceReplay (class in ding.data.buffer.middleware.priority)</a>
 </li>
       <li><a href="05_api_doc/model.html#ding.model.ProcedureCloningBFS">ProcedureCloningBFS (class in ding.model)</a>
@@ -3279,16 +3227,36 @@
 <h2 id="Q">Q</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.q_1step_td_data">q_1step_td_data (class in ding.rl_utils.td)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.q_1step_td_error">q_1step_td_error() (in module ding.rl_utils.td)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.q_nstep_sql_td_error">q_nstep_sql_td_error() (in module ding.rl_utils.td)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.q_nstep_td_data">q_nstep_td_data (class in ding.rl_utils.td)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.q_nstep_td_error">q_nstep_td_error() (in module ding.rl_utils.td)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.q_nstep_td_error_with_rescale">q_nstep_td_error_with_rescale() (in module ding.rl_utils.td)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.q_v_1step_td_data">q_v_1step_td_data (class in ding.rl_utils.td)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.q_v_1step_td_error">q_v_1step_td_error() (in module ding.rl_utils.td)</a>
+</li>
       <li><a href="05_api_doc/model.html#ding.model.QACDIST">QACDIST (class in ding.model)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="05_api_doc/model.html#ding.model.QMix">QMix (class in ding.model)</a>
 </li>
       <li><a href="05_api_doc/policy/qmix.html#ding.policy.qmix.QMIXPolicy">QMIXPolicy (class in ding.policy.qmix)</a>
 </li>
       <li><a href="05_api_doc/model.html#ding.model.QRDQN">QRDQN (class in ding.model)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.qrdqn_nstep_td_data">qrdqn_nstep_td_data (class in ding.rl_utils.td)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.qrdqn_nstep_td_error">qrdqn_nstep_td_error() (in module ding.rl_utils.td)</a>
+</li>
       <li><a href="05_api_doc/model.html#ding.model.QRDQNHead">QRDQNHead (class in ding.model)</a>
 </li>
       <li><a href="05_api_doc/model.html#ding.model.FQFHead.quantile_net">quantile_net() (ding.model.FQFHead method)</a>
@@ -3379,6 +3347,8 @@
       </ul></li>
       <li><a href="05_api_doc/model.html#ding.model.ReparameterizationHead">ReparameterizationHead (class in ding.model)</a>
 </li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.sampler.ReparameterizationSampler">ReparameterizationSampler (class in ding.rl_utils.sampler)</a>
+</li>
       <li><a href="05_api_doc/model.html#ding.model.wrapper.model_wrappers.ReparamSampleWrapper">ReparamSampleWrapper (class in ding.model.wrapper.model_wrappers)</a>
 </li>
       <li><a href="05_api_doc/torch_utils/torch_utils_network.html#ding.torch_utils.network.res_block.ResBlock">ResBlock (class in ding.torch_utils.network.res_block)</a>
@@ -3436,7 +3406,7 @@
 </li>
         <li><a href="05_api_doc/model.html#ding.model.wrapper.model_wrappers.TransformerMemoryWrapper.reset">(ding.model.wrapper.model_wrappers.TransformerMemoryWrapper method)</a>
 </li>
-        <li><a href="05_api_doc/rl_utils/exploration.html#ding.rl_utils.exploration.OUNoise.reset">(ding.rl_utils.exploration.OUNoise method)</a>
+        <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.exploration.OUNoise.reset">(ding.rl_utils.exploration.OUNoise method)</a>
 </li>
         <li><a href="05_api_doc/worker/collector/base_serial_collector.html#ding.worker.collector.base_serial_collector.CachePool.reset">(ding.worker.collector.base_serial_collector.CachePool method)</a>
 </li>
@@ -3617,6 +3587,18 @@
 </li>
       <li><a href="05_api_doc/worker/learner/learner.html#ding.worker.learner.base_learner.BaseLearner.setup_dataloader">setup_dataloader() (ding.worker.learner.base_learner.BaseLearner method)</a>
 </li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.shape_fn_dntd">shape_fn_dntd() (in module ding.rl_utils.td)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.gae.shape_fn_gae">shape_fn_gae() (in module ding.rl_utils.gae)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.ppo.shape_fn_ppo">shape_fn_ppo() (in module ding.rl_utils.ppo)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.shape_fn_qntd">shape_fn_qntd() (in module ding.rl_utils.td)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.shape_fn_qntd_rescale">shape_fn_qntd_rescale() (in module ding.rl_utils.td)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.shape_fn_td_lambda">shape_fn_td_lambda() (in module ding.rl_utils.td)</a>
+</li>
       <li><a href="05_api_doc/utils/design_helper.html#ding.utils.design_helper.SingletonMetaclass">SingletonMetaclass (class in ding.utils.design_helper)</a>
 </li>
       <li><a href="05_api_doc/league/player.html#ding.league.player.NaiveSpPlayer.snapshot">snapshot() (ding.league.player.NaiveSpPlayer method)</a>
@@ -3635,12 +3617,12 @@
 </li>
       <li><a href="05_api_doc/worker/coordinator/commander.html#ding.worker.coordinator.solo_parallel_commander.SoloCommander">SoloCommander (class in ding.worker.coordinator.solo_parallel_commander)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="05_api_doc/torch_utils/torch_utils_network.html#ding.torch_utils.network.transformer.Attention.split">split() (ding.torch_utils.network.transformer.Attention method)</a>
 </li>
       <li><a href="05_api_doc/framework/middleware/functional/data_processor.html#ding.framework.middleware.functional.data_processor.sqil_data_pusher">sqil_data_pusher() (in module ding.framework.middleware.functional.data_processor)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="12_policies/sql.html#ding.policy.sql.SQLPolicy">SQLPolicy (class in ding.policy.sql)</a>
 </li>
       <li><a href="05_api_doc/data/buffer/middleware/staleness_check.html#ding.data.buffer.middleware.staleness_check.staleness_check">staleness_check() (in module ding.data.buffer.middleware.staleness_check)</a>
@@ -3755,6 +3737,8 @@
 </li>
       <li><a href="05_api_doc/utils/segment_tree.html#ding.utils.segment_tree.SumSegmentTree">SumSegmentTree (class in ding.utils.segment_tree)</a>
 </li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.value_rescale.symlog">symlog() (in module ding.rl_utils.value_rescale)</a>
+</li>
       <li><a href="05_api_doc/env.html#ding.envs.SyncSubprocessEnvManager">SyncSubprocessEnvManager (class in ding.envs)</a>
 </li>
       <li><a href="05_api_doc/worker/coordinator/coordinator.html#ding.worker.coordinator.coordinator.Coordinator.system_shutdown_flag">system_shutdown_flag (ding.worker.coordinator.coordinator.Coordinator property)</a>
@@ -3774,6 +3758,10 @@
       <li><a href="12_policies/td3_bc.html#ding.policy.td3_bc.TD3BCPolicy">TD3BCPolicy (class in ding.policy.td3_bc)</a>
 </li>
       <li><a href="12_policies/td3.html#ding.policy.td3.TD3Policy">TD3Policy (class in ding.policy.td3)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.td_lambda_data">td_lambda_data (class in ding.rl_utils.td)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.td_lambda_error">td_lambda_error() (in module ding.rl_utils.td)</a>
 </li>
       <li><a href="05_api_doc/env.html#ding.envs.TimeLimitWrapper">TimeLimitWrapper (class in ding.envs)</a>
 </li>
@@ -3861,6 +3849,10 @@
 </li>
       <li><a href="05_api_doc/env.html#ding.envs.update_shape">update_shape() (in module ding.envs)</a>
 </li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.upgo.upgo_loss">upgo_loss() (in module ding.rl_utils.upgo)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.upgo.upgo_returns">upgo_returns() (in module ding.rl_utils.upgo)</a>
+</li>
       <li><a href="05_api_doc/data/buffer/buffer.html#ding.data.buffer.buffer.Buffer.use">use() (ding.data.buffer.buffer.Buffer method)</a>
 
       <ul>
@@ -3879,13 +3871,37 @@
 <h2 id="V">V</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.v_1step_td_data">v_1step_td_data (class in ding.rl_utils.td)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.v_1step_td_error">v_1step_td_error() (in module ding.rl_utils.td)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.v_nstep_td_data">v_nstep_td_data (class in ding.rl_utils.td)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.td.v_nstep_td_error">v_nstep_td_error() (in module ding.rl_utils.td)</a>
+</li>
       <li><a href="05_api_doc/model.html#ding.model.VAC">VAC (class in ding.model)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.value_rescale.value_inv_transform">value_inv_transform() (in module ding.rl_utils.value_rescale)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.value_rescale.value_transform">value_transform() (in module ding.rl_utils.value_rescale)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="05_api_doc/worker/collector/base_serial_evaluator.html#ding.worker.collector.base_serial_evaluator.VectorEvalMonitor">VectorEvalMonitor (class in ding.worker.collector.base_serial_evaluator)</a>
 </li>
       <li><a href="05_api_doc/data/buffer/buffer.html#ding.data.buffer.buffer.Buffer.view">view() (ding.data.buffer.buffer.Buffer method)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.vtrace.vtrace_advantage">vtrace_advantage() (in module ding.rl_utils.vtrace)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.vtrace.vtrace_data">vtrace_data (class in ding.rl_utils.vtrace)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.vtrace.vtrace_error_continuous_action">vtrace_error_continuous_action() (in module ding.rl_utils.vtrace)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.vtrace.vtrace_error_discrete_action">vtrace_error_discrete_action() (in module ding.rl_utils.vtrace)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.vtrace.vtrace_loss">vtrace_loss (class in ding.rl_utils.vtrace)</a>
+</li>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.vtrace.vtrace_nstep_return">vtrace_nstep_return() (in module ding.rl_utils.vtrace)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -3920,6 +3936,14 @@
       <li><a href="05_api_doc/framework/task.html#ding.framework.task.Task.wrap">wrap() (ding.framework.task.Task method)</a>
 </li>
       <li><a href="05_api_doc/utils/time_helper.html#ding.utils.time_helper.TimeWrapper.wrapper">wrapper() (ding.utils.time_helper.TimeWrapper class method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="X">X</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="05_api_doc/rl_utils.html#ding.rl_utils.exploration.OUNoise.x0">x0 (ding.rl_utils.exploration.OUNoise property)</a>
 </li>
   </ul></td>
 </tr></table>

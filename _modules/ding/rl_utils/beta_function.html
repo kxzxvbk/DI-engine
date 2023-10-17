@@ -9,39 +9,36 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>rl_utils.ppo &mdash; DI-engine 0.1.0 documentation</title>
+  <title>ding.rl_utils.beta_function &mdash; DI-engine 0.1.0 documentation</title>
   
 
-  <link rel="shortcut icon" href="../../_static/images/favicon.ico" />
-  
-  
-
-  
-
-  
+  <link rel="shortcut icon" href="../../../_static/images/favicon.ico" />
   
   
 
   
 
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <!-- <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/css/style.css" type="text/css" />
-  <link rel="index" title="Index" href="../../genindex.html" />
-  <link rel="search" title="Search" href="../../search.html" />
-  <link rel="next" title="rl_utils.adder" href="adder.html" />
-  <link rel="prev" title="rl_utils.gae" href="gae.html" />
-    <link href="../../_static/css/style.css" rel="stylesheet" type="text/css">
+  
+  
+  
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" /> -->
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/style.css" type="text/css" />
+  <link rel="index" title="Index" href="../../../genindex.html" />
+  <link rel="search" title="Search" href="../../../search.html" />
+    <link href="../../../_static/css/style.css" rel="stylesheet" type="text/css">
 
 
   
-  <script src="../../_static/js/modernizr.min.js"></script>
+  <script src="../../../_static/js/modernizr.min.js"></script>
   <script>
     MathJax = {
         chtml: {
@@ -57,12 +54,12 @@
 
   <!-- Preload the theme fonts -->
 
-<link rel="preload" href="../../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" href="../../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" href="../../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" href="../../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" href="../../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" href="../../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../../../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../../../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../../../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../../../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../../../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../../../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
 <!-- Preload the katex fonts -->
 
@@ -188,7 +185,7 @@
 
 
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search Docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -205,29 +202,29 @@
         
         
         <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../00_intro/index.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../01_quickstart/index.html">Quickstart</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../02_algo/index.html">RL Algorithm Taxonomy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../03_system/index.html">System Design</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../04_best_practice/index.html">Best Practice</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">API Doc</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../06_faq/index.html">FAQ</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../00_intro/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../01_quickstart/index.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../02_algo/index.html">RL Algorithm Taxonomy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../03_system/index.html">System Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../04_best_practice/index.html">Best Practice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../05_api_doc/index.html">API Doc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../06_faq/index.html">FAQ</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Reinforcement Learning Tutorial</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../10_concepts/index.html">Introduction to RL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../11_dizoo/index.html">Learn From DI-zoo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../12_policies/index.html">RL Algorithms Cheat Sheet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../13_envs/index.html">RL Env Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../10_concepts/index.html">Introduction to RL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../11_dizoo/index.html">Learn From DI-zoo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../12_policies/index.html">RL Algorithms Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../13_envs/index.html">RL Env Examples</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Specification</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../20_spec/index.html">Specification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../21_code_style/index.html">Code Style Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../22_test/index.html">Unit Test Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../23_visual/index.html">Diagrams and Visualization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../24_cooperation/index.html">Github Cooperation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../20_spec/index.html">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../21_code_style/index.html">Code Style Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../22_test/index.html">Unit Test Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../23_visual/index.html">Diagrams and Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../24_cooperation/index.html">Github Cooperation</a></li>
 </ul>
 
         
@@ -260,24 +257,18 @@
   <ul class="pytorch-breadcrumbs">
     
       <li>
-        <a href="../../index.html">
+        <a href="../../../index.html">
             Docs
         </a> &gt;
       </li>
 
         
-          <li><a href="../index.html">API Doc</a> &gt;</li>
+          <li><a href="../../index.html">Module code</a> &gt;</li>
         
-          <li><a href="index.html">RL Utils</a> &gt;</li>
-        
-      <li>rl_utils.ppo</li>
+      <li>ding.rl_utils.beta_function</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
-        
-            
-            <a href="../../_sources/05_api_doc/rl_utils/ppo.rst.txt" rel="nofollow"><img src="../../_static/images/view-page-source-icon.svg"></a>
-          
         
       </li>
     
@@ -300,68 +291,53 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
               <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
                 
-  <section id="rl-utils-ppo">
-<h1>rl_utils.ppo<a class="headerlink" href="#rl-utils-ppo" title="Permalink to this headline">¶</a></h1>
-<section id="ppo">
-<h2>ppo<a class="headerlink" href="#ppo" title="Permalink to this headline">¶</a></h2>
-<section id="module-ding.rl_utils.ppo.ppo_error">
-<span id="ppo-error"></span><h3>ppo_error<a class="headerlink" href="#module-ding.rl_utils.ppo.ppo_error" title="Permalink to this headline">¶</a></h3>
-<dl class="simple">
-<dt>Overview:</dt><dd><p>Implementation of Proximal Policy Optimization (arXiv:1707.06347) with value_clip and dual_clip</p>
-</dd>
-<dt>Arguments:</dt><dd><ul class="simple">
-<li><p>data (<code class="xref py py-obj docutils literal notranslate"><span class="pre">namedtuple</span></code>): the ppo input data with fieids shown in <code class="docutils literal notranslate"><span class="pre">ppo_data</span></code></p></li>
-<li><p>clip_ratio (<code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>): the ppo clip ratio for the constraint of policy update, defaults to 0.2</p></li>
-<li><p>use_value_clip (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>): whether to use clip in value loss with the same ratio as policy</p></li>
-<li><p>dual_clip (<code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>): a parameter c mentioned in arXiv:1912.09729 Equ. 5, shoule be in [1, inf),        defaults to 5.0, if you don’t want to use it, set this parameter to None</p></li>
-</ul>
-</dd>
-<dt>Returns:</dt><dd><ul class="simple">
-<li><p>ppo_loss (<code class="xref py py-obj docutils literal notranslate"><span class="pre">namedtuple</span></code>): the ppo loss item, all of them are the differentiable 0-dim tensor</p></li>
-<li><p>ppo_info (<code class="xref py py-obj docutils literal notranslate"><span class="pre">namedtuple</span></code>): the ppo optim information for monitoring, all of them are Python scalar</p></li>
-</ul>
-</dd>
-<dt>Shapes:</dt><dd><ul class="simple">
-<li><p>logit_new (<code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.FloatTensor</span></code>): <span class="math notranslate nohighlight">\((B, N)\)</span>, where B is batch size and N is action dim</p></li>
-<li><p>logit_old (<code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.FloatTensor</span></code>): <span class="math notranslate nohighlight">\((B, N)\)</span></p></li>
-<li><p>action (<code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.LongTensor</span></code>): <span class="math notranslate nohighlight">\((B, )\)</span></p></li>
-<li><p>value_new (<code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.FloatTensor</span></code>): <span class="math notranslate nohighlight">\((B, )\)</span></p></li>
-<li><p>value_old (<code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.FloatTensor</span></code>): <span class="math notranslate nohighlight">\((B, )\)</span></p></li>
-<li><p>adv (<code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.FloatTensor</span></code>): <span class="math notranslate nohighlight">\((B, )\)</span></p></li>
-<li><p>return (<code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.FloatTensor</span></code>): <span class="math notranslate nohighlight">\((B, )\)</span></p></li>
-<li><p>weight (<code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.FloatTensor</span></code> or <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>): <span class="math notranslate nohighlight">\((B, )\)</span></p></li>
-<li><p>policy_loss (<code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.FloatTensor</span></code>): <span class="math notranslate nohighlight">\(()\)</span>, 0-dim tensor</p></li>
-<li><p>value_loss (<code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.FloatTensor</span></code>): <span class="math notranslate nohighlight">\(()\)</span></p></li>
-</ul>
-</dd>
-</dl>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>adv is already normalized value (adv - adv.mean()) / (adv.std() + 1e-8), and there are many
-ways to calculate this mean and std, like among data buffer or train batch, so we don’t couple
-this part into ppo_error, you can refer to our examples for different ways.</p>
-</div>
-</section>
-</section>
-</section>
+  <h1>Source code for ding.rl_utils.beta_function</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Referenced papar &lt;Implicit Quantile Networks for Distributional Reinforcement Learning&gt;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span>
 
+<span class="n">beta_function_map</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="n">beta_function_map</span><span class="p">[</span><span class="s1">&#39;uniform&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span>
+
+<span class="c1"># For beta functions, concavity corresponds to risk-averse and convexity to risk-seeking policies</span>
+
+
+<span class="c1"># For CPW, eta = 0.71 most closely match human subjects</span>
+<span class="c1"># this function is locally concave for small values of τ and becomes locally convex for larger values of τ</span>
+<div class="viewcode-block" id="cpw"><a class="viewcode-back" href="../../../05_api_doc/rl_utils.html#ding.rl_utils.beta_function.cpw">[docs]</a><span class="k">def</span> <span class="nf">cpw</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="nb">float</span><span class="p">],</span> <span class="n">eta</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.71</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">**</span> <span class="n">eta</span><span class="p">)</span> <span class="o">/</span> <span class="p">((</span><span class="n">x</span> <span class="o">**</span> <span class="n">eta</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span> <span class="o">**</span> <span class="n">eta</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">eta</span><span class="p">))</span></div>
+
+
+<span class="n">beta_function_map</span><span class="p">[</span><span class="s1">&#39;CPW&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cpw</span>
+
+
+<span class="c1"># CVaR is risk-averse</span>
+<div class="viewcode-block" id="CVaR"><a class="viewcode-back" href="../../../05_api_doc/rl_utils.html#ding.rl_utils.beta_function.CVaR">[docs]</a><span class="k">def</span> <span class="nf">CVaR</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="nb">float</span><span class="p">],</span> <span class="n">eta</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.71</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+    <span class="k">assert</span> <span class="n">eta</span> <span class="o">&lt;=</span> <span class="mf">1.0</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">eta</span></div>
+
+
+<span class="n">beta_function_map</span><span class="p">[</span><span class="s1">&#39;CVaR&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">CVaR</span>
+
+
+<span class="c1"># risk-averse (eta &lt; 0) or risk-seeking (eta &gt; 0)</span>
+<span class="k">def</span> <span class="nf">Pow</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="nb">float</span><span class="p">],</span> <span class="n">eta</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">eta</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">eta</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">eta</span><span class="p">)</span>
+
+
+<span class="n">beta_function_map</span><span class="p">[</span><span class="s1">&#39;Pow&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Pow</span>
+</pre></div>
 
               </article>
               
             </div>
             <footer>
-  
-  <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-    
-    <a href="adder.html" class="btn btn-neutral float-right" title="rl_utils.adder" accesskey="n"
-      rel="next">Next <img src="../../_static/images/chevron-right-blue.svg"
-        class="next-page"></a>
-    
-    
-    <a href="gae.html" class="btn btn-neutral" title="rl_utils.gae" accesskey="p"
-      rel="prev"><img src="../../_static/images/chevron-right-blue.svg" class="previous-page"> Previous</a>
-    
-  </div>
   
 
   <hr>
@@ -387,16 +363,7 @@ this part into ppo_error, you can refer to our examples for different ways.</p>
         <div class="pytorch-content-right" id="pytorch-content-right">
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
-              <ul>
-<li><a class="reference internal" href="#">rl_utils.ppo</a><ul>
-<li><a class="reference internal" href="#ppo">ppo</a><ul>
-<li><a class="reference internal" href="#module-ding.rl_utils.ppo.ppo_error">ppo_error</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
+              
             </div>
           </div>
         </div>
@@ -409,21 +376,20 @@ this part into ppo_error, you can refer to our examples for different ways.</p>
   
 
   
-  <script type="text/javascript" id="documentation_options" data-url_root="../../"
-    src="../../_static/documentation_options.js"></script>
-  <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-  <script src="../../_static/jquery.js"></script>
-  <script src="../../_static/underscore.js"></script>
-  <script src="../../_static/doctools.js"></script>
-  <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script type="text/javascript" id="documentation_options" data-url_root="../../../"
+    src="../../../_static/documentation_options.js"></script>
+  <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+  <script src="../../../_static/jquery.js"></script>
+  <script src="../../../_static/underscore.js"></script>
+  <script src="../../../_static/doctools.js"></script>
   
 
   
 
-  <script type="text/javascript" src="../../_static/js/vendor/popper.min.js"></script>
-  <script type="text/javascript" src="../../_static/js/vendor/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../../../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../../../_static/js/vendor/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
   <script type="text/javascript">
     jQuery(function () {
@@ -462,7 +428,7 @@ this part into ppo_error, you can refer to our examples for different ways.</p>
 
   <!-- End Mobile Menu -->
 
-  <script type="text/javascript" src="../../_static/js/vendor/anchor.min.js"></script>
+  <script type="text/javascript" src="../../../_static/js/vendor/anchor.min.js"></script>
 
   <script type="text/javascript">
     $(document).ready(function () {
