@@ -305,16 +305,16 @@
 <section id="module-ding.torch_utils.data_helper.to_device">
 <span id="to-device"></span><h2>to_device<a class="headerlink" href="#module-ding.torch_utils.data_helper.to_device" title="Permalink to this headline">¶</a></h2>
 <dl class="simple">
-<dt>Overview:</dt><dd><p>Transfer data to certain device</p>
+<dt>Overview:</dt><dd><p>Transfer data to certain device.</p>
 </dd>
 <dt>Arguments:</dt><dd><ul class="simple">
-<li><p>item (<code class="xref py py-obj docutils literal notranslate"><span class="pre">Any</span></code>): the item to be transferred</p></li>
-<li><p>device (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>): the device wanted</p></li>
-<li><p>ignore_keys (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>): the keys to be ignored in transfer, defalut set to empty</p></li>
+<li><p>item (<code class="xref py py-obj docutils literal notranslate"><span class="pre">Any</span></code>): The item to be transferred.</p></li>
+<li><p>device (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>): The device wanted.</p></li>
+<li><p>ignore_keys (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>): The keys to be ignored in transfer, default set to empty.</p></li>
 </ul>
 </dd>
 <dt>Returns:</dt><dd><ul class="simple">
-<li><p>item (<code class="xref py py-obj docutils literal notranslate"><span class="pre">Any</span></code>): the transferred item</p></li>
+<li><p>item (<code class="xref py py-obj docutils literal notranslate"><span class="pre">Any</span></code>): The transferred item.</p></li>
 </ul>
 </dd>
 </dl>
@@ -322,15 +322,15 @@
 <section id="module-ding.torch_utils.data_helper.to_dtype">
 <span id="to-dtype"></span><h2>to_dtype<a class="headerlink" href="#module-ding.torch_utils.data_helper.to_dtype" title="Permalink to this headline">¶</a></h2>
 <dl class="simple">
-<dt>Overview:</dt><dd><p>Change data to certain dtype</p>
+<dt>Overview:</dt><dd><p>Change data to certain dtype.</p>
 </dd>
 <dt>Arguments:</dt><dd><ul class="simple">
-<li><p>item (<code class="xref py py-obj docutils literal notranslate"><span class="pre">Any</span></code>): the item to be dtype changed</p></li>
-<li><p>dtype (<code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code>): the type wanted</p></li>
+<li><p>item (<code class="xref py py-obj docutils literal notranslate"><span class="pre">Any</span></code>): The item for changing the dtype.</p></li>
+<li><p>dtype (<code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code>): The type wanted.</p></li>
 </ul>
 </dd>
 <dt>Returns:</dt><dd><ul class="simple">
-<li><p>item (<code class="xref py py-obj docutils literal notranslate"><span class="pre">object</span></code>): the dtype changed item</p></li>
+<li><p>item (<code class="xref py py-obj docutils literal notranslate"><span class="pre">object</span></code>): The item with changed dtype.</p></li>
 </ul>
 </dd>
 </dl>
@@ -338,15 +338,17 @@
 <section id="module-ding.torch_utils.data_helper.to_tensor">
 <span id="to-tensor"></span><h2>to_tensor<a class="headerlink" href="#module-ding.torch_utils.data_helper.to_tensor" title="Permalink to this headline">¶</a></h2>
 <dl class="simple">
-<dt>Overview:</dt><dd><p>Change <cite>numpy.ndarray</cite>, sequence of scalars to torch.Tensor, and keep other data types unchanged.</p>
+<dt>Overview:</dt><dd><p>Convert <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> object to <code class="docutils literal notranslate"><span class="pre">torch.Tensor</span></code>.</p>
 </dd>
 <dt>Arguments:</dt><dd><ul class="simple">
-<li><p>item (<code class="xref py py-obj docutils literal notranslate"><span class="pre">Any</span></code>): the item to be changed</p></li>
-<li><p>dtype (<code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code>): the type of wanted tensor</p></li>
+<li><p>item (<code class="xref py py-obj docutils literal notranslate"><span class="pre">Any</span></code>): The <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> objects to be converted. It can be exactly a <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>             object or a container (list, tuple or dict) that contains several <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> objects.</p></li>
+<li><p>dtype (<code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.dtype</span></code>): The type of wanted tensor. If set to <code class="docutils literal notranslate"><span class="pre">None</span></code>, its dtype will be unchanged.</p></li>
+<li><p>ignore_keys (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>): If the <code class="docutils literal notranslate"><span class="pre">item</span></code> is a dict, values whose keys are in <code class="docutils literal notranslate"><span class="pre">ignore_keys</span></code> will not             be converted.</p></li>
+<li><p>transform_scalar (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>): If set to <code class="docutils literal notranslate"><span class="pre">True</span></code>, a scalar will be also converted to a tensor object.</p></li>
 </ul>
 </dd>
 <dt>Returns:</dt><dd><ul class="simple">
-<li><p>item (<code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.Tensor</span></code>): the change tensor</p></li>
+<li><p>item (<code class="xref py py-obj docutils literal notranslate"><span class="pre">Any</span></code>): The converted tensors.</p></li>
 </ul>
 </dd>
 </dl>
@@ -354,15 +356,15 @@
 <section id="module-ding.torch_utils.data_helper.to_ndarray">
 <span id="to-ndarray"></span><h2>to_ndarray<a class="headerlink" href="#module-ding.torch_utils.data_helper.to_ndarray" title="Permalink to this headline">¶</a></h2>
 <dl class="simple">
-<dt>Overview:</dt><dd><p>Change <cite>torch.Tensor</cite>, sequence of scalars to ndarray, and keep other data types unchanged.</p>
+<dt>Overview:</dt><dd><p>Convert <code class="docutils literal notranslate"><span class="pre">torch.Tensor</span></code> to <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>.</p>
 </dd>
 <dt>Arguments:</dt><dd><ul class="simple">
-<li><p>item (<code class="xref py py-obj docutils literal notranslate"><span class="pre">object</span></code>): the item to be changed</p></li>
-<li><p>dtype (<code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code>): the type of wanted ndarray</p></li>
+<li><p>item (<code class="xref py py-obj docutils literal notranslate"><span class="pre">Any</span></code>): The <code class="docutils literal notranslate"><span class="pre">torch.Tensor</span></code> objects to be converted. It can be exactly a <code class="docutils literal notranslate"><span class="pre">torch.Tensor</span></code>             object or a container (list, tuple or dict) that contains several <code class="docutils literal notranslate"><span class="pre">torch.Tensor</span></code> objects.</p></li>
+<li><p>dtype (<code class="xref py py-obj docutils literal notranslate"><span class="pre">np.dtype</span></code>): The type of wanted array. If set to <code class="docutils literal notranslate"><span class="pre">None</span></code>, its dtype will be unchanged.</p></li>
 </ul>
 </dd>
 <dt>Returns:</dt><dd><ul class="simple">
-<li><p>item (<code class="xref py py-obj docutils literal notranslate"><span class="pre">object</span></code>): the changed ndarray</p></li>
+<li><p>item (<code class="xref py py-obj docutils literal notranslate"><span class="pre">object</span></code>): The changed arrays.</p></li>
 </ul>
 </dd>
 </dl>
@@ -370,52 +372,52 @@
 <section id="module-ding.torch_utils.data_helper.to_list">
 <span id="to-list"></span><h2>to_list<a class="headerlink" href="#module-ding.torch_utils.data_helper.to_list" title="Permalink to this headline">¶</a></h2>
 <dl class="simple">
-<dt>Overview:</dt><dd><p>Transform <cite>torch.Tensor</cite>, <cite>numpy.ndarray</cite> to <cite>list</cite>, keep other data types unchanged</p>
+<dt>Overview:</dt><dd><p>Convert <code class="docutils literal notranslate"><span class="pre">torch.Tensor</span></code>, <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> objects to <code class="docutils literal notranslate"><span class="pre">list</span></code> objects, and keep their dtypes unchanged.</p>
 </dd>
 <dt>Arguments:</dt><dd><ul class="simple">
-<li><p>item (<code class="xref py py-obj docutils literal notranslate"><span class="pre">Any</span></code>): the item to be transformed</p></li>
+<li><p>item (<code class="xref py py-obj docutils literal notranslate"><span class="pre">Any</span></code>): The item to be converted.</p></li>
 </ul>
 </dd>
 <dt>Returns:</dt><dd><ul class="simple">
-<li><p>item (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>): the list after transformation</p></li>
+<li><p>item (<code class="xref py py-obj docutils literal notranslate"><span class="pre">Any</span></code>): The list after conversion.</p></li>
 </ul>
 </dd>
 </dl>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Now supports item type: <code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.Tensor</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">dict</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">tuple</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+<p>Now supports item type: <code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.Tensor</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">dict</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>,         <code class="xref py py-obj docutils literal notranslate"><span class="pre">tuple</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </div>
 </section>
 <section id="module-ding.torch_utils.data_helper.tensor_to_list">
 <span id="tensor-to-list"></span><h2>tensor_to_list<a class="headerlink" href="#module-ding.torch_utils.data_helper.tensor_to_list" title="Permalink to this headline">¶</a></h2>
 <dl class="simple">
-<dt>Overview:</dt><dd><p>Transform <cite>torch.Tensor</cite> to <cite>list</cite>, keep other data types unchanged.</p>
+<dt>Overview:</dt><dd><p>Convert <code class="docutils literal notranslate"><span class="pre">torch.Tensor</span></code> objects to <code class="docutils literal notranslate"><span class="pre">list</span></code>, and keep their dtypes unchanged.</p>
 </dd>
 <dt>Arguments:</dt><dd><ul class="simple">
-<li><p>item (<code class="xref py py-obj docutils literal notranslate"><span class="pre">Any</span></code>): the item to be transformed</p></li>
+<li><p>item (<code class="xref py py-obj docutils literal notranslate"><span class="pre">Any</span></code>): The item to be converted.</p></li>
 </ul>
 </dd>
 <dt>Returns:</dt><dd><ul class="simple">
-<li><p>item (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>): the list after transformation</p></li>
+<li><p>item (<code class="xref py py-obj docutils literal notranslate"><span class="pre">Any</span></code>): The lists after conversion.</p></li>
 </ul>
 </dd>
 </dl>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Now supports item type: <code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.Tensor</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">dict</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">tuple</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+<p>Now supports item type: <code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.Tensor</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">dict</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">tuple</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </div>
 </section>
 <section id="module-ding.torch_utils.data_helper.same_shape">
 <span id="same-shape"></span><h2>same_shape<a class="headerlink" href="#module-ding.torch_utils.data_helper.same_shape" title="Permalink to this headline">¶</a></h2>
 <dl class="simple">
-<dt>Overview:</dt><dd><p>Judge whether all data elements in a list have the same shape.</p>
+<dt>Overview:</dt><dd><p>Judge whether all data elements in a list have the same shapes.</p>
 </dd>
 <dt>Arguments:</dt><dd><ul class="simple">
-<li><p>data (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>): the list of data</p></li>
+<li><p>data (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>): The list of data.</p></li>
 </ul>
 </dd>
 <dt>Returns:</dt><dd><ul class="simple">
-<li><p>same (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>): whether the list of data all have the same shape</p></li>
+<li><p>same (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>): Whether the list of data all have the same shape.</p></li>
 </ul>
 </dd>
 </dl>
@@ -423,10 +425,10 @@
 <section id="module-ding.torch_utils.data_helper.build_log_buffer">
 <span id="build-log-buffer"></span><h2>build_log_buffer<a class="headerlink" href="#module-ding.torch_utils.data_helper.build_log_buffer" title="Permalink to this headline">¶</a></h2>
 <dl class="simple">
-<dt>Overview:</dt><dd><p>Builg log buffer, a subclass of dict, which can transform the input data into log format.</p>
+<dt>Overview:</dt><dd><p>Build log buffer, a subclass of dict, which can convert the input data into log format.</p>
 </dd>
 <dt>Returns:</dt><dd><ul class="simple">
-<li><p>log_buffer (<code class="xref py py-obj docutils literal notranslate"><span class="pre">LogDict</span></code>): Log buffer dict</p></li>
+<li><p>log_buffer (<code class="xref py py-obj docutils literal notranslate"><span class="pre">LogDict</span></code>): Log buffer dict.</p></li>
 </ul>
 </dd>
 </dl>
@@ -437,9 +439,9 @@
 <dt class="sig sig-object py" id="ding.torch_utils.data_helper.CudaFetcher">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ding.torch_utils.data_helper.</span></span><span class="sig-name descname"><span class="pre">CudaFetcher</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_source</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Iterable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queue_size</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sleep</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ding/torch_utils/data_helper.html#CudaFetcher"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.torch_utils.data_helper.CudaFetcher" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
-<dt>Overview:</dt><dd><p>Fetch data from source, and transfer it to specified device.</p>
+<dt>Overview:</dt><dd><p>Fetch data from source, and transfer it to a specified device.</p>
 </dd>
-<dt>Interfaces:</dt><dd><p>run, close</p>
+<dt>Interfaces:</dt><dd><p>__init__, run, close, __next__.</p>
 </dd>
 </dl>
 <dl class="py method">
@@ -455,8 +457,7 @@
 <dt class="sig sig-object py" id="ding.torch_utils.data_helper.CudaFetcher.run">
 <span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../_modules/ding/torch_utils/data_helper.html#CudaFetcher.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.torch_utils.data_helper.CudaFetcher.run" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
-<dt>Overview:</dt><dd><p>Start <code class="docutils literal notranslate"><span class="pre">producer</span></code> thread: Keep fetching data from source,
-change the device, and put into <code class="docutils literal notranslate"><span class="pre">queue</span></code> for request.</p>
+<dt>Overview:</dt><dd><p>Start <code class="docutils literal notranslate"><span class="pre">producer</span></code> thread: Keep fetching data from source, change the device, and put into             <code class="docutils literal notranslate"><span class="pre">queue</span></code> for request.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -467,7 +468,15 @@ change the device, and put into <code class="docutils literal notranslate"><span
 <section id="module-ding.torch_utils.data_helper.get_tensor_data">
 <span id="get-tensor-data"></span><h2>get_tensor_data<a class="headerlink" href="#module-ding.torch_utils.data_helper.get_tensor_data" title="Permalink to this headline">¶</a></h2>
 <dl class="simple">
-<dt>Overview:</dt><dd><p>Get pure tensor data from the given data(without disturbing grad computation graph)</p>
+<dt>Overview:</dt><dd><p>Get pure tensor data from the given data (without disturbing grad computation graph).</p>
+</dd>
+<dt>Arguments:</dt><dd><ul class="simple">
+<li><p>data (<code class="xref py py-obj docutils literal notranslate"><span class="pre">Any</span></code>): The original data. It can be exactly a tensor or a container (Sequence or dict).</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><ul class="simple">
+<li><p>output (<code class="xref py py-obj docutils literal notranslate"><span class="pre">Any</span></code>): The output data.</p></li>
+</ul>
 </dd>
 </dl>
 </section>
