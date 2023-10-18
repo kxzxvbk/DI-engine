@@ -323,6 +323,12 @@
 <span class="sd">        &gt;&gt;&gt; cuda_d = to_device(setup_data_dict, device, ignore_keys=[&#39;module&#39;])</span>
 <span class="sd">        &gt;&gt;&gt; assert cuda_d[&#39;module&#39;].weight.device == torch.device(&#39;cpu&#39;)</span>
 
+<span class="sd">    Examples:</span>
+<span class="sd">        &gt;&gt;&gt; setup_data_dict[&#39;module&#39;] = nn.Linear(3, 5)</span>
+<span class="sd">        &gt;&gt;&gt; device = &#39;cuda&#39;</span>
+<span class="sd">        &gt;&gt;&gt; cuda_d = to_device(setup_data_dict, device)</span>
+<span class="sd">        &gt;&gt;&gt; assert cuda_d[&#39;module&#39;].weight.device == torch.device(&#39;cuda:0&#39;)</span>
+
 <span class="sd">    .. note:</span>
 
 <span class="sd">        Now supports item type: :obj:`torch.nn.Module`, :obj:`torch.Tensor`, :obj:`Sequence`, \</span>
