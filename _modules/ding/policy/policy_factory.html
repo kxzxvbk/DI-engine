@@ -9,11 +9,10 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>worker.coordinator.comm_coordinator &mdash; DI-engine 0.1.0 documentation</title>
+  <title>ding.policy.policy_factory &mdash; DI-engine 0.1.0 documentation</title>
   
 
   <link rel="shortcut icon" href="../../../_static/images/favicon.ico" />
@@ -209,7 +208,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../02_algo/index.html">RL Algorithm Taxonomy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../03_system/index.html">System Design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../04_best_practice/index.html">Best Practice</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">API Doc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../05_api_doc/index.html">API Doc</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../06_faq/index.html">FAQ</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Reinforcement Learning Tutorial</span></p>
@@ -264,14 +263,12 @@
       </li>
 
         
-      <li>worker.coordinator.comm_coordinator</li>
+          <li><a href="../../index.html">Module code</a> &gt;</li>
+        
+      <li>ding.policy.policy_factory</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
-        
-            
-            <a href="../../../_sources/05_api_doc/worker/coordinator/comm_coordinator.rst.txt" rel="nofollow"><img src="../../../_static/images/view-page-source-icon.svg"></a>
-          
         
       </li>
     
@@ -294,92 +291,85 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
               <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
                 
-  <section id="worker-coordinator-comm-coordinator">
-<h1>worker.coordinator.comm_coordinator<a class="headerlink" href="#worker-coordinator-comm-coordinator" title="Permalink to this headline">¶</a></h1>
-<section id="commcoordinator">
-<h2>CommCoordinator<a class="headerlink" href="#commcoordinator" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="ding.worker.coordinator.comm_coordinator.CommCoordinator">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ding.worker.coordinator.comm_coordinator.</span></span><span class="sig-name descname"><span class="pre">CommCoordinator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback_fn</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Callable</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">logging.Logger</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ding/worker/coordinator/comm_coordinator.html#CommCoordinator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.coordinator.comm_coordinator.CommCoordinator" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="simple">
-<dt>Overview:</dt><dd><p>the communication part of coordinator(coordinator intercollector)</p>
-</dd>
-<dt>Interface:</dt><dd><p>__init__ , start, close, __del__, send_collector_task, send_learner_task</p>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="ding.worker.coordinator.comm_coordinator.CommCoordinator.__del__">
-<span class="sig-name descname"><span class="pre">__del__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/coordinator/comm_coordinator.html#CommCoordinator.__del__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.coordinator.comm_coordinator.CommCoordinator.__del__" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="simple">
-<dt>Overview:</dt><dd><p>__del__ method will close the coordinator interactor</p>
-</dd>
-</dl>
-</dd></dl>
+  <h1>Source code for ding.policy.policy_factory</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Callable</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+<span class="kn">from</span> <span class="nn">easydict</span> <span class="kn">import</span> <span class="n">EasyDict</span>
+<span class="kn">import</span> <span class="nn">torch</span>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="ding.worker.coordinator.comm_coordinator.CommCoordinator.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback_fn</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Callable</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">logging.Logger</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/coordinator/comm_coordinator.html#CommCoordinator.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.coordinator.comm_coordinator.CommCoordinator.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="simple">
-<dt>Overview:</dt><dd><p>init the interactor of coordinator</p>
-</dd>
-<dt>Arguments:</dt><dd><ul class="simple">
-<li><p>cfg (<code class="xref py py-obj docutils literal notranslate"><span class="pre">dict</span></code>): The config file of communication coordinator</p></li>
-<li><p>callback_fn (<code class="xref py py-obj docutils literal notranslate"><span class="pre">Dict[str,</span> <span class="pre">Callable]</span></code>): The callback functions given by coordinator</p></li>
-<li><p>logger (<code class="xref py py-obj docutils literal notranslate"><span class="pre">logging.Logger</span></code>): The text logger.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
+<span class="kn">from</span> <span class="nn">ding.torch_utils</span> <span class="kn">import</span> <span class="n">to_device</span>
+<span class="kn">import</span> <span class="nn">gym</span>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="ding.worker.coordinator.comm_coordinator.CommCoordinator.close">
-<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/coordinator/comm_coordinator.html#CommCoordinator.close"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.coordinator.comm_coordinator.CommCoordinator.close" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="simple">
-<dt>Overview:</dt><dd><p>close the coordinator interactor</p>
-</dd>
-</dl>
-</dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="ding.worker.coordinator.comm_coordinator.CommCoordinator.send_collector_task">
-<span class="sig-name descname"><span class="pre">send_collector_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">collector_task</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/coordinator/comm_coordinator.html#CommCoordinator.send_collector_task"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.coordinator.comm_coordinator.CommCoordinator.send_collector_task" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="simple">
-<dt>Overview:</dt><dd><p>send the collector_task to collector_task threads and execute</p>
-</dd>
-<dt>Arguments:</dt><dd><ul class="simple">
-<li><p>collector_task (<code class="xref py py-obj docutils literal notranslate"><span class="pre">dict</span></code>): the collector_task to send</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
+<div class="viewcode-block" id="PolicyFactory"><a class="viewcode-back" href="../../../05_api_doc/policy.html#ding.policy.PolicyFactory">[docs]</a><span class="k">class</span> <span class="nc">PolicyFactory</span><span class="p">:</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Overview:</span>
+<span class="sd">        Pure random policy. Only used for initial sample collecting if `cfg.policy.random_collect_size` &gt; 0.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="ding.worker.coordinator.comm_coordinator.CommCoordinator.send_learner_task">
-<span class="sig-name descname"><span class="pre">send_learner_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">learner_task</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/coordinator/comm_coordinator.html#CommCoordinator.send_learner_task"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.coordinator.comm_coordinator.CommCoordinator.send_learner_task" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="simple">
-<dt>Overview:</dt><dd><p>send the learner_task to learner_task threads and execute</p>
-</dd>
-<dt>Arguments:</dt><dd><ul class="simple">
-<li><p>learner_task (<code class="xref py py-obj docutils literal notranslate"><span class="pre">dict</span></code>): the learner_task to send</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">get_random_policy</span><span class="p">(</span>
+            <span class="n">policy</span><span class="p">:</span> <span class="s1">&#39;BasePolicy&#39;</span><span class="p">,</span>  <span class="c1"># noqa</span>
+            <span class="n">action_space</span><span class="p">:</span> <span class="s1">&#39;gym.spaces.Space&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>  <span class="c1"># noqa</span>
+            <span class="n">forward_fn</span><span class="p">:</span> <span class="n">Callable</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="ow">not</span> <span class="p">(</span><span class="n">action_space</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">forward_fn</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">random_collect_function</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span>
+            <span class="s1">&#39;random_collect_function&#39;</span><span class="p">,</span> <span class="p">[</span>
+                <span class="s1">&#39;forward&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;process_transition&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;get_train_sample&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;reset&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;get_attribute&#39;</span><span class="p">,</span>
+            <span class="p">]</span>
+        <span class="p">)</span>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="ding.worker.coordinator.comm_coordinator.CommCoordinator.start">
-<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/coordinator/comm_coordinator.html#CommCoordinator.start"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.coordinator.comm_coordinator.CommCoordinator.start" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="simple">
-<dt>Overview:</dt><dd><p>start the coordinator interactor and manage resources and connections</p>
-</dd>
-</dl>
-</dd></dl>
+        <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
 
-</dd></dl>
+            <span class="n">actions</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">for</span> <span class="n">env_id</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">action_space</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">action_space</span><span class="p">,</span> <span class="n">gym</span><span class="o">.</span><span class="n">spaces</span><span class="o">.</span><span class="n">Discrete</span><span class="p">):</span>
+                        <span class="n">action</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">([</span><span class="n">action_space</span><span class="o">.</span><span class="n">sample</span><span class="p">()])</span>
+                    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">action_space</span><span class="p">,</span> <span class="n">gym</span><span class="o">.</span><span class="n">spaces</span><span class="o">.</span><span class="n">MultiDiscrete</span><span class="p">):</span>
+                        <span class="n">action</span> <span class="o">=</span> <span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">([</span><span class="n">v</span><span class="p">])</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">action_space</span><span class="o">.</span><span class="n">sample</span><span class="p">()]</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">action</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">as_tensor</span><span class="p">(</span><span class="n">action_space</span><span class="o">.</span><span class="n">sample</span><span class="p">())</span>
+                    <span class="n">actions</span><span class="p">[</span><span class="n">env_id</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;action&#39;</span><span class="p">:</span> <span class="n">action</span><span class="p">}</span>
+                <span class="k">elif</span> <span class="s1">&#39;global_state&#39;</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="n">env_id</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                    <span class="c1"># for smac</span>
+                    <span class="n">logit</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">env_id</span><span class="p">][</span><span class="s1">&#39;action_mask&#39;</span><span class="p">])</span>
+                    <span class="n">logit</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="n">env_id</span><span class="p">][</span><span class="s1">&#39;action_mask&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1e8</span>
+                    <span class="n">dist</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">categorical</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">logits</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="n">logit</span><span class="p">))</span>
+                    <span class="n">actions</span><span class="p">[</span><span class="n">env_id</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;action&#39;</span><span class="p">:</span> <span class="n">dist</span><span class="o">.</span><span class="n">sample</span><span class="p">(),</span> <span class="s1">&#39;logit&#39;</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">as_tensor</span><span class="p">(</span><span class="n">logit</span><span class="p">)}</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="c1"># for gfootball</span>
+                    <span class="n">actions</span><span class="p">[</span><span class="n">env_id</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                        <span class="s1">&#39;action&#39;</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">as_tensor</span><span class="p">([</span><span class="n">action_space_agent</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span> <span class="k">for</span> <span class="n">action_space_agent</span> <span class="ow">in</span> <span class="n">action_space</span><span class="p">]),</span>
+                        <span class="s1">&#39;logit&#39;</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="nb">len</span><span class="p">(</span><span class="n">action_space</span><span class="p">),</span> <span class="n">action_space</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">n</span><span class="p">])</span>
+                    <span class="p">}</span>
+            <span class="k">return</span> <span class="n">actions</span>
 
-</section>
-</section>
+        <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">pass</span>
 
+        <span class="k">if</span> <span class="n">action_space</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">random_collect_function</span><span class="p">(</span>
+                <span class="n">forward_fn</span><span class="p">,</span> <span class="n">policy</span><span class="o">.</span><span class="n">process_transition</span><span class="p">,</span> <span class="n">policy</span><span class="o">.</span><span class="n">get_train_sample</span><span class="p">,</span> <span class="n">reset</span><span class="p">,</span> <span class="n">policy</span><span class="o">.</span><span class="n">get_attribute</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="n">forward_fn</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">random_collect_function</span><span class="p">(</span>
+                <span class="n">forward</span><span class="p">,</span> <span class="n">policy</span><span class="o">.</span><span class="n">process_transition</span><span class="p">,</span> <span class="n">policy</span><span class="o">.</span><span class="n">get_train_sample</span><span class="p">,</span> <span class="n">reset</span><span class="p">,</span> <span class="n">policy</span><span class="o">.</span><span class="n">get_attribute</span>
+            <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_random_policy"><a class="viewcode-back" href="../../../05_api_doc/policy.html#ding.policy.get_random_policy">[docs]</a><span class="k">def</span> <span class="nf">get_random_policy</span><span class="p">(</span><span class="n">cfg</span><span class="p">:</span> <span class="n">EasyDict</span><span class="p">,</span> <span class="n">policy</span><span class="p">:</span> <span class="s1">&#39;Policy.collect_mode&#39;</span><span class="p">,</span> <span class="n">env</span><span class="p">:</span> <span class="s1">&#39;BaseEnvManager&#39;</span><span class="p">):</span>  <span class="c1"># noqa</span>
+    <span class="k">if</span> <span class="n">cfg</span><span class="o">.</span><span class="n">policy</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;transition_with_policy_data&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">policy</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">action_space</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">action_space</span>
+        <span class="k">return</span> <span class="n">PolicyFactory</span><span class="o">.</span><span class="n">get_random_policy</span><span class="p">(</span><span class="n">policy</span><span class="p">,</span> <span class="n">action_space</span><span class="o">=</span><span class="n">action_space</span><span class="p">)</span></div>
+</pre></div>
 
               </article>
               
@@ -410,13 +400,7 @@
         <div class="pytorch-content-right" id="pytorch-content-right">
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
-              <ul>
-<li><a class="reference internal" href="#">worker.coordinator.comm_coordinator</a><ul>
-<li><a class="reference internal" href="#commcoordinator">CommCoordinator</a></li>
-</ul>
-</li>
-</ul>
-
+              
             </div>
           </div>
         </div>

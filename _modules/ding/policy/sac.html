@@ -708,7 +708,7 @@
             <span class="p">]</span> <span class="o">+</span> <span class="n">twin_critic</span>
 
 
-<div class="viewcode-block" id="SACPolicy"><a class="viewcode-back" href="../../../12_policies/sac.html#ding.policy.sac.SACPolicy">[docs]</a><span class="nd">@POLICY_REGISTRY</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;sac&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="SACPolicy"><a class="viewcode-back" href="../../../12_policies/sac.html#ding.policy.SACPolicy">[docs]</a><span class="nd">@POLICY_REGISTRY</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;sac&#39;</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">SACPolicy</span><span class="p">(</span><span class="n">Policy</span><span class="p">):</span>
 <span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">       Overview:</span>
@@ -1122,7 +1122,7 @@
         <span class="p">]</span> <span class="o">+</span> <span class="n">twin_critic</span> <span class="o">+</span> <span class="n">alpha_loss</span></div>
 
 
-<span class="nd">@POLICY_REGISTRY</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;sqil_sac&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="SQILSACPolicy"><a class="viewcode-back" href="../../../05_api_doc/policy.html#ding.policy.SQILSACPolicy">[docs]</a><span class="nd">@POLICY_REGISTRY</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;sqil_sac&#39;</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">SQILSACPolicy</span><span class="p">(</span><span class="n">SACPolicy</span><span class="p">):</span>
 
     <span class="k">def</span> <span class="nf">_init_learn</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -1408,7 +1408,7 @@
             <span class="s1">&#39;sigma&#39;</span><span class="p">,</span>
             <span class="s1">&#39;q_value0&#39;</span><span class="p">,</span>
             <span class="s1">&#39;q_value1&#39;</span><span class="p">,</span>
-        <span class="p">]</span> <span class="o">+</span> <span class="n">twin_critic</span> <span class="o">+</span> <span class="n">alpha_loss</span> <span class="o">+</span> <span class="n">cos_similarity</span> <span class="o">+</span> <span class="n">entropy</span>
+        <span class="p">]</span> <span class="o">+</span> <span class="n">twin_critic</span> <span class="o">+</span> <span class="n">alpha_loss</span> <span class="o">+</span> <span class="n">cos_similarity</span> <span class="o">+</span> <span class="n">entropy</span></div>
 </pre></div>
 
               </article>
