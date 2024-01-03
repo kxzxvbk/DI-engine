@@ -981,14 +981,18 @@
     <span class="n">q</span><span class="p">,</span> <span class="n">next_n_q</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">next_n_action</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">weight</span> <span class="o">=</span> <span class="n">data</span>
     <span class="k">if</span> <span class="n">weight</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">weight</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">action</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1"># MARL case</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">action</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1"># single agent case</span>
+        <span class="n">action</span> <span class="o">=</span> <span class="n">action</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">action</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1"># MARL case</span>
         <span class="n">reward</span> <span class="o">=</span> <span class="n">reward</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
         <span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
         <span class="n">done</span> <span class="o">=</span> <span class="n">done</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">value_gamma</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">value_gamma</span> <span class="o">=</span> <span class="n">value_gamma</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
-    <span class="n">q_s_a</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">action</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">q_s_a</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
     <span class="n">target_q_s_a</span> <span class="o">=</span> <span class="n">next_n_q</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">next_n_action</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">cum_reward</span><span class="p">:</span>
@@ -1012,10 +1016,10 @@
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Overview:</span>
-<span class="sd">        Multistep (1 step or n step) td_error for BDQ algorithm, referenced paper &quot;Action Branching Architectures \</span>
-<span class="sd">        for Deep Reinforcement Learning&quot;, link: https://arxiv.org/pdf/1711.08946.</span>
+<span class="sd">        Multistep (1 step or n step) td_error for BDQ algorithm, referenced paper &quot;Action Branching Architectures for \</span>
+<span class="sd">        Deep Reinforcement Learning&quot;, link: https://arxiv.org/pdf/1711.08946.</span>
 <span class="sd">        In fact, the original paper only provides the 1-step TD-error calculation method, and here we extend the \</span>
-<span class="sd">        calculation method of n-step TD-error.</span>
+<span class="sd">        calculation method of n-step, i.e., TD-error:</span>
 <span class="sd">    Arguments:</span>
 <span class="sd">        - data (:obj:`q_nstep_td_data`): The input data, q_nstep_td_data to calculate loss</span>
 <span class="sd">        - gamma (:obj:`float`): Discount factor</span>

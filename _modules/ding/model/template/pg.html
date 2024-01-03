@@ -305,6 +305,15 @@
 
 <div class="viewcode-block" id="PG"><a class="viewcode-back" href="../../../../05_api_doc/model.html#ding.model.PG">[docs]</a><span class="nd">@MODEL_REGISTRY</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;pg&#39;</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">PG</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Overview:</span>
+<span class="sd">        The neural network and computation graph of algorithms related to Policy Gradient(PG) \</span>
+<span class="sd">        (https://proceedings.neurips.cc/paper/1999/file/464d828b85b0bed98e80ade0a5c43b0f-Paper.pdf). \</span>
+<span class="sd">        The PG model is composed of two parts: encoder and head. Encoders are used to extract the feature \</span>
+<span class="sd">        from various observation. Heads are used to predict corresponding action logit.</span>
+<span class="sd">    Interface:</span>
+<span class="sd">        ``__init__``, ``forward``.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="PG.__init__"><a class="viewcode-back" href="../../../../05_api_doc/model.html#ding.model.PG.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
@@ -317,6 +326,31 @@
             <span class="n">activation</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">]</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
             <span class="n">norm_type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Overview:</span>
+<span class="sd">            Initialize the PG model according to corresponding input arguments.</span>
+<span class="sd">        Arguments:</span>
+<span class="sd">            - obs_shape (:obj:`Union[int, SequenceType]`): Observation space shape, such as 8 or [4, 84, 84].</span>
+<span class="sd">            - action_shape (:obj:`Union[int, SequenceType]`): Action space shape, such as 6 or [2, 3, 3].</span>
+<span class="sd">            - action_space (:obj:`str`): The type of different action spaces, including [&#39;discrete&#39;, &#39;continuous&#39;], \</span>
+<span class="sd">                then will instantiate corresponding head, including ``DiscreteHead`` and ``ReparameterizationHead``.</span>
+<span class="sd">            - encoder_hidden_size_list (:obj:`SequenceType`): Collection of ``hidden_size`` to pass to ``Encoder``, \</span>
+<span class="sd">                the last element must match ``head_hidden_size``.</span>
+<span class="sd">            - head_hidden_size (:obj:`Optional[int]`): The ``hidden_size`` of ``head`` network, defaults \</span>
+<span class="sd">                to None, it must match the last element of ``encoder_hidden_size_list``.</span>
+<span class="sd">            - head_layer_num (:obj:`int`): The num of layers used in the ``head`` network to compute action.</span>
+<span class="sd">            - activation (:obj:`Optional[nn.Module]`): The type of activation function in networks \</span>
+<span class="sd">                if ``None`` then default set it to ``nn.ReLU()``.</span>
+<span class="sd">            - norm_type (:obj:`Optional[str]`): The type of normalization in networks, see \</span>
+<span class="sd">                ``ding.torch_utils.fc_block`` for more details. you can choose one of [&#39;BN&#39;, &#39;IN&#39;, &#39;SyncBN&#39;, &#39;LN&#39;]</span>
+<span class="sd">        Examples:</span>
+<span class="sd">            &gt;&gt;&gt; model = PG((4, 84, 84), 5)</span>
+<span class="sd">            &gt;&gt;&gt; inputs = torch.randn(8, 4, 84, 84)</span>
+<span class="sd">            &gt;&gt;&gt; outputs = model(inputs)</span>
+<span class="sd">            &gt;&gt;&gt; assert isinstance(outputs, dict)</span>
+<span class="sd">            &gt;&gt;&gt; assert outputs[&#39;logit&#39;].shape == (8, 5)</span>
+<span class="sd">            &gt;&gt;&gt; assert outputs[&#39;dist&#39;].sample().shape == (8, )</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">PG</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="c1"># For compatibility: 1, (1, ), [4, 32, 32]</span>
         <span class="n">obs_shape</span><span class="p">,</span> <span class="n">action_shape</span> <span class="o">=</span> <span class="n">squeeze</span><span class="p">(</span><span class="n">obs_shape</span><span class="p">),</span> <span class="n">squeeze</span><span class="p">(</span><span class="n">action_shape</span><span class="p">)</span>
@@ -351,6 +385,16 @@
             <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s2">&quot;not support action space: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">action_space</span><span class="p">))</span></div>
 
 <div class="viewcode-block" id="PG.forward"><a class="viewcode-back" href="../../../../05_api_doc/model.html#ding.model.PG.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Overview:</span>
+<span class="sd">            PG forward computation graph, input observation tensor to predict policy distribution.</span>
+<span class="sd">        Arguments:</span>
+<span class="sd">            - x (:obj:`torch.Tensor`): The input observation tensor data.</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            - outputs (:obj:`torch.distributions`): The output policy distribution. If action space is \</span>
+<span class="sd">            discrete, the output is Categorical distribution; if action space is continuous, the output is Normal \</span>
+<span class="sd">            distribution.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">encoder</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
         <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">action_space</span> <span class="o">==</span> <span class="s1">&#39;discrete&#39;</span><span class="p">:</span>

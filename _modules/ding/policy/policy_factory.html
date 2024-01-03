@@ -295,24 +295,39 @@
 <span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Callable</span>
 <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
 <span class="kn">from</span> <span class="nn">easydict</span> <span class="kn">import</span> <span class="n">EasyDict</span>
+<span class="kn">import</span> <span class="nn">gym</span>
 <span class="kn">import</span> <span class="nn">torch</span>
 
 <span class="kn">from</span> <span class="nn">ding.torch_utils</span> <span class="kn">import</span> <span class="n">to_device</span>
-<span class="kn">import</span> <span class="nn">gym</span>
 
 
 <div class="viewcode-block" id="PolicyFactory"><a class="viewcode-back" href="../../../05_api_doc/policy.html#ding.policy.PolicyFactory">[docs]</a><span class="k">class</span> <span class="nc">PolicyFactory</span><span class="p">:</span>
-<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Overview:</span>
-<span class="sd">        Pure random policy. Only used for initial sample collecting if `cfg.policy.random_collect_size` &gt; 0.</span>
+<span class="sd">        Policy factory class, used to generate different policies for general purpose. Such as random action policy, \</span>
+<span class="sd">        which is used for initial sample collecting for better exploration when ``random_collect_size`` &gt; 0.</span>
+<span class="sd">    Interfaces:</span>
+<span class="sd">        ``get_random_policy``</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="PolicyFactory.get_random_policy"><a class="viewcode-back" href="../../../05_api_doc/policy.html#ding.policy.PolicyFactory.get_random_policy">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">get_random_policy</span><span class="p">(</span>
-            <span class="n">policy</span><span class="p">:</span> <span class="s1">&#39;BasePolicy&#39;</span><span class="p">,</span>  <span class="c1"># noqa</span>
+            <span class="n">policy</span><span class="p">:</span> <span class="s1">&#39;Policy.collect_mode&#39;</span><span class="p">,</span>  <span class="c1"># noqa</span>
             <span class="n">action_space</span><span class="p">:</span> <span class="s1">&#39;gym.spaces.Space&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>  <span class="c1"># noqa</span>
             <span class="n">forward_fn</span><span class="p">:</span> <span class="n">Callable</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Policy.collect_mode&#39;</span><span class="p">:</span>  <span class="c1"># noqa</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Overview:</span>
+<span class="sd">            According to the given action space, define the forward function of the random policy, then pack it with \</span>
+<span class="sd">            other interfaces of the given policy, and return the final collect mode interfaces of policy.</span>
+<span class="sd">        Arguments:</span>
+<span class="sd">            - policy (:obj:`Policy.collect_mode`): The collect mode interfaces of the policy.</span>
+<span class="sd">            - action_space (:obj:`gym.spaces.Space`): The action space of the environment, gym-style.</span>
+<span class="sd">            - forward_fn (:obj:`Callable`): It action space is too complex, you can define your own forward function \</span>
+<span class="sd">                and pass it to this function, note you should set ``action_space`` to ``None`` in this case.</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            - random_policy (:obj:`Policy.collect_mode`): The collect mode intefaces of the random policy.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">assert</span> <span class="ow">not</span> <span class="p">(</span><span class="n">action_space</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">forward_fn</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span>
         <span class="n">random_collect_function</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span>
             <span class="s1">&#39;random_collect_function&#39;</span><span class="p">,</span> <span class="p">[</span>
@@ -360,10 +375,26 @@
         <span class="k">elif</span> <span class="n">forward_fn</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">random_collect_function</span><span class="p">(</span>
                 <span class="n">forward</span><span class="p">,</span> <span class="n">policy</span><span class="o">.</span><span class="n">process_transition</span><span class="p">,</span> <span class="n">policy</span><span class="o">.</span><span class="n">get_train_sample</span><span class="p">,</span> <span class="n">reset</span><span class="p">,</span> <span class="n">policy</span><span class="o">.</span><span class="n">get_attribute</span>
-            <span class="p">)</span></div>
+            <span class="p">)</span></div></div>
 
 
-<div class="viewcode-block" id="get_random_policy"><a class="viewcode-back" href="../../../05_api_doc/policy.html#ding.policy.get_random_policy">[docs]</a><span class="k">def</span> <span class="nf">get_random_policy</span><span class="p">(</span><span class="n">cfg</span><span class="p">:</span> <span class="n">EasyDict</span><span class="p">,</span> <span class="n">policy</span><span class="p">:</span> <span class="s1">&#39;Policy.collect_mode&#39;</span><span class="p">,</span> <span class="n">env</span><span class="p">:</span> <span class="s1">&#39;BaseEnvManager&#39;</span><span class="p">):</span>  <span class="c1"># noqa</span>
+<div class="viewcode-block" id="get_random_policy"><a class="viewcode-back" href="../../../05_api_doc/policy.html#ding.policy.get_random_policy">[docs]</a><span class="k">def</span> <span class="nf">get_random_policy</span><span class="p">(</span>
+        <span class="n">cfg</span><span class="p">:</span> <span class="n">EasyDict</span><span class="p">,</span>
+        <span class="n">policy</span><span class="p">:</span> <span class="s1">&#39;Policy.collect_mode&#39;</span><span class="p">,</span>  <span class="c1"># noqa</span>
+        <span class="n">env</span><span class="p">:</span> <span class="s1">&#39;BaseEnvManager&#39;</span>  <span class="c1"># noqa</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Policy.collect_mode&#39;</span><span class="p">:</span>  <span class="c1"># noqa</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Overview:</span>
+<span class="sd">        The entry function to get the corresponding random policy. If a policy needs special data items in a \</span>
+<span class="sd">        transition, then return itself, otherwise, we will use ``PolicyFactory`` to return a general random policy.</span>
+<span class="sd">    Arguments:</span>
+<span class="sd">        - cfg (:obj:`EasyDict`): The EasyDict-type dict configuration.</span>
+<span class="sd">        - policy (:obj:`Policy.collect_mode`): The collect mode interfaces of the policy.</span>
+<span class="sd">        - env (:obj:`BaseEnvManager`): The env manager instance, which is used to get the action space for random \</span>
+<span class="sd">            action generation.</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        - random_policy (:obj:`Policy.collect_mode`): The collect mode intefaces of the random policy.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">cfg</span><span class="o">.</span><span class="n">policy</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;transition_with_policy_data&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">policy</span>
     <span class="k">else</span><span class="p">:</span>

@@ -303,9 +303,11 @@
 
 <div class="viewcode-block" id="ACER"><a class="viewcode-back" href="../../../../05_api_doc/model.html#ding.model.ACER">[docs]</a><span class="nd">@MODEL_REGISTRY</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;acer&#39;</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">ACER</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Overview:</span>
-<span class="sd">        The ACER model.</span>
+<span class="sd">        The model of algorithmn ACER(Actor Critic with Experience Replay)</span>
+<span class="sd">        Sample Efficient Actor-Critic with Experience Replay.</span>
+<span class="sd">        https://arxiv.org/abs/1611.01224</span>
 <span class="sd">    Interfaces:</span>
 <span class="sd">        ``__init__``, ``forward``, ``compute_actor``, ``compute_critic``</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -323,7 +325,7 @@
             <span class="n">activation</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">]</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
             <span class="n">norm_type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Overview:</span>
 <span class="sd">            Init the ACER Model according to arguments.</span>
 <span class="sd">        Arguments:</span>
@@ -372,64 +374,29 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">critic</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ModuleList</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">critic</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="ACER.forward"><a class="viewcode-back" href="../../../../05_api_doc/model.html#ding.model.ACER.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">Dict</span><span class="p">],</span> <span class="n">mode</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
-<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Overview:</span>
-<span class="sd">        Use observation to predict output.</span>
-<span class="sd">        Parameter updates with ACER&#39;s MLPs forward setup.</span>
+<span class="sd">            Use observation to predict output.</span>
+<span class="sd">            Parameter updates with ACER&#39;s MLPs forward setup.</span>
 <span class="sd">        Arguments:</span>
-<span class="sd">            Forward with ``&#39;compute_actor&#39;``:</span>
-<span class="sd">                - inputs (:obj:`torch.Tensor`):</span>
-<span class="sd">                The encoded embedding tensor, determined with given ``hidden_size``, i.e. ``(B, N=hidden_size)``.</span>
-<span class="sd">                Whether ``actor_head_hidden_size`` or ``critic_head_hidden_size`` depend on ``mode``.</span>
-
-<span class="sd">            Forward with ``&#39;compute_critic&#39;``, inputs:`torch.Tensor` Necessary Keys:</span>
-<span class="sd">                - ``obs`` encoded tensors.</span>
-
 <span class="sd">            - mode (:obj:`str`): Name of the forward mode.</span>
 <span class="sd">        Returns:</span>
 <span class="sd">            - outputs (:obj:`Dict`): Outputs of network forward.</span>
-
-<span class="sd">                Forward with ``&#39;compute_actor&#39;``, Necessary Keys (either):</span>
-<span class="sd">                    - logit (:obj:`torch.Tensor`):</span>
-<span class="sd">                        - logit (:obj:`torch.Tensor`): Logit encoding tensor.</span>
-
-<span class="sd">                Forward with ``&#39;compute_critic&#39;``, Necessary Keys:</span>
-<span class="sd">                    - q_value (:obj:`torch.Tensor`): Q value tensor.</span>
-
-<span class="sd">        Actor Shapes:</span>
+<span class="sd">        Shapes (Actor):</span>
 <span class="sd">            - obs (:obj:`torch.Tensor`): :math:`(B, N1)`, where B is batch size and N1 is ``obs_shape``</span>
 <span class="sd">            - logit (:obj:`torch.FloatTensor`): :math:`(B, N2)`, where B is batch size and N2 is ``action_shape``</span>
-
-<span class="sd">        Critic Shapes:</span>
+<span class="sd">        Shapes (Critic):</span>
 <span class="sd">            - inputs (:obj:`torch.Tensor`): :math:`(B, N1)`, B is batch size and N1 corresponds to ``obs_shape``</span>
 <span class="sd">            - q_value (:obj:`torch.FloatTensor`): :math:`(B, N2)`, where B is batch size and N2 is ``action_shape``</span>
-<span class="sd">        Actor Examples:</span>
-<span class="sd">            &gt;&gt;&gt; # Regression mode</span>
-<span class="sd">            &gt;&gt;&gt; model = ACER(64, 64)</span>
-<span class="sd">            &gt;&gt;&gt; inputs = torch.randn(4, 64)</span>
-<span class="sd">            &gt;&gt;&gt; actor_outputs = model(inputs,&#39;compute_actor&#39;)</span>
-<span class="sd">            &gt;&gt;&gt; assert actor_outputs[&#39;logit&#39;].shape == torch.Size([4, 64])</span>
-
-<span class="sd">        Critic Examples:</span>
-<span class="sd">            &gt;&gt;&gt; inputs = torch.randn(4,N)</span>
-<span class="sd">            &gt;&gt;&gt; model = ACER(obs_shape=(N, ),action_shape=5)</span>
-<span class="sd">            &gt;&gt;&gt; model(inputs, mode=&#39;compute_critic&#39;)[&#39;q_value&#39;] # q value</span>
-<span class="sd">            tensor([[-0.0681, -0.0431, -0.0530,  0.1454, -0.1093],</span>
-<span class="sd">            [-0.0647, -0.0281, -0.0527,  0.1409, -0.1162],</span>
-<span class="sd">            [-0.0596, -0.0321, -0.0676,  0.1386, -0.1113],</span>
-<span class="sd">            [-0.0874, -0.0406, -0.0487,  0.1346, -0.1135]],</span>
-<span class="sd">            grad_fn=&lt;AddmmBackward&gt;)</span>
-
-
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">assert</span> <span class="n">mode</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span> <span class="s2">&quot;not support forward mode: </span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
         <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="p">)(</span><span class="n">inputs</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="ACER.compute_actor"><a class="viewcode-back" href="../../../../05_api_doc/model.html#ding.model.ACER.compute_actor">[docs]</a>    <span class="k">def</span> <span class="nf">compute_actor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
-<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Overview:</span>
 <span class="sd">            Use encoded embedding tensor to predict output.</span>
-<span class="sd">            Execute parameter updates with ``&#39;compute_actor&#39;`` mode</span>
+<span class="sd">            Execute parameter updates with ``compute_actor`` mode</span>
 <span class="sd">            Use encoded embedding tensor to predict output.</span>
 <span class="sd">        Arguments:</span>
 <span class="sd">            - inputs (:obj:`torch.Tensor`):</span>
@@ -438,7 +405,6 @@
 <span class="sd">            - mode (:obj:`str`): Name of the forward mode.</span>
 <span class="sd">        Returns:</span>
 <span class="sd">            - outputs (:obj:`Dict`): Outputs of forward pass encoder and head.</span>
-
 <span class="sd">        ReturnsKeys (either):</span>
 <span class="sd">            - logit (:obj:`torch.FloatTensor`): :math:`(B, N1)`, where B is batch size and N1 is ``action_shape``</span>
 <span class="sd">        Shapes:</span>
@@ -457,31 +423,24 @@
         <span class="k">return</span> <span class="n">x</span></div>
 
 <div class="viewcode-block" id="ACER.compute_critic"><a class="viewcode-back" href="../../../../05_api_doc/model.html#ding.model.ACER.compute_critic">[docs]</a>    <span class="k">def</span> <span class="nf">compute_critic</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
-<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Overview:</span>
-<span class="sd">            Execute parameter updates with ``&#39;compute_critic&#39;`` mode</span>
+<span class="sd">            Execute parameter updates with ``compute_critic`` mode</span>
 <span class="sd">            Use encoded embedding tensor to predict output.</span>
 <span class="sd">        Arguments:</span>
 <span class="sd">            - ``obs``, ``action`` encoded tensors.</span>
 <span class="sd">            - mode (:obj:`str`): Name of the forward mode.</span>
 <span class="sd">        Returns:</span>
 <span class="sd">            - outputs (:obj:`Dict`): Q-value output.</span>
-
 <span class="sd">        ReturnKeys:</span>
 <span class="sd">            - q_value (:obj:`torch.Tensor`): Q value tensor with same size as batch size.</span>
 <span class="sd">        Shapes:</span>
 <span class="sd">            - obs (:obj:`torch.Tensor`): :math:`(B, N1)`, where B is batch size and N1 is ``obs_shape``</span>
 <span class="sd">            - q_value (:obj:`torch.FloatTensor`): :math:`(B, N2)`, where B is batch size and N2 is ``action_shape``.</span>
-
 <span class="sd">        Examples:</span>
 <span class="sd">            &gt;&gt;&gt; inputs =torch.randn(4, N)</span>
 <span class="sd">            &gt;&gt;&gt; model = ACER(obs_shape=(N, ),action_shape=5)</span>
-<span class="sd">            &gt;&gt;&gt; model(inputs, mode=&#39;compute_critic&#39;)[&#39;q_value&#39;] # q value</span>
-<span class="sd">            tensor([[-0.0681, -0.0431, -0.0530,  0.1454, -0.1093],</span>
-<span class="sd">            [-0.0647, -0.0281, -0.0527,  0.1409, -0.1162],</span>
-<span class="sd">            [-0.0596, -0.0321, -0.0676,  0.1386, -0.1113],</span>
-<span class="sd">            [-0.0874, -0.0406, -0.0487,  0.1346, -0.1135]],</span>
-<span class="sd">            grad_fn=&lt;AddmmBackward&gt;)</span>
+<span class="sd">            &gt;&gt;&gt; model(inputs, mode=&#39;compute_critic&#39;)[&#39;q_value&#39;]</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="n">obs</span> <span class="o">=</span> <span class="n">inputs</span>

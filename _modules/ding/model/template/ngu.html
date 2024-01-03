@@ -304,9 +304,9 @@
 
 
 <span class="k">def</span> <span class="nf">parallel_wrapper</span><span class="p">(</span><span class="n">forward_fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">:</span>
-<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Overview:</span>
-<span class="sd">        Process timestep T and batch_size B at the same time, in other words, treat different timestep data as</span>
+<span class="sd">        Process timestep T and batch_size B at the same time, in other words, treat different timestep data as \</span>
 <span class="sd">        different trajectories in a batch.</span>
 <span class="sd">    Arguments:</span>
 <span class="sd">        - forward_fn (:obj:`Callable`): Normal ``nn.Module`` &#39;s forward function.</span>
@@ -338,9 +338,12 @@
 <span class="k">class</span> <span class="nc">NGU</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Overview:</span>
-<span class="sd">        The recurrent Q model for NGU policy, modified from the class DRQN in q_leaning.py</span>
-<span class="sd">        input: x_t, a_{t-1}, r_e_{t-1}, r_i_{t-1}, beta</span>
-<span class="sd">        output:</span>
+<span class="sd">        The recurrent Q model for NGU(https://arxiv.org/pdf/2002.06038.pdf) policy, modified from the class DRQN in \</span>
+<span class="sd">        q_leaning.py. The implementation mentioned in the original paper is &#39;adapt the R2D2 agent that uses the \</span>
+<span class="sd">        dueling network architecture with an LSTM layer after a convolutional neural network&#39;. The NGU network \</span>
+<span class="sd">        includes encoder, LSTM core(rnn) and head.</span>
+<span class="sd">    Interface:</span>
+<span class="sd">        ``__init__``, ``forward``.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="NGU.__init__"><a class="viewcode-back" href="../../../../05_api_doc/model.html#ding.model.NGU.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
@@ -356,20 +359,26 @@
             <span class="n">activation</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">]</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
             <span class="n">norm_type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Overview:</span>
-<span class="sd">            Init the DRQN Model according to arguments.</span>
+<span class="sd">            Init the DRQN Model for NGU according to arguments.</span>
 <span class="sd">        Arguments:</span>
-<span class="sd">            - obs_shape (:obj:`Union[int, SequenceType]`): Observation&#39;s space.</span>
-<span class="sd">            - action_shape (:obj:`Union[int, SequenceType]`): Action&#39;s space.</span>
-<span class="sd">            - encoder_hidden_size_list (:obj:`SequenceType`): Collection of ``hidden_size`` to pass to ``Encoder``</span>
-<span class="sd">            - head_hidden_size (:obj:`Optional[int]`): The ``hidden_size`` to pass to ``Head``.</span>
-<span class="sd">            - lstm_type (:obj:`Optional[str]`): Version of rnn cell, now support [&#39;normal&#39;, &#39;pytorch&#39;, &#39;hpc&#39;, &#39;gru&#39;]</span>
+<span class="sd">            - obs_shape (:obj:`Union[int, SequenceType]`): Observation&#39;s space, such as 8 or [4, 84, 84].</span>
+<span class="sd">            - action_shape (:obj:`Union[int, SequenceType]`): Action&#39;s space, such as 6 or [2, 3, 3].</span>
+<span class="sd">            - encoder_hidden_size_list (:obj:`SequenceType`): Collection of ``hidden_size`` to pass to ``Encoder``.</span>
+<span class="sd">            - collector_env_num (:obj:`Optional[int]`): The number of environments used to collect data simultaneously.</span>
+<span class="sd">            - dueling (:obj:`bool`): Whether choose ``DuelingHead`` (True) or ``DiscreteHead (False)``, \</span>
+<span class="sd">                default to True.</span>
+<span class="sd">            - head_hidden_size (:obj:`Optional[int]`): The ``hidden_size`` to pass to ``Head``, should match the \</span>
+<span class="sd">                last element of ``encoder_hidden_size_list``.</span>
+<span class="sd">            - head_layer_num (:obj:`int`): The number of layers in head network.</span>
+<span class="sd">            - lstm_type (:obj:`Optional[str]`): Version of rnn cell, now support [&#39;normal&#39;, &#39;pytorch&#39;, &#39;hpc&#39;, &#39;gru&#39;], \</span>
+<span class="sd">                default is &#39;normal&#39;.</span>
 <span class="sd">            - activation (:obj:`Optional[nn.Module]`):</span>
-<span class="sd">                The type of activation function to use in ``MLP`` the after ``layer_fn``,</span>
-<span class="sd">                if ``None`` then default set to ``nn.ReLU()``</span>
+<span class="sd">                The type of activation function to use in ``MLP`` the after ``layer_fn``, \</span>
+<span class="sd">                if ``None`` then default set to ``nn.ReLU()``.</span>
 <span class="sd">            - norm_type (:obj:`Optional[str]`):</span>
-<span class="sd">                The type of normalization to use, see ``ding.torch_utils.fc_block`` for more details`</span>
+<span class="sd">                The type of normalization to use, see ``ding.torch_utils.fc_block`` for more details`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">NGU</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="c1"># For compatibility: 1, (1, ), [4, H, H]</span>
@@ -414,34 +423,31 @@
             <span class="p">)</span></div>
 
 <div class="viewcode-block" id="NGU.forward"><a class="viewcode-back" href="../../../../05_api_doc/model.html#ding.model.NGU.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">inference</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">saved_state_timesteps</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
-<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Overview:</span>
-<span class="sd">            Use observation, prev_action prev_reward_extrinsic to predict NGU Q output.</span>
-<span class="sd">            Parameter updates with NGU&#39;s MLPs forward setup.</span>
+<span class="sd">            Forward computation graph of NGU R2D2 network. Input observation, prev_action prev_reward_extrinsic \</span>
+<span class="sd">            to predict NGU Q output. Parameter updates with NGU&#39;s MLPs forward setup.</span>
 <span class="sd">        Arguments:</span>
 <span class="sd">            - inputs (:obj:`Dict`):</span>
-<span class="sd">            - inference: (:obj:&#39;bool&#39;): if inference is True, we unroll the one timestep transition,</span>
+<span class="sd">                - obs (:obj:`torch.Tensor`): Encoded observation.</span>
+<span class="sd">                - prev_state (:obj:`list`): Previous state&#39;s tensor of size ``(B, N)``.</span>
+<span class="sd">            - inference: (:obj:&#39;bool&#39;): If inference is True, we unroll the one timestep transition, \</span>
 <span class="sd">                if inference is False, we unroll the sequence transitions.</span>
-<span class="sd">            - saved_state_timesteps: (:obj:&#39;Optional[list]&#39;): when inference is False,</span>
-<span class="sd">                we unroll the sequence transitions, then we would save rnn hidden states at timesteps</span>
+<span class="sd">            - saved_state_timesteps: (:obj:&#39;Optional[list]&#39;): When inference is False, \</span>
+<span class="sd">                we unroll the sequence transitions, then we would save rnn hidden states at timesteps \</span>
 <span class="sd">                that are listed in list saved_state_timesteps.</span>
-
-<span class="sd">       ArgumentsKeys:</span>
-<span class="sd">            - obs (:obj:`torch.Tensor`): Encoded observation</span>
-<span class="sd">            - prev_state (:obj:`list`): Previous state&#39;s tensor of size ``(B, N)``</span>
-
 <span class="sd">        Returns:</span>
 <span class="sd">            - outputs (:obj:`Dict`):</span>
 <span class="sd">                Run ``MLP`` with ``DRQN`` setups and return the result prediction dictionary.</span>
 
 <span class="sd">        ReturnsKeys:</span>
 <span class="sd">            - logit (:obj:`torch.Tensor`): Logit tensor with same size as input ``obs``.</span>
-<span class="sd">            - next_state (:obj:`list`): Next state&#39;s tensor of size ``(B, N)``</span>
+<span class="sd">            - next_state (:obj:`list`): Next state&#39;s tensor of size ``(B, N)``.</span>
 <span class="sd">        Shapes:</span>
 <span class="sd">            - obs (:obj:`torch.Tensor`): :math:`(B, N=obs_space)`, where B is batch size.</span>
-<span class="sd">            - prev_state(:obj:`torch.FloatTensor list`): :math:`[(B, N)]`</span>
-<span class="sd">            - logit (:obj:`torch.FloatTensor`): :math:`(B, N)`</span>
-<span class="sd">            - next_state(:obj:`torch.FloatTensor list`): :math:`[(B, N)]`</span>
+<span class="sd">            - prev_state(:obj:`torch.FloatTensor list`): :math:`[(B, N)]`.</span>
+<span class="sd">            - logit (:obj:`torch.FloatTensor`): :math:`(B, N)`.</span>
+<span class="sd">            - next_state(:obj:`torch.FloatTensor list`): :math:`[(B, N)]`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">x</span><span class="p">,</span> <span class="n">prev_state</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">[</span><span class="s1">&#39;obs&#39;</span><span class="p">],</span> <span class="n">inputs</span><span class="p">[</span><span class="s1">&#39;prev_state&#39;</span><span class="p">]</span>
         <span class="k">if</span> <span class="s1">&#39;prev_action&#39;</span> <span class="ow">in</span> <span class="n">inputs</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>

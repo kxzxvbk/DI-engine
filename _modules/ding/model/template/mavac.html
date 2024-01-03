@@ -346,8 +346,8 @@
 <span class="sd">            - actor_head_layer_num (:obj:`int`): The num of layers used in the ``actor_head`` network to compute action.</span>
 <span class="sd">            - critic_head_hidden_size (:obj:`Optional[int]`): The ``hidden_size`` of ``critic_head`` network, defaults \</span>
 <span class="sd">                to 512, it must match the last element of ``global_obs_shape``.</span>
-<span class="sd">            - critic_head_layer_num (:obj:`int`):</span>
-<span class="sd">                The num of layers used in the network to compute Q value output for critic&#39;s nn.</span>
+<span class="sd">            - critic_head_layer_num (:obj:`int`): The num of layers used in the network to compute Q value output for \</span>
+<span class="sd">                critic&#39;s nn.</span>
 <span class="sd">            - action_space (:obj:`Union[int, SequenceType]`): The type of different action spaces, including \</span>
 <span class="sd">                [&#39;discrete&#39;, &#39;continuous&#39;], then will instantiate corresponding head, including ``DiscreteHead`` \</span>
 <span class="sd">                and ``ReparameterizationHead``.</span>
@@ -474,8 +474,7 @@
 <span class="sd">                - action_mask(optional): (:obj:`torch.Tensor`): When ``action_space`` is discrete, action_mask needs \</span>
 <span class="sd">                    to be provided to mask illegal actions.</span>
 <span class="sd">        Returns:</span>
-<span class="sd">            - outputs (:obj:`Dict`):</span>
-<span class="sd">                The output dict of MAVAC&#39;s forward computation graph for actor, including ``logit``.</span>
+<span class="sd">            - outputs (:obj:`Dict`): The output dict of the forward computation graph for actor, including ``logit``.</span>
 <span class="sd">        ReturnsKeys:</span>
 <span class="sd">            - logit (:obj:`torch.Tensor`): The predicted action logit tensor, for discrete action space, it will be \</span>
 <span class="sd">                the same dimension real-value ranged tensor of possible action choices, and for continuous action \</span>
@@ -547,7 +546,7 @@
 <span class="sd">            MAVAC forward computation graph for both actor and critic part, input observation to predict action \</span>
 <span class="sd">            logit and state value.</span>
 <span class="sd">        Arguments:</span>
-<span class="sd">            - x (:obj:Dict): The input dict contains ``agent_state``, ``global_state`` and other related info.</span>
+<span class="sd">            - x (:obj:`Dict`): The input dict contains ``agent_state``, ``global_state`` and other related info.</span>
 <span class="sd">        Returns:</span>
 <span class="sd">            - outputs (:obj:`Dict`): The output dict of MAVAC&#39;s forward computation graph for both actor and critic, \</span>
 <span class="sd">                including ``logit`` and ``value``.</span>
