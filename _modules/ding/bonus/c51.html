@@ -99,6 +99,16 @@
                   <p>OpenDILab Decision AI Engine</p>
                 </a>
                 <a class="doc-dropdown-option nav-dropdown-item"
+                  href="https://github.com/opendilab/LightZero" target="_blank">
+                  <span class="dropdown-title">LightZero </span>
+                  <p>OpenDILab Decision Monte Carlo Tree Search Framework</p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item"
+                  href="https://github.com/opendilab/GenerativeRL" target="_blank">
+                  <span class="dropdown-title">GenerativeRL </span>
+                  <p>OpenDILab Generative AI Framework</p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item"
                   href="https://github.com/opendilab/DI-star" target="_blank">
                   <span class="dropdown-title">DI-star </span>
                   <p>OpenDILab Decision AI in StarCraftII</p>
@@ -362,9 +372,8 @@
 <span class="sd">            - exp_name (:obj:`str`): The name of this experiment, which will be used to create the folder to save \</span>
 <span class="sd">                log data. Default to None. If not specified, the folder name will be ``env_id``-``algorithm``.</span>
 <span class="sd">            - model (:obj:`torch.nn.Module`): The model of C51 algorithm, which should be an instance of class \</span>
-<span class="sd">                :class:`ding.model.C51DQN`. \</span>
-<span class="sd">                If not specified, a default model will be generated according to the configuration.</span>
-<span class="sd">            - cfg (:obj:Union[EasyDict, dict]): The configuration of C51 algorithm, which is a dict. \</span>
+<span class="sd">                :class:`ding.model.C51DQN`. If not specified, a default model will be generated according to the config.</span>
+<span class="sd">            - cfg (:obj:`Union[EasyDict, dict]`): The configuration of C51 algorithm, which is a dict. \</span>
 <span class="sd">                Default to None. If not specified, the default configuration will be used. \</span>
 <span class="sd">                The default configuration can be found in ``ding/config/example/C51/gym_lunarlander_v2.py``.</span>
 <span class="sd">            - policy_state_dict (:obj:`str`): The path of policy state dict saved by PyTorch a in local file. \</span>
@@ -798,9 +807,8 @@
   <script type="text/javascript" id="documentation_options" data-url_root="../../../"
     src="../../../_static/documentation_options.js"></script>
   <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-  <script src="../../../_static/jquery.js"></script>
-  <script src="../../../_static/underscore.js"></script>
   <script src="../../../_static/doctools.js"></script>
+  <script src="../../../_static/sphinx_highlight.js"></script>
   
 
   

@@ -99,6 +99,16 @@
                   <p>OpenDILab Decision AI Engine</p>
                 </a>
                 <a class="doc-dropdown-option nav-dropdown-item"
+                  href="https://github.com/opendilab/LightZero" target="_blank">
+                  <span class="dropdown-title">LightZero </span>
+                  <p>OpenDILab Decision Monte Carlo Tree Search Framework</p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item"
+                  href="https://github.com/opendilab/GenerativeRL" target="_blank">
+                  <span class="dropdown-title">GenerativeRL </span>
+                  <p>OpenDILab Generative AI Framework</p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item"
                   href="https://github.com/opendilab/DI-star" target="_blank">
                   <span class="dropdown-title">DI-star </span>
                   <p>OpenDILab Decision AI in StarCraftII</p>
@@ -1732,7 +1742,7 @@
 <span class="sd">    Overview:</span>
 <span class="sd">        This class is used to wrap a gymnasium environment to a gym environment.</span>
 <span class="sd">    Interfaces:</span>
-<span class="sd">        __init__, seed, reset</span>
+<span class="sd">        __init__, seed, reset, step</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="GymToGymnasiumWrapper.__init__"><a class="viewcode-back" href="../../../../05_api_doc/env.html#ding.envs.GymToGymnasiumWrapper.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">env</span><span class="p">:</span> <span class="n">gymnasium</span><span class="o">.</span><span class="n">Env</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -1764,9 +1774,20 @@
 <span class="sd">            - observation (:obj:`np.ndarray`): The new observation after reset.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">seed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_seed</span><span class="p">)</span>
+            <span class="n">obs</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_seed</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span></div></div>
+            <span class="n">obs</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">obs</span></div>
+
+    <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Overview:</span>
+<span class="sd">            Execute the given action in the environment, and return the new observation,</span>
+<span class="sd">            reward, done status, and info. To keep consistency with gym, the done status should be the either \</span>
+<span class="sd">            terminated=True or truncated=True.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">obs</span><span class="p">,</span> <span class="n">rew</span><span class="p">,</span> <span class="n">terminated</span><span class="p">,</span> <span class="n">truncated</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">obs</span><span class="p">,</span> <span class="n">rew</span><span class="p">,</span> <span class="n">terminated</span> <span class="ow">or</span> <span class="n">truncated</span><span class="p">,</span> <span class="n">info</span></div>
 
 
 <div class="viewcode-block" id="AllinObsWrapper"><a class="viewcode-back" href="../../../../05_api_doc/env.html#ding.envs.AllinObsWrapper">[docs]</a><span class="nd">@ENV_WRAPPER_REGISTRY</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;reward_in_obs&#39;</span><span class="p">)</span>
@@ -1802,7 +1823,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_observation_space</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">spaces</span><span class="o">.</span><span class="n">Dict</span><span class="p">(</span>
             <span class="p">{</span>
                 <span class="s1">&#39;obs&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">observation_space</span><span class="p">,</span>
-                <span class="s1">&#39;reward&#39;</span><span class="p">:</span> <span class="n">gym</span><span class="o">.</span><span class="n">spaces</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">low</span><span class="o">=-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+                <span class="s1">&#39;reward&#39;</span><span class="p">:</span> <span class="n">gym</span><span class="o">.</span><span class="n">spaces</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">low</span><span class="o">=-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">))</span>
             <span class="p">}</span>
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">ret</span></div>
@@ -1918,9 +1939,8 @@
   <script type="text/javascript" id="documentation_options" data-url_root="../../../../"
     src="../../../../_static/documentation_options.js"></script>
   <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-  <script src="../../../../_static/jquery.js"></script>
-  <script src="../../../../_static/underscore.js"></script>
   <script src="../../../../_static/doctools.js"></script>
+  <script src="../../../../_static/sphinx_highlight.js"></script>
   
 
   

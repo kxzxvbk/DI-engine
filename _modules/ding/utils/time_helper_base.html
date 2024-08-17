@@ -99,6 +99,16 @@
                   <p>OpenDILab Decision AI Engine</p>
                 </a>
                 <a class="doc-dropdown-option nav-dropdown-item"
+                  href="https://github.com/opendilab/LightZero" target="_blank">
+                  <span class="dropdown-title">LightZero </span>
+                  <p>OpenDILab Decision Monte Carlo Tree Search Framework</p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item"
+                  href="https://github.com/opendilab/GenerativeRL" target="_blank">
+                  <span class="dropdown-title">GenerativeRL </span>
+                  <p>OpenDILab Generative AI Framework</p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item"
                   href="https://github.com/opendilab/DI-star" target="_blank">
                   <span class="dropdown-title">DI-star </span>
                   <p>OpenDILab Decision AI in StarCraftII</p>
@@ -292,22 +302,22 @@
               <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
                 
   <h1>Source code for ding.utils.time_helper_base</h1><div class="highlight"><pre>
-<div class="viewcode-block" id="TimeWrapper"><a class="viewcode-back" href="../../../05_api_doc/utils/time_helper.html#ding.utils.time_helper.TimeWrapper">[docs]</a><span></span><span class="k">class</span> <span class="nc">TimeWrapper</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="TimeWrapper"><a class="viewcode-back" href="../../../05_api_doc/utils.html#ding.utils.time_helper_base.TimeWrapper">[docs]</a><span></span><span class="k">class</span> <span class="nc">TimeWrapper</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Overview:</span>
 <span class="sd">        Abstract class method that defines ``TimeWrapper`` class</span>
 
-<span class="sd">    Interface:</span>
+<span class="sd">    Interfaces:</span>
 <span class="sd">        ``wrapper``, ``start_time``, ``end_time``</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="TimeWrapper.wrapper"><a class="viewcode-back" href="../../../05_api_doc/utils/time_helper.html#ding.utils.time_helper.TimeWrapper.wrapper">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="TimeWrapper.wrapper"><a class="viewcode-back" href="../../../05_api_doc/utils.html#ding.utils.time_helper_base.TimeWrapper.wrapper">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">fn</span><span class="p">):</span>
-<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Overview:</span>
 <span class="sd">            Classmethod wrapper, wrap a function and automatically return its running time</span>
-
-<span class="sd">        - fn (:obj:`function`): The function to be wrap and timed</span>
+<span class="sd">        Arguments:</span>
+<span class="sd">            - fn (:obj:`function`): The function to be wrap and timed</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="k">def</span> <span class="nf">time_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -318,17 +328,17 @@
 
         <span class="k">return</span> <span class="n">time_func</span></div>
 
-<div class="viewcode-block" id="TimeWrapper.start_time"><a class="viewcode-back" href="../../../05_api_doc/utils/time_helper.html#ding.utils.time_helper.TimeWrapper.start_time">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="TimeWrapper.start_time"><a class="viewcode-back" href="../../../05_api_doc/utils.html#ding.utils.time_helper_base.TimeWrapper.start_time">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">start_time</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Overview:</span>
 <span class="sd">            Abstract classmethod, start timing</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
-<div class="viewcode-block" id="TimeWrapper.end_time"><a class="viewcode-back" href="../../../05_api_doc/utils/time_helper.html#ding.utils.time_helper.TimeWrapper.end_time">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="TimeWrapper.end_time"><a class="viewcode-back" href="../../../05_api_doc/utils.html#ding.utils.time_helper_base.TimeWrapper.end_time">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">end_time</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Overview:</span>
 <span class="sd">            Abstract classmethod, stop timing</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -380,9 +390,8 @@
   <script type="text/javascript" id="documentation_options" data-url_root="../../../"
     src="../../../_static/documentation_options.js"></script>
   <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-  <script src="../../../_static/jquery.js"></script>
-  <script src="../../../_static/underscore.js"></script>
   <script src="../../../_static/doctools.js"></script>
+  <script src="../../../_static/sphinx_highlight.js"></script>
   
 
   

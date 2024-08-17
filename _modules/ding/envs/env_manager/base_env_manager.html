@@ -99,6 +99,16 @@
                   <p>OpenDILab Decision AI Engine</p>
                 </a>
                 <a class="doc-dropdown-option nav-dropdown-item"
+                  href="https://github.com/opendilab/LightZero" target="_blank">
+                  <span class="dropdown-title">LightZero </span>
+                  <p>OpenDILab Decision Monte Carlo Tree Search Framework</p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item"
+                  href="https://github.com/opendilab/GenerativeRL" target="_blank">
+                  <span class="dropdown-title">GenerativeRL </span>
+                  <p>OpenDILab Generative AI Framework</p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item"
                   href="https://github.com/opendilab/DI-star" target="_blank">
                   <span class="dropdown-title">DI-star </span>
                   <p>OpenDILab Decision AI in StarCraftII</p>
@@ -418,7 +428,7 @@
 
 <span class="sd">        .. note::</span>
 <span class="sd">            For more details about how to merge config, please refer to the system document of DI-engine \</span>
-<span class="sd">            (`en link &lt;../03_system/config.html&gt;`_).</span>
+<span class="sd">            (`en link1 &lt;../03_system/config.html&gt;`_).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_cfg</span> <span class="o">=</span> <span class="n">cfg</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_env_fn</span> <span class="o">=</span> <span class="n">env_fn</span>
@@ -778,7 +788,7 @@
 
 <span class="sd">        .. note::</span>
 <span class="sd">            For more details about ``dynamic_seed``, please refer to the best practice document of DI-engine \</span>
-<span class="sd">            (`en link &lt;../04_best_practice/random_seed.html&gt;`_).</span>
+<span class="sd">            (`en link2 &lt;../04_best_practice/random_seed.html&gt;`_).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">seed</span><span class="p">,</span> <span class="n">numbers</span><span class="o">.</span><span class="n">Integral</span><span class="p">):</span>
             <span class="n">seed</span> <span class="o">=</span> <span class="p">[</span><span class="n">seed</span> <span class="o">+</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">env_num</span><span class="p">)]</span>
@@ -819,7 +829,7 @@
 <span class="sd">            - figure_path (:obj:`str`): The file directory path for all environments to save figures.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">assert</span> <span class="n">figure_path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_env</span><span class="p">[</span><span class="n">env_id</span><span class="p">]</span><span class="o">.</span><span class="n">enable_save_figure</span><span class="p">(</span><span class="n">figure_path</span><span class="p">)</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_envs</span><span class="p">[</span><span class="n">env_id</span><span class="p">]</span><span class="o">.</span><span class="n">enable_save_figure</span><span class="p">(</span><span class="n">figure_path</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="BaseEnvManager.close"><a class="viewcode-back" href="../../../../05_api_doc/env.html#ding.envs.BaseEnvManager.close">[docs]</a>    <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -874,7 +884,7 @@
 
 <span class="sd">    .. note::</span>
 <span class="sd">        For more details about new task pipeline, please refer to the system document of DI-engine \</span>
-<span class="sd">        (`system en link &lt;../03_system/index.html&gt;`_).</span>
+<span class="sd">        (`system en link3 &lt;../03_system/index.html&gt;`_).</span>
 
 <span class="sd">    Interfaces:</span>
 <span class="sd">        reset, step, seed, close, enable_save_replay, launch, default_config, reward_shaping, enable_save_figure</span>
@@ -1024,9 +1034,8 @@
   <script type="text/javascript" id="documentation_options" data-url_root="../../../../"
     src="../../../../_static/documentation_options.js"></script>
   <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-  <script src="../../../../_static/jquery.js"></script>
-  <script src="../../../../_static/underscore.js"></script>
   <script src="../../../../_static/doctools.js"></script>
+  <script src="../../../../_static/sphinx_highlight.js"></script>
   
 
   

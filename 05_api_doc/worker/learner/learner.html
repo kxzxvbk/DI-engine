@@ -9,7 +9,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
@@ -100,6 +100,16 @@
                   href="https://github.com/opendilab/DI-engine" target="_blank">
                   <span class="dropdown-title">DI-engine </span>
                   <p>OpenDILab Decision AI Engine</p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item"
+                  href="https://github.com/opendilab/LightZero" target="_blank">
+                  <span class="dropdown-title">LightZero </span>
+                  <p>OpenDILab Decision Monte Carlo Tree Search Framework</p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item"
+                  href="https://github.com/opendilab/GenerativeRL" target="_blank">
+                  <span class="dropdown-title">GenerativeRL </span>
+                  <p>OpenDILab Generative AI Framework</p>
                 </a>
                 <a class="doc-dropdown-option nav-dropdown-item"
                   href="https://github.com/opendilab/DI-star" target="_blank">
@@ -301,15 +311,15 @@
               <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
                 
   <section id="worker-learner">
-<h1>worker.learner<a class="headerlink" href="#worker-learner" title="Permalink to this headline">¶</a></h1>
+<h1>worker.learner<a class="headerlink" href="#worker-learner" title="Permalink to this heading">¶</a></h1>
 <section id="learner-hook">
-<h2>learner_hook<a class="headerlink" href="#learner-hook" title="Permalink to this headline">¶</a></h2>
+<h2>learner_hook<a class="headerlink" href="#learner-hook" title="Permalink to this heading">¶</a></h2>
 <p>Please Reference ding/worker/learner/learner_hook.py for usage</p>
 <section id="hook">
-<h3>Hook<a class="headerlink" href="#hook" title="Permalink to this headline">¶</a></h3>
+<h3>Hook<a class="headerlink" href="#hook" title="Permalink to this heading">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="ding.worker.learner.learner_hook.Hook">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ding.worker.learner.learner_hook.</span></span><span class="sig-name descname"><span class="pre">Hook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ding/worker/learner/learner_hook.html#Hook"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.learner_hook.Hook" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ding.worker.learner.learner_hook.</span></span><span class="sig-name descname"><span class="pre">Hook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ding/worker/learner/learner_hook.html#Hook"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.learner_hook.Hook" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>Abstract class for hooks.</p>
 </dd>
@@ -320,7 +330,7 @@
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="ding.worker.learner.learner_hook.Hook.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/learner/learner_hook.html#Hook.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.learner_hook.Hook.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/learner/learner_hook.html#Hook.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.learner_hook.Hook.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>Init method for hooks. Set name and priority.</p>
 </dd>
@@ -336,10 +346,10 @@
 
 </section>
 <section id="learnerhook">
-<h3>LearnerHook<a class="headerlink" href="#learnerhook" title="Permalink to this headline">¶</a></h3>
+<h3>LearnerHook<a class="headerlink" href="#learnerhook" title="Permalink to this heading">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="ding.worker.learner.learner_hook.LearnerHook">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ding.worker.learner.learner_hook.</span></span><span class="sig-name descname"><span class="pre">LearnerHook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ding/worker/learner/learner_hook.html#LearnerHook"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.learner_hook.LearnerHook" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ding.worker.learner.learner_hook.</span></span><span class="sig-name descname"><span class="pre">LearnerHook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ding/worker/learner/learner_hook.html#LearnerHook"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.learner_hook.LearnerHook" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>Abstract class for hooks used in Learner.</p>
 </dd>
@@ -354,7 +364,7 @@
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="ding.worker.learner.learner_hook.LearnerHook.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/learner/learner_hook.html#LearnerHook.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.learner_hook.LearnerHook.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/learner/learner_hook.html#LearnerHook.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.learner_hook.LearnerHook.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>Init LearnerHook.</p>
 </dd>
@@ -369,10 +379,10 @@
 
 </section>
 <section id="loadckpthook">
-<h3>LoadCkptHook<a class="headerlink" href="#loadckpthook" title="Permalink to this headline">¶</a></h3>
+<h3>LoadCkptHook<a class="headerlink" href="#loadckpthook" title="Permalink to this heading">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="ding.worker.learner.learner_hook.LoadCkptHook">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ding.worker.learner.learner_hook.</span></span><span class="sig-name descname"><span class="pre">LoadCkptHook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">easydict.EasyDict</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ding/worker/learner/learner_hook.html#LoadCkptHook"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.learner_hook.LoadCkptHook" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ding.worker.learner.learner_hook.</span></span><span class="sig-name descname"><span class="pre">LoadCkptHook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">EasyDict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ding/worker/learner/learner_hook.html#LoadCkptHook"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.learner_hook.LoadCkptHook" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>Hook to load checkpoint</p>
 </dd>
@@ -383,7 +393,7 @@
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="ding.worker.learner.learner_hook.LoadCkptHook.__call__">
-<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">BaseLearner</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/learner/learner_hook.html#LoadCkptHook.__call__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.learner_hook.LoadCkptHook.__call__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ding.worker.learner.base_learner.BaseLearner" title="ding.worker.learner.base_learner.BaseLearner"><span class="pre">BaseLearner</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/learner/learner_hook.html#LoadCkptHook.__call__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.learner_hook.LoadCkptHook.__call__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>Load checkpoint to learner. Checkpoint info includes policy state_dict and iter num.</p>
 </dd>
@@ -396,7 +406,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ding.worker.learner.learner_hook.LoadCkptHook.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">easydict.EasyDict</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/learner/learner_hook.html#LoadCkptHook.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.learner_hook.LoadCkptHook.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">EasyDict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/learner/learner_hook.html#LoadCkptHook.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.learner_hook.LoadCkptHook.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>Init LoadCkptHook.</p>
 </dd>
@@ -411,10 +421,10 @@
 
 </section>
 <section id="saveckpthook">
-<h3>SaveCkptHook<a class="headerlink" href="#saveckpthook" title="Permalink to this headline">¶</a></h3>
+<h3>SaveCkptHook<a class="headerlink" href="#saveckpthook" title="Permalink to this heading">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="ding.worker.learner.learner_hook.SaveCkptHook">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ding.worker.learner.learner_hook.</span></span><span class="sig-name descname"><span class="pre">SaveCkptHook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">easydict.EasyDict</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ding/worker/learner/learner_hook.html#SaveCkptHook"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.learner_hook.SaveCkptHook" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ding.worker.learner.learner_hook.</span></span><span class="sig-name descname"><span class="pre">SaveCkptHook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">EasyDict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ding/worker/learner/learner_hook.html#SaveCkptHook"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.learner_hook.SaveCkptHook" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>Hook to save checkpoint</p>
 </dd>
@@ -425,7 +435,7 @@
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="ding.worker.learner.learner_hook.SaveCkptHook.__call__">
-<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">BaseLearner</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/learner/learner_hook.html#SaveCkptHook.__call__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.learner_hook.SaveCkptHook.__call__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ding.worker.learner.base_learner.BaseLearner" title="ding.worker.learner.base_learner.BaseLearner"><span class="pre">BaseLearner</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/learner/learner_hook.html#SaveCkptHook.__call__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.learner_hook.SaveCkptHook.__call__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>Save checkpoint in corresponding path.
 Checkpoint info includes policy state_dict and iter num.</p>
@@ -439,7 +449,7 @@ Checkpoint info includes policy state_dict and iter num.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ding.worker.learner.learner_hook.SaveCkptHook.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">easydict.EasyDict</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/learner/learner_hook.html#SaveCkptHook.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.learner_hook.SaveCkptHook.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">EasyDict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/learner/learner_hook.html#SaveCkptHook.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.learner_hook.SaveCkptHook.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>init SaveCkptHook</p>
 </dd>
@@ -454,10 +464,10 @@ Checkpoint info includes policy state_dict and iter num.</p>
 
 </section>
 <section id="logshowhook">
-<h3>LogShowHook<a class="headerlink" href="#logshowhook" title="Permalink to this headline">¶</a></h3>
+<h3>LogShowHook<a class="headerlink" href="#logshowhook" title="Permalink to this heading">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="ding.worker.learner.learner_hook.LogShowHook">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ding.worker.learner.learner_hook.</span></span><span class="sig-name descname"><span class="pre">LogShowHook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">easydict.EasyDict</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ding/worker/learner/learner_hook.html#LogShowHook"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.learner_hook.LogShowHook" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ding.worker.learner.learner_hook.</span></span><span class="sig-name descname"><span class="pre">LogShowHook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">EasyDict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ding/worker/learner/learner_hook.html#LogShowHook"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.learner_hook.LogShowHook" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>Hook to show log</p>
 </dd>
@@ -468,7 +478,7 @@ Checkpoint info includes policy state_dict and iter num.</p>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="ding.worker.learner.learner_hook.LogShowHook.__call__">
-<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">BaseLearner</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/learner/learner_hook.html#LogShowHook.__call__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.learner_hook.LogShowHook.__call__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ding.worker.learner.base_learner.BaseLearner" title="ding.worker.learner.base_learner.BaseLearner"><span class="pre">BaseLearner</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/learner/learner_hook.html#LogShowHook.__call__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.learner_hook.LogShowHook.__call__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>Show log, update record and tb_logger if rank is 0 and at interval iterations,
 clear the log buffer for all learners regardless of rank</p>
@@ -482,7 +492,7 @@ clear the log buffer for all learners regardless of rank</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ding.worker.learner.learner_hook.LogShowHook.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">easydict.EasyDict</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/learner/learner_hook.html#LogShowHook.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.learner_hook.LogShowHook.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">EasyDict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/learner/learner_hook.html#LogShowHook.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.learner_hook.LogShowHook.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>init LogShowHook</p>
 </dd>
@@ -497,10 +507,10 @@ clear the log buffer for all learners regardless of rank</p>
 
 </section>
 <section id="logreducehook">
-<h3>LogReduceHook<a class="headerlink" href="#logreducehook" title="Permalink to this headline">¶</a></h3>
+<h3>LogReduceHook<a class="headerlink" href="#logreducehook" title="Permalink to this heading">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="ding.worker.learner.learner_hook.LogReduceHook">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ding.worker.learner.learner_hook.</span></span><span class="sig-name descname"><span class="pre">LogReduceHook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">easydict.EasyDict</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ding/worker/learner/learner_hook.html#LogReduceHook"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.learner_hook.LogReduceHook" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ding.worker.learner.learner_hook.</span></span><span class="sig-name descname"><span class="pre">LogReduceHook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">EasyDict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ding/worker/learner/learner_hook.html#LogReduceHook"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.learner_hook.LogReduceHook" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>Hook to reduce the distributed(multi-gpu) logs</p>
 </dd>
@@ -511,7 +521,7 @@ clear the log buffer for all learners regardless of rank</p>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="ding.worker.learner.learner_hook.LogReduceHook.__call__">
-<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">BaseLearner</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/learner/learner_hook.html#LogReduceHook.__call__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.learner_hook.LogReduceHook.__call__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ding.worker.learner.base_learner.BaseLearner" title="ding.worker.learner.base_learner.BaseLearner"><span class="pre">BaseLearner</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/learner/learner_hook.html#LogReduceHook.__call__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.learner_hook.LogReduceHook.__call__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>reduce the logs from distributed(multi-gpu) learners</p>
 </dd>
@@ -524,7 +534,7 @@ clear the log buffer for all learners regardless of rank</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ding.worker.learner.learner_hook.LogReduceHook.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">easydict.EasyDict</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/learner/learner_hook.html#LogReduceHook.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.learner_hook.LogReduceHook.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">EasyDict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/learner/learner_hook.html#LogReduceHook.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.learner_hook.LogReduceHook.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>init LogReduceHook</p>
 </dd>
@@ -539,7 +549,7 @@ clear the log buffer for all learners regardless of rank</p>
 
 </section>
 <section id="module-ding.worker.learner.learner_hook.register_learner_hook">
-<span id="register-learner-hook"></span><h3>register_learner_hook<a class="headerlink" href="#module-ding.worker.learner.learner_hook.register_learner_hook" title="Permalink to this headline">¶</a></h3>
+<span id="register-learner-hook"></span><h3>register_learner_hook<a class="headerlink" href="#module-ding.worker.learner.learner_hook.register_learner_hook" title="Permalink to this heading">¶</a></h3>
 <dl>
 <dt>Overview:</dt><dd><p>Add a new LearnerHook class to hook_mapping, so you can build one instance with <cite>build_learner_hook_by_cfg</cite>.</p>
 </dd>
@@ -565,7 +575,7 @@ clear the log buffer for all learners regardless of rank</p>
 </dl>
 </section>
 <section id="module-ding.worker.learner.learner_hook.build_learner_hook_by_cfg">
-<span id="build-learner-hook-by-cfg"></span><h3>build_learner_hook_by_cfg<a class="headerlink" href="#module-ding.worker.learner.learner_hook.build_learner_hook_by_cfg" title="Permalink to this headline">¶</a></h3>
+<span id="build-learner-hook-by-cfg"></span><h3>build_learner_hook_by_cfg<a class="headerlink" href="#module-ding.worker.learner.learner_hook.build_learner_hook_by_cfg" title="Permalink to this heading">¶</a></h3>
 <dl class="simple">
 <dt>Overview:</dt><dd><p>Build the learner hooks in hook_mapping by config.
 This function is often used to initialize <code class="docutils literal notranslate"><span class="pre">hooks</span></code> according to cfg,
@@ -584,7 +594,7 @@ while add_learner_hook() is often used to add an existing LearnerHook to <cite>h
 </dl>
 </section>
 <section id="module-ding.worker.learner.learner_hook.merge_hooks">
-<span id="merge-hooks"></span><h3>merge_hooks<a class="headerlink" href="#module-ding.worker.learner.learner_hook.merge_hooks" title="Permalink to this headline">¶</a></h3>
+<span id="merge-hooks"></span><h3>merge_hooks<a class="headerlink" href="#module-ding.worker.learner.learner_hook.merge_hooks" title="Permalink to this heading">¶</a></h3>
 <dl class="simple">
 <dt>Overview:</dt><dd><p>Merge two hooks dict, which have the same keys, and each value is sorted by hook priority with stable method.</p>
 </dd>
@@ -603,13 +613,13 @@ while add_learner_hook() is often used to add an existing LearnerHook to <cite>h
 </section>
 </section>
 <section id="base-learner">
-<h2>base_learner<a class="headerlink" href="#base-learner" title="Permalink to this headline">¶</a></h2>
+<h2>base_learner<a class="headerlink" href="#base-learner" title="Permalink to this heading">¶</a></h2>
 <p>Please Reference ding/worker/learner/base_learner.py for usage</p>
 <section id="baselearner">
-<h3>BaseLearner<a class="headerlink" href="#baselearner" title="Permalink to this headline">¶</a></h3>
+<h3>BaseLearner<a class="headerlink" href="#baselearner" title="Permalink to this heading">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="ding.worker.learner.base_learner.BaseLearner">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ding.worker.learner.base_learner.</span></span><span class="sig-name descname"><span class="pre">BaseLearner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">easydict.EasyDict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">collections.namedtuple</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_logger</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">SummaryWriter</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dist_info</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exp_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'default_experiment'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'learner'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ding/worker/learner/base_learner.html#BaseLearner"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.base_learner.BaseLearner" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ding.worker.learner.base_learner.</span></span><span class="sig-name descname"><span class="pre">BaseLearner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">EasyDict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">namedtuple</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_logger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SummaryWriter</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dist_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exp_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'default_experiment'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'learner'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ding/worker/learner/base_learner.html#BaseLearner"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.base_learner.BaseLearner" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>Base class for policy learning.</p>
 </dd>
@@ -621,7 +631,7 @@ monitor, log_buffer, logger, tb_logger, ckpt_name, exp_name, instance_name</p>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="ding.worker.learner.base_learner.BaseLearner.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">easydict.EasyDict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">collections.namedtuple</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_logger</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">SummaryWriter</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dist_info</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exp_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'default_experiment'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'learner'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/learner/base_learner.html#BaseLearner.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.base_learner.BaseLearner.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">EasyDict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">namedtuple</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_logger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SummaryWriter</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dist_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exp_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'default_experiment'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'learner'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/learner/base_learner.html#BaseLearner.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.base_learner.BaseLearner.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl>
 <dt>Overview:</dt><dd><p>Initialization method, build common learner components according to cfg, such as hook, wrapper and so on.</p>
 </dd>
@@ -665,7 +675,7 @@ in base_learner. You can refer to <code class="docutils literal notranslate"><sp
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ding.worker.learner.base_learner.BaseLearner.call_hook">
-<span class="sig-name descname"><span class="pre">call_hook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/learner/base_learner.html#BaseLearner.call_hook"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.base_learner.BaseLearner.call_hook" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">call_hook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/learner/base_learner.html#BaseLearner.call_hook"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.base_learner.BaseLearner.call_hook" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>Call the corresponding hook plugins according to position name.</p>
 </dd>
@@ -687,7 +697,7 @@ in base_learner. You can refer to <code class="docutils literal notranslate"><sp
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ding.worker.learner.base_learner.BaseLearner.register_hook">
-<span class="sig-name descname"><span class="pre">register_hook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hook</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#ding.worker.learner.learner_hook.LearnerHook" title="ding.worker.learner.learner_hook.LearnerHook"><span class="pre">ding.worker.learner.learner_hook.LearnerHook</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/learner/base_learner.html#BaseLearner.register_hook"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.base_learner.BaseLearner.register_hook" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">register_hook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hook</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ding.worker.learner.learner_hook.LearnerHook" title="ding.worker.learner.learner_hook.LearnerHook"><span class="pre">LearnerHook</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/learner/base_learner.html#BaseLearner.register_hook"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.base_learner.BaseLearner.register_hook" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>Add a new learner hook.</p>
 </dd>
@@ -700,7 +710,7 @@ in base_learner. You can refer to <code class="docutils literal notranslate"><sp
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ding.worker.learner.base_learner.BaseLearner.save_checkpoint">
-<span class="sig-name descname"><span class="pre">save_checkpoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ckpt_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/learner/base_learner.html#BaseLearner.save_checkpoint"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.base_learner.BaseLearner.save_checkpoint" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">save_checkpoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ckpt_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/learner/base_learner.html#BaseLearner.save_checkpoint"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.base_learner.BaseLearner.save_checkpoint" title="Permalink to this definition">¶</a></dt>
 <dd><dl>
 <dt>Overview:</dt><dd><p>Directly call <code class="docutils literal notranslate"><span class="pre">save_ckpt_after_run</span></code> hook to save checkpoint.</p>
 </dd>
@@ -734,7 +744,7 @@ Users don’t need to know the related details if not necessary.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ding.worker.learner.base_learner.BaseLearner.train">
-<span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">envstep</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy_kwargs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/learner/base_learner.html#BaseLearner.train"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.base_learner.BaseLearner.train" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">envstep</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy_kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/learner/base_learner.html#BaseLearner.train"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.learner.base_learner.BaseLearner.train" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>Given training data, implement network update for one iteration and update related variables.
 Learner’s API for serial entry.
@@ -758,7 +768,7 @@ parameter update.</p>
 
 </section>
 <section id="module-ding.worker.learner.base_learner.create_learner">
-<span id="create-learner"></span><h3>create_learner<a class="headerlink" href="#module-ding.worker.learner.base_learner.create_learner" title="Permalink to this headline">¶</a></h3>
+<span id="create-learner"></span><h3>create_learner<a class="headerlink" href="#module-ding.worker.learner.base_learner.create_learner" title="Permalink to this heading">¶</a></h3>
 <dl class="simple">
 <dt>Overview:</dt><dd><p>Given the key(learner_name), create a new learner instance if in learner_mapping’s values,
 or raise an KeyError. In other words, a derived learner must first register, then can call <code class="docutils literal notranslate"><span class="pre">create_learner</span></code>
@@ -822,19 +832,73 @@ to get the instance.</p>
               <ul>
 <li><a class="reference internal" href="#">worker.learner</a><ul>
 <li><a class="reference internal" href="#learner-hook">learner_hook</a><ul>
-<li><a class="reference internal" href="#hook">Hook</a></li>
-<li><a class="reference internal" href="#learnerhook">LearnerHook</a></li>
-<li><a class="reference internal" href="#loadckpthook">LoadCkptHook</a></li>
-<li><a class="reference internal" href="#saveckpthook">SaveCkptHook</a></li>
-<li><a class="reference internal" href="#logshowhook">LogShowHook</a></li>
-<li><a class="reference internal" href="#logreducehook">LogReduceHook</a></li>
+<li><a class="reference internal" href="#hook">Hook</a><ul>
+<li><a class="reference internal" href="#ding.worker.learner.learner_hook.Hook"><code class="docutils literal notranslate"><span class="pre">Hook</span></code></a><ul>
+<li><a class="reference internal" href="#ding.worker.learner.learner_hook.Hook.__init__"><code class="docutils literal notranslate"><span class="pre">Hook.__init__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#learnerhook">LearnerHook</a><ul>
+<li><a class="reference internal" href="#ding.worker.learner.learner_hook.LearnerHook"><code class="docutils literal notranslate"><span class="pre">LearnerHook</span></code></a><ul>
+<li><a class="reference internal" href="#ding.worker.learner.learner_hook.LearnerHook.__init__"><code class="docutils literal notranslate"><span class="pre">LearnerHook.__init__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#loadckpthook">LoadCkptHook</a><ul>
+<li><a class="reference internal" href="#ding.worker.learner.learner_hook.LoadCkptHook"><code class="docutils literal notranslate"><span class="pre">LoadCkptHook</span></code></a><ul>
+<li><a class="reference internal" href="#ding.worker.learner.learner_hook.LoadCkptHook.__call__"><code class="docutils literal notranslate"><span class="pre">LoadCkptHook.__call__()</span></code></a></li>
+<li><a class="reference internal" href="#ding.worker.learner.learner_hook.LoadCkptHook.__init__"><code class="docutils literal notranslate"><span class="pre">LoadCkptHook.__init__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#saveckpthook">SaveCkptHook</a><ul>
+<li><a class="reference internal" href="#ding.worker.learner.learner_hook.SaveCkptHook"><code class="docutils literal notranslate"><span class="pre">SaveCkptHook</span></code></a><ul>
+<li><a class="reference internal" href="#ding.worker.learner.learner_hook.SaveCkptHook.__call__"><code class="docutils literal notranslate"><span class="pre">SaveCkptHook.__call__()</span></code></a></li>
+<li><a class="reference internal" href="#ding.worker.learner.learner_hook.SaveCkptHook.__init__"><code class="docutils literal notranslate"><span class="pre">SaveCkptHook.__init__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#logshowhook">LogShowHook</a><ul>
+<li><a class="reference internal" href="#ding.worker.learner.learner_hook.LogShowHook"><code class="docutils literal notranslate"><span class="pre">LogShowHook</span></code></a><ul>
+<li><a class="reference internal" href="#ding.worker.learner.learner_hook.LogShowHook.__call__"><code class="docutils literal notranslate"><span class="pre">LogShowHook.__call__()</span></code></a></li>
+<li><a class="reference internal" href="#ding.worker.learner.learner_hook.LogShowHook.__init__"><code class="docutils literal notranslate"><span class="pre">LogShowHook.__init__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#logreducehook">LogReduceHook</a><ul>
+<li><a class="reference internal" href="#ding.worker.learner.learner_hook.LogReduceHook"><code class="docutils literal notranslate"><span class="pre">LogReduceHook</span></code></a><ul>
+<li><a class="reference internal" href="#ding.worker.learner.learner_hook.LogReduceHook.__call__"><code class="docutils literal notranslate"><span class="pre">LogReduceHook.__call__()</span></code></a></li>
+<li><a class="reference internal" href="#ding.worker.learner.learner_hook.LogReduceHook.__init__"><code class="docutils literal notranslate"><span class="pre">LogReduceHook.__init__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a class="reference internal" href="#module-ding.worker.learner.learner_hook.register_learner_hook">register_learner_hook</a></li>
 <li><a class="reference internal" href="#module-ding.worker.learner.learner_hook.build_learner_hook_by_cfg">build_learner_hook_by_cfg</a></li>
 <li><a class="reference internal" href="#module-ding.worker.learner.learner_hook.merge_hooks">merge_hooks</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#base-learner">base_learner</a><ul>
-<li><a class="reference internal" href="#baselearner">BaseLearner</a></li>
+<li><a class="reference internal" href="#baselearner">BaseLearner</a><ul>
+<li><a class="reference internal" href="#ding.worker.learner.base_learner.BaseLearner"><code class="docutils literal notranslate"><span class="pre">BaseLearner</span></code></a><ul>
+<li><a class="reference internal" href="#ding.worker.learner.base_learner.BaseLearner.__init__"><code class="docutils literal notranslate"><span class="pre">BaseLearner.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#ding.worker.learner.base_learner.BaseLearner._setup_hook"><code class="docutils literal notranslate"><span class="pre">BaseLearner._setup_hook()</span></code></a></li>
+<li><a class="reference internal" href="#ding.worker.learner.base_learner.BaseLearner._setup_wrapper"><code class="docutils literal notranslate"><span class="pre">BaseLearner._setup_wrapper()</span></code></a></li>
+<li><a class="reference internal" href="#ding.worker.learner.base_learner.BaseLearner.call_hook"><code class="docutils literal notranslate"><span class="pre">BaseLearner.call_hook()</span></code></a></li>
+<li><a class="reference internal" href="#ding.worker.learner.base_learner.BaseLearner.close"><code class="docutils literal notranslate"><span class="pre">BaseLearner.close()</span></code></a></li>
+<li><a class="reference internal" href="#ding.worker.learner.base_learner.BaseLearner.register_hook"><code class="docutils literal notranslate"><span class="pre">BaseLearner.register_hook()</span></code></a></li>
+<li><a class="reference internal" href="#ding.worker.learner.base_learner.BaseLearner.save_checkpoint"><code class="docutils literal notranslate"><span class="pre">BaseLearner.save_checkpoint()</span></code></a></li>
+<li><a class="reference internal" href="#ding.worker.learner.base_learner.BaseLearner.setup_dataloader"><code class="docutils literal notranslate"><span class="pre">BaseLearner.setup_dataloader()</span></code></a></li>
+<li><a class="reference internal" href="#ding.worker.learner.base_learner.BaseLearner.train"><code class="docutils literal notranslate"><span class="pre">BaseLearner.train()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a class="reference internal" href="#module-ding.worker.learner.base_learner.create_learner">create_learner</a></li>
 </ul>
 </li>
@@ -857,9 +921,8 @@ to get the instance.</p>
   <script type="text/javascript" id="documentation_options" data-url_root="../../../"
     src="../../../_static/documentation_options.js"></script>
   <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-  <script src="../../../_static/jquery.js"></script>
-  <script src="../../../_static/underscore.js"></script>
   <script src="../../../_static/doctools.js"></script>
+  <script src="../../../_static/sphinx_highlight.js"></script>
   
 
   

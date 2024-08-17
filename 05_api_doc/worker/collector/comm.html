@@ -9,7 +9,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
@@ -100,6 +100,16 @@
                   href="https://github.com/opendilab/DI-engine" target="_blank">
                   <span class="dropdown-title">DI-engine </span>
                   <p>OpenDILab Decision AI Engine</p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item"
+                  href="https://github.com/opendilab/LightZero" target="_blank">
+                  <span class="dropdown-title">LightZero </span>
+                  <p>OpenDILab Decision Monte Carlo Tree Search Framework</p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item"
+                  href="https://github.com/opendilab/GenerativeRL" target="_blank">
+                  <span class="dropdown-title">GenerativeRL </span>
+                  <p>OpenDILab Generative AI Framework</p>
                 </a>
                 <a class="doc-dropdown-option nav-dropdown-item"
                   href="https://github.com/opendilab/DI-star" target="_blank">
@@ -301,15 +311,15 @@
               <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
                 
   <section id="worker-collector-comm">
-<h1>worker.collector.comm<a class="headerlink" href="#worker-collector-comm" title="Permalink to this headline">¶</a></h1>
+<h1>worker.collector.comm<a class="headerlink" href="#worker-collector-comm" title="Permalink to this heading">¶</a></h1>
 <section id="base-comm-collector">
-<h2>base_comm_collector<a class="headerlink" href="#base-comm-collector" title="Permalink to this headline">¶</a></h2>
+<h2>base_comm_collector<a class="headerlink" href="#base-comm-collector" title="Permalink to this heading">¶</a></h2>
 <p>Please Reference ding/worker/collector/comm/base_comm_collector.py for usage</p>
 <section id="basecommcollector">
-<h3>BaseCommCollector<a class="headerlink" href="#basecommcollector" title="Permalink to this headline">¶</a></h3>
+<h3>BaseCommCollector<a class="headerlink" href="#basecommcollector" title="Permalink to this heading">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="ding.worker.collector.comm.base_comm_collector.BaseCommCollector">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ding.worker.collector.comm.base_comm_collector.</span></span><span class="sig-name descname"><span class="pre">BaseCommCollector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ding/worker/collector/comm/base_comm_collector.html#BaseCommCollector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.collector.comm.base_comm_collector.BaseCommCollector" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ding.worker.collector.comm.base_comm_collector.</span></span><span class="sig-name descname"><span class="pre">BaseCommCollector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ding/worker/collector/comm/base_comm_collector.html#BaseCommCollector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.collector.comm.base_comm_collector.BaseCommCollector" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>Abstract baseclass for common collector.</p>
 </dd>
@@ -334,7 +344,7 @@ start, close, _create_collector</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ding.worker.collector.comm.base_comm_collector.BaseCommCollector._create_collector">
-<span class="sig-name descname"><span class="pre">_create_collector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_info</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ding.worker.collector.base_parallel_collector.BaseParallelCollector</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/collector/comm/base_comm_collector.html#BaseCommCollector._create_collector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.collector.comm.base_comm_collector.BaseCommCollector._create_collector" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">_create_collector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">BaseParallelCollector</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/collector/comm/base_comm_collector.html#BaseCommCollector._create_collector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.collector.comm.base_comm_collector.BaseCommCollector._create_collector" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>Receive <code class="docutils literal notranslate"><span class="pre">task_info</span></code> passed from coordinator and create a collector.</p>
 </dd>
@@ -362,7 +372,7 @@ clarified and initialized.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ding.worker.collector.comm.base_comm_collector.BaseCommCollector.get_policy_update_info">
-<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">get_policy_update_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/collector/comm/base_comm_collector.html#BaseCommCollector.get_policy_update_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.collector.comm.base_comm_collector.BaseCommCollector.get_policy_update_info" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_policy_update_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/collector/comm/base_comm_collector.html#BaseCommCollector.get_policy_update_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.collector.comm.base_comm_collector.BaseCommCollector.get_policy_update_info" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>Get policy information in corresponding path.
 Will be registered in base collector.</p>
@@ -376,7 +386,7 @@ Will be registered in base collector.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ding.worker.collector.comm.base_comm_collector.BaseCommCollector.send_metadata">
-<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">send_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/collector/comm/base_comm_collector.html#BaseCommCollector.send_metadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.collector.comm.base_comm_collector.BaseCommCollector.send_metadata" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">send_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/collector/comm/base_comm_collector.html#BaseCommCollector.send_metadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.collector.comm.base_comm_collector.BaseCommCollector.send_metadata" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>Store meta data in queue, which will be retrieved by callback function “deal_with_collector_data”
 in collector slave, then will be sent to coordinator.
@@ -391,7 +401,7 @@ Will be registered in base collector.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ding.worker.collector.comm.base_comm_collector.BaseCommCollector.send_stepdata">
-<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">send_stepdata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stepdata</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/collector/comm/base_comm_collector.html#BaseCommCollector.send_stepdata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.collector.comm.base_comm_collector.BaseCommCollector.send_stepdata" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">send_stepdata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stepdata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/collector/comm/base_comm_collector.html#BaseCommCollector.send_stepdata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.collector.comm.base_comm_collector.BaseCommCollector.send_stepdata" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>Save step data in corresponding path.
 Will be registered in base collector.</p>
@@ -416,7 +426,7 @@ Will be registered in base collector.</p>
 
 </section>
 <section id="module-ding.worker.collector.comm.base_comm_collector.create_comm_collector">
-<span id="create-comm-collector"></span><h3>create_comm_collector<a class="headerlink" href="#module-ding.worker.collector.comm.base_comm_collector.create_comm_collector" title="Permalink to this headline">¶</a></h3>
+<span id="create-comm-collector"></span><h3>create_comm_collector<a class="headerlink" href="#module-ding.worker.collector.comm.base_comm_collector.create_comm_collector" title="Permalink to this heading">¶</a></h3>
 <dl class="simple">
 <dt>Overview:</dt><dd><p>Given the key(comm_collector_name), create a new comm collector instance if in comm_map’s values,
 or raise an KeyError. In other words, a derived comm collector must first register,
@@ -434,13 +444,13 @@ then can call <code class="docutils literal notranslate"><span class="pre">creat
 </section>
 </section>
 <section id="flask-fs-collector">
-<h2>flask_fs_collector<a class="headerlink" href="#flask-fs-collector" title="Permalink to this headline">¶</a></h2>
+<h2>flask_fs_collector<a class="headerlink" href="#flask-fs-collector" title="Permalink to this heading">¶</a></h2>
 <p>Please Reference ding/worker/collector/comm/flask_fs_collector.py for usage</p>
 <section id="collectorslave">
-<h3>CollectorSlave<a class="headerlink" href="#collectorslave" title="Permalink to this headline">¶</a></h3>
+<h3>CollectorSlave<a class="headerlink" href="#collectorslave" title="Permalink to this heading">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="ding.worker.collector.comm.flask_fs_collector.CollectorSlave">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ding.worker.collector.comm.flask_fs_collector.</span></span><span class="sig-name descname"><span class="pre">CollectorSlave</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback_fn</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Callable</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ding/worker/collector/comm/flask_fs_collector.html#CollectorSlave"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.collector.comm.flask_fs_collector.CollectorSlave" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ding.worker.collector.comm.flask_fs_collector.</span></span><span class="sig-name descname"><span class="pre">CollectorSlave</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback_fn</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Callable</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ding/worker/collector/comm/flask_fs_collector.html#CollectorSlave"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.collector.comm.flask_fs_collector.CollectorSlave" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>A slave, whose master is coordinator.
 Used to pass message between comm collector and coordinator.</p>
@@ -450,7 +460,7 @@ Used to pass message between comm collector and coordinator.</p>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="ding.worker.collector.comm.flask_fs_collector.CollectorSlave.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback_fn</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Callable</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/collector/comm/flask_fs_collector.html#CollectorSlave.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.collector.comm.flask_fs_collector.CollectorSlave.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback_fn</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Callable</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/collector/comm/flask_fs_collector.html#CollectorSlave.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.collector.comm.flask_fs_collector.CollectorSlave.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>Init callback functions additionally. Callback functions are methods in comm collector.</p>
 </dd>
@@ -459,7 +469,7 @@ Used to pass message between comm collector and coordinator.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ding.worker.collector.comm.flask_fs_collector.CollectorSlave._process_task">
-<span class="sig-name descname"><span class="pre">_process_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span> </span><span class="pre">ding.interaction.slave.action.TaskFail</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../../_modules/ding/worker/collector/comm/flask_fs_collector.html#CollectorSlave._process_task"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.collector.comm.flask_fs_collector.CollectorSlave._process_task" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">_process_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">TaskFail</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/collector/comm/flask_fs_collector.html#CollectorSlave._process_task"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.collector.comm.flask_fs_collector.CollectorSlave._process_task" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>Process a task according to input task info dict, which is passed in by master coordinator.
 For each type of task, you can refer to corresponding callback function in comm collector for details.</p>
@@ -479,10 +489,10 @@ For each type of task, you can refer to corresponding callback function in comm 
 
 </section>
 <section id="flaskfilesystemcollector">
-<h3>FlaskFileSystemCollector<a class="headerlink" href="#flaskfilesystemcollector" title="Permalink to this headline">¶</a></h3>
+<h3>FlaskFileSystemCollector<a class="headerlink" href="#flaskfilesystemcollector" title="Permalink to this heading">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="ding.worker.collector.comm.flask_fs_collector.FlaskFileSystemCollector">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ding.worker.collector.comm.flask_fs_collector.</span></span><span class="sig-name descname"><span class="pre">FlaskFileSystemCollector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ding/worker/collector/comm/flask_fs_collector.html#FlaskFileSystemCollector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.collector.comm.flask_fs_collector.FlaskFileSystemCollector" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ding.worker.collector.comm.flask_fs_collector.</span></span><span class="sig-name descname"><span class="pre">FlaskFileSystemCollector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ding/worker/collector/comm/flask_fs_collector.html#FlaskFileSystemCollector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.collector.comm.flask_fs_collector.FlaskFileSystemCollector" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>An implementation of CommLearner, using flask and the file system.</p>
 </dd>
@@ -491,7 +501,7 @@ For each type of task, you can refer to corresponding callback function in comm 
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="ding.worker.collector.comm.flask_fs_collector.FlaskFileSystemCollector.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/collector/comm/flask_fs_collector.html#FlaskFileSystemCollector.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.collector.comm.flask_fs_collector.FlaskFileSystemCollector.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/collector/comm/flask_fs_collector.html#FlaskFileSystemCollector.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.collector.comm.flask_fs_collector.FlaskFileSystemCollector.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>Initialization method.</p>
 </dd>
@@ -527,7 +537,7 @@ which will be sent to coordinator afterwards.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ding.worker.collector.comm.flask_fs_collector.FlaskFileSystemCollector.deal_with_collector_start">
-<span class="sig-name descname"><span class="pre">deal_with_collector_start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_info</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/collector/comm/flask_fs_collector.html#FlaskFileSystemCollector.deal_with_collector_start"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.collector.comm.flask_fs_collector.FlaskFileSystemCollector.deal_with_collector_start" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">deal_with_collector_start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/collector/comm/flask_fs_collector.html#FlaskFileSystemCollector.deal_with_collector_start"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.collector.comm.flask_fs_collector.FlaskFileSystemCollector.deal_with_collector_start" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>Callback function in <code class="docutils literal notranslate"><span class="pre">CollectorSlave</span></code>.
 Create a collector and start a collector thread of the created one.</p>
@@ -558,7 +568,7 @@ You can refer to it for details.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ding.worker.collector.comm.flask_fs_collector.FlaskFileSystemCollector.get_policy_update_info">
-<span class="sig-name descname"><span class="pre">get_policy_update_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/collector/comm/flask_fs_collector.html#FlaskFileSystemCollector.get_policy_update_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.collector.comm.flask_fs_collector.FlaskFileSystemCollector.get_policy_update_info" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_policy_update_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/collector/comm/flask_fs_collector.html#FlaskFileSystemCollector.get_policy_update_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.collector.comm.flask_fs_collector.FlaskFileSystemCollector.get_policy_update_info" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>Get policy information in corresponding path.</p>
 </dd>
@@ -571,7 +581,7 @@ You can refer to it for details.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ding.worker.collector.comm.flask_fs_collector.FlaskFileSystemCollector.send_metadata">
-<span class="sig-name descname"><span class="pre">send_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/collector/comm/flask_fs_collector.html#FlaskFileSystemCollector.send_metadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.collector.comm.flask_fs_collector.FlaskFileSystemCollector.send_metadata" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">send_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/collector/comm/flask_fs_collector.html#FlaskFileSystemCollector.send_metadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.collector.comm.flask_fs_collector.FlaskFileSystemCollector.send_metadata" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>Store learn info dict in queue, which will be retrieved by callback function “deal_with_collector_learn”
 in collector slave, then will be sent to coordinator.</p>
@@ -585,7 +595,7 @@ in collector slave, then will be sent to coordinator.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ding.worker.collector.comm.flask_fs_collector.FlaskFileSystemCollector.send_stepdata">
-<span class="sig-name descname"><span class="pre">send_stepdata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stepdata</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/collector/comm/flask_fs_collector.html#FlaskFileSystemCollector.send_stepdata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.collector.comm.flask_fs_collector.FlaskFileSystemCollector.send_stepdata" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">send_stepdata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stepdata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/ding/worker/collector/comm/flask_fs_collector.html#FlaskFileSystemCollector.send_stepdata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.collector.comm.flask_fs_collector.FlaskFileSystemCollector.send_stepdata" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>Save collector’s step data in corresponding path.</p>
 </dd>
@@ -611,13 +621,13 @@ in collector slave, then will be sent to coordinator.</p>
 </section>
 </section>
 <section id="utils">
-<h2>utils<a class="headerlink" href="#utils" title="Permalink to this headline">¶</a></h2>
+<h2>utils<a class="headerlink" href="#utils" title="Permalink to this heading">¶</a></h2>
 <p>Please Reference ding/worker/collector/comm/utils.py for usage</p>
 <section id="naivecollector">
-<h3>NaiveCollector<a class="headerlink" href="#naivecollector" title="Permalink to this headline">¶</a></h3>
+<h3>NaiveCollector<a class="headerlink" href="#naivecollector" title="Permalink to this heading">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="ding.worker.collector.comm.utils.NaiveCollector">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ding.worker.collector.comm.utils.</span></span><span class="sig-name descname"><span class="pre">NaiveCollector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ding/worker/collector/comm/utils.html#NaiveCollector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.collector.comm.utils.NaiveCollector" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ding.worker.collector.comm.utils.</span></span><span class="sig-name descname"><span class="pre">NaiveCollector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ding/worker/collector/comm/utils.html#NaiveCollector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.worker.collector.comm.utils.NaiveCollector" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>A slave, whose master is coordinator.
 Used to pass message between comm collector and coordinator.</p>
@@ -694,17 +704,56 @@ For each type of task, you can refer to corresponding callback function in comm 
               <ul>
 <li><a class="reference internal" href="#">worker.collector.comm</a><ul>
 <li><a class="reference internal" href="#base-comm-collector">base_comm_collector</a><ul>
-<li><a class="reference internal" href="#basecommcollector">BaseCommCollector</a></li>
+<li><a class="reference internal" href="#basecommcollector">BaseCommCollector</a><ul>
+<li><a class="reference internal" href="#ding.worker.collector.comm.base_comm_collector.BaseCommCollector"><code class="docutils literal notranslate"><span class="pre">BaseCommCollector</span></code></a><ul>
+<li><a class="reference internal" href="#ding.worker.collector.comm.base_comm_collector.BaseCommCollector.__init__"><code class="docutils literal notranslate"><span class="pre">BaseCommCollector.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#ding.worker.collector.comm.base_comm_collector.BaseCommCollector._create_collector"><code class="docutils literal notranslate"><span class="pre">BaseCommCollector._create_collector()</span></code></a></li>
+<li><a class="reference internal" href="#ding.worker.collector.comm.base_comm_collector.BaseCommCollector.close"><code class="docutils literal notranslate"><span class="pre">BaseCommCollector.close()</span></code></a></li>
+<li><a class="reference internal" href="#ding.worker.collector.comm.base_comm_collector.BaseCommCollector.get_policy_update_info"><code class="docutils literal notranslate"><span class="pre">BaseCommCollector.get_policy_update_info()</span></code></a></li>
+<li><a class="reference internal" href="#ding.worker.collector.comm.base_comm_collector.BaseCommCollector.send_metadata"><code class="docutils literal notranslate"><span class="pre">BaseCommCollector.send_metadata()</span></code></a></li>
+<li><a class="reference internal" href="#ding.worker.collector.comm.base_comm_collector.BaseCommCollector.send_stepdata"><code class="docutils literal notranslate"><span class="pre">BaseCommCollector.send_stepdata()</span></code></a></li>
+<li><a class="reference internal" href="#ding.worker.collector.comm.base_comm_collector.BaseCommCollector.start"><code class="docutils literal notranslate"><span class="pre">BaseCommCollector.start()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a class="reference internal" href="#module-ding.worker.collector.comm.base_comm_collector.create_comm_collector">create_comm_collector</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#flask-fs-collector">flask_fs_collector</a><ul>
-<li><a class="reference internal" href="#collectorslave">CollectorSlave</a></li>
-<li><a class="reference internal" href="#flaskfilesystemcollector">FlaskFileSystemCollector</a></li>
+<li><a class="reference internal" href="#collectorslave">CollectorSlave</a><ul>
+<li><a class="reference internal" href="#ding.worker.collector.comm.flask_fs_collector.CollectorSlave"><code class="docutils literal notranslate"><span class="pre">CollectorSlave</span></code></a><ul>
+<li><a class="reference internal" href="#ding.worker.collector.comm.flask_fs_collector.CollectorSlave.__init__"><code class="docutils literal notranslate"><span class="pre">CollectorSlave.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#ding.worker.collector.comm.flask_fs_collector.CollectorSlave._process_task"><code class="docutils literal notranslate"><span class="pre">CollectorSlave._process_task()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#flaskfilesystemcollector">FlaskFileSystemCollector</a><ul>
+<li><a class="reference internal" href="#ding.worker.collector.comm.flask_fs_collector.FlaskFileSystemCollector"><code class="docutils literal notranslate"><span class="pre">FlaskFileSystemCollector</span></code></a><ul>
+<li><a class="reference internal" href="#ding.worker.collector.comm.flask_fs_collector.FlaskFileSystemCollector.__init__"><code class="docutils literal notranslate"><span class="pre">FlaskFileSystemCollector.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#ding.worker.collector.comm.flask_fs_collector.FlaskFileSystemCollector.close"><code class="docutils literal notranslate"><span class="pre">FlaskFileSystemCollector.close()</span></code></a></li>
+<li><a class="reference internal" href="#ding.worker.collector.comm.flask_fs_collector.FlaskFileSystemCollector.deal_with_collector_data"><code class="docutils literal notranslate"><span class="pre">FlaskFileSystemCollector.deal_with_collector_data()</span></code></a></li>
+<li><a class="reference internal" href="#ding.worker.collector.comm.flask_fs_collector.FlaskFileSystemCollector.deal_with_collector_start"><code class="docutils literal notranslate"><span class="pre">FlaskFileSystemCollector.deal_with_collector_start()</span></code></a></li>
+<li><a class="reference internal" href="#ding.worker.collector.comm.flask_fs_collector.FlaskFileSystemCollector.deal_with_resource"><code class="docutils literal notranslate"><span class="pre">FlaskFileSystemCollector.deal_with_resource()</span></code></a></li>
+<li><a class="reference internal" href="#ding.worker.collector.comm.flask_fs_collector.FlaskFileSystemCollector.get_policy_update_info"><code class="docutils literal notranslate"><span class="pre">FlaskFileSystemCollector.get_policy_update_info()</span></code></a></li>
+<li><a class="reference internal" href="#ding.worker.collector.comm.flask_fs_collector.FlaskFileSystemCollector.send_metadata"><code class="docutils literal notranslate"><span class="pre">FlaskFileSystemCollector.send_metadata()</span></code></a></li>
+<li><a class="reference internal" href="#ding.worker.collector.comm.flask_fs_collector.FlaskFileSystemCollector.send_stepdata"><code class="docutils literal notranslate"><span class="pre">FlaskFileSystemCollector.send_stepdata()</span></code></a></li>
+<li><a class="reference internal" href="#ding.worker.collector.comm.flask_fs_collector.FlaskFileSystemCollector.start"><code class="docutils literal notranslate"><span class="pre">FlaskFileSystemCollector.start()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a class="reference internal" href="#utils">utils</a><ul>
-<li><a class="reference internal" href="#naivecollector">NaiveCollector</a></li>
+<li><a class="reference internal" href="#naivecollector">NaiveCollector</a><ul>
+<li><a class="reference internal" href="#ding.worker.collector.comm.utils.NaiveCollector"><code class="docutils literal notranslate"><span class="pre">NaiveCollector</span></code></a><ul>
+<li><a class="reference internal" href="#ding.worker.collector.comm.utils.NaiveCollector._process_task"><code class="docutils literal notranslate"><span class="pre">NaiveCollector._process_task()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -726,9 +775,8 @@ For each type of task, you can refer to corresponding callback function in comm 
   <script type="text/javascript" id="documentation_options" data-url_root="../../../"
     src="../../../_static/documentation_options.js"></script>
   <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-  <script src="../../../_static/jquery.js"></script>
-  <script src="../../../_static/underscore.js"></script>
   <script src="../../../_static/doctools.js"></script>
+  <script src="../../../_static/sphinx_highlight.js"></script>
   
 
   

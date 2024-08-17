@@ -99,6 +99,16 @@
                   <p>OpenDILab Decision AI Engine</p>
                 </a>
                 <a class="doc-dropdown-option nav-dropdown-item"
+                  href="https://github.com/opendilab/LightZero" target="_blank">
+                  <span class="dropdown-title">LightZero </span>
+                  <p>OpenDILab Decision Monte Carlo Tree Search Framework</p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item"
+                  href="https://github.com/opendilab/GenerativeRL" target="_blank">
+                  <span class="dropdown-title">GenerativeRL </span>
+                  <p>OpenDILab Generative AI Framework</p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item"
                   href="https://github.com/opendilab/DI-star" target="_blank">
                   <span class="dropdown-title">DI-star </span>
                   <p>OpenDILab Decision AI in StarCraftII</p>
@@ -343,8 +353,10 @@
 <li><a href="ding/model/template/collaq.html">ding.model.template.collaq</a></li>
 <li><a href="ding/model/template/coma.html">ding.model.template.coma</a></li>
 <li><a href="ding/model/template/decision_transformer.html">ding.model.template.decision_transformer</a></li>
+<li><a href="ding/model/template/diffusion.html">ding.model.template.diffusion</a></li>
 <li><a href="ding/model/template/ebm.html">ding.model.template.ebm</a></li>
 <li><a href="ding/model/template/edac.html">ding.model.template.edac</a></li>
+<li><a href="ding/model/template/havac.html">ding.model.template.havac</a></li>
 <li><a href="ding/model/template/language_transformer.html">ding.model.template.language_transformer</a></li>
 <li><a href="ding/model/template/maqac.html">ding.model.template.maqac</a></li>
 <li><a href="ding/model/template/mavac.html">ding.model.template.mavac</a></li>
@@ -356,6 +368,7 @@
 <li><a href="ding/model/template/q_learning.html">ding.model.template.q_learning</a></li>
 <li><a href="ding/model/template/qac.html">ding.model.template.qac</a></li>
 <li><a href="ding/model/template/qac_dist.html">ding.model.template.qac_dist</a></li>
+<li><a href="ding/model/template/qgpo.html">ding.model.template.qgpo</a></li>
 <li><a href="ding/model/template/qmix.html">ding.model.template.qmix</a></li>
 <li><a href="ding/model/template/qtran.html">ding.model.template.qtran</a></li>
 <li><a href="ding/model/template/vac.html">ding.model.template.vac</a></li>
@@ -379,15 +392,18 @@
 <li><a href="ding/policy/dt.html">ding.policy.dt</a></li>
 <li><a href="ding/policy/edac.html">ding.policy.edac</a></li>
 <li><a href="ding/policy/fqf.html">ding.policy.fqf</a></li>
+<li><a href="ding/policy/happo.html">ding.policy.happo</a></li>
 <li><a href="ding/policy/impala.html">ding.policy.impala</a></li>
 <li><a href="ding/policy/iqn.html">ding.policy.iqn</a></li>
 <li><a href="ding/policy/mbpolicy/mbsac.html">ding.policy.mbpolicy.mbsac</a></li>
 <li><a href="ding/policy/mdqn.html">ding.policy.mdqn</a></li>
 <li><a href="ding/policy/ngu.html">ding.policy.ngu</a></li>
 <li><a href="ding/policy/pdqn.html">ding.policy.pdqn</a></li>
+<li><a href="ding/policy/plan_diffuser.html">ding.policy.plan_diffuser</a></li>
 <li><a href="ding/policy/policy_factory.html">ding.policy.policy_factory</a></li>
 <li><a href="ding/policy/ppg.html">ding.policy.ppg</a></li>
 <li><a href="ding/policy/ppo.html">ding.policy.ppo</a></li>
+<li><a href="ding/policy/qgpo.html">ding.policy.qgpo</a></li>
 <li><a href="ding/policy/qmix.html">ding.policy.qmix</a></li>
 <li><a href="ding/policy/qrdqn.html">ding.policy.qrdqn</a></li>
 <li><a href="ding/policy/qtran.html">ding.policy.qtran</a></li>
@@ -427,29 +443,85 @@
 <li><a href="ding/rl_utils/upgo.html">ding.rl_utils.upgo</a></li>
 <li><a href="ding/rl_utils/value_rescale.html">ding.rl_utils.value_rescale</a></li>
 <li><a href="ding/rl_utils/vtrace.html">ding.rl_utils.vtrace</a></li>
+<li><a href="ding/torch_utils/backend_helper.html">ding.torch_utils.backend_helper</a></li>
 <li><a href="ding/torch_utils/checkpoint_helper.html">ding.torch_utils.checkpoint_helper</a></li>
 <li><a href="ding/torch_utils/data_helper.html">ding.torch_utils.data_helper</a></li>
+<li><a href="ding/torch_utils/dataparallel.html">ding.torch_utils.dataparallel</a></li>
 <li><a href="ding/torch_utils/distribution.html">ding.torch_utils.distribution</a></li>
+<li><a href="ding/torch_utils/loss/contrastive_loss.html">ding.torch_utils.loss.contrastive_loss</a></li>
 <li><a href="ding/torch_utils/loss/cross_entropy_loss.html">ding.torch_utils.loss.cross_entropy_loss</a></li>
 <li><a href="ding/torch_utils/loss/multi_logits_loss.html">ding.torch_utils.loss.multi_logits_loss</a></li>
+<li><a href="ding/torch_utils/lr_scheduler.html">ding.torch_utils.lr_scheduler</a></li>
+<li><a href="ding/torch_utils/math_helper.html">ding.torch_utils.math_helper</a></li>
+<li><a href="ding/torch_utils/metric.html">ding.torch_utils.metric</a></li>
+<li><a href="ding/torch_utils/model_helper.html">ding.torch_utils.model_helper</a></li>
 <li><a href="ding/torch_utils/network/activation.html">ding.torch_utils.network.activation</a></li>
+<li><a href="ding/torch_utils/network/diffusion.html">ding.torch_utils.network.diffusion</a></li>
+<li><a href="ding/torch_utils/network/dreamer.html">ding.torch_utils.network.dreamer</a></li>
 <li><a href="ding/torch_utils/network/gtrxl.html">ding.torch_utils.network.gtrxl</a></li>
+<li><a href="ding/torch_utils/network/gumbel_softmax.html">ding.torch_utils.network.gumbel_softmax</a></li>
+<li><a href="ding/torch_utils/network/merge.html">ding.torch_utils.network.merge</a></li>
 <li><a href="ding/torch_utils/network/nn_module.html">ding.torch_utils.network.nn_module</a></li>
+<li><a href="ding/torch_utils/network/normalization.html">ding.torch_utils.network.normalization</a></li>
+<li><a href="ding/torch_utils/network/popart.html">ding.torch_utils.network.popart</a></li>
 <li><a href="ding/torch_utils/network/res_block.html">ding.torch_utils.network.res_block</a></li>
+<li><a href="ding/torch_utils/network/resnet.html">ding.torch_utils.network.resnet</a></li>
 <li><a href="ding/torch_utils/network/rnn.html">ding.torch_utils.network.rnn</a></li>
 <li><a href="ding/torch_utils/network/scatter_connection.html">ding.torch_utils.network.scatter_connection</a></li>
 <li><a href="ding/torch_utils/network/soft_argmax.html">ding.torch_utils.network.soft_argmax</a></li>
 <li><a href="ding/torch_utils/network/transformer.html">ding.torch_utils.network.transformer</a></li>
+<li><a href="ding/torch_utils/nn_test_helper.html">ding.torch_utils.nn_test_helper</a></li>
 <li><a href="ding/torch_utils/optimizer_helper.html">ding.torch_utils.optimizer_helper</a></li>
+<li><a href="ding/torch_utils/parameter.html">ding.torch_utils.parameter</a></li>
+<li><a href="ding/torch_utils/reshape_helper.html">ding.torch_utils.reshape_helper</a></li>
+<li><a href="ding/utils/autolog/base.html">ding.utils.autolog.base</a></li>
+<li><a href="ding/utils/autolog/data.html">ding.utils.autolog.data</a></li>
+<li><a href="ding/utils/autolog/model.html">ding.utils.autolog.model</a></li>
+<li><a href="ding/utils/autolog/time_ctl.html">ding.utils.autolog.time_ctl</a></li>
+<li><a href="ding/utils/autolog/value.html">ding.utils.autolog.value</a></li>
+<li><a href="ding/utils/bfs_helper.html">ding.utils.bfs_helper</a></li>
+<li><a href="ding/utils/collection_helper.html">ding.utils.collection_helper</a></li>
+<li><a href="ding/utils/compression_helper.html">ding.utils.compression_helper</a></li>
+<li><a href="ding/utils/data/base_dataloader.html">ding.utils.data.base_dataloader</a></li>
+<li><a href="ding/utils/data/collate_fn.html">ding.utils.data.collate_fn</a></li>
 <li><a href="ding/utils/data/dataloader.html">ding.utils.data.dataloader</a></li>
+<li><a href="ding/utils/data/dataset.html">ding.utils.data.dataset</a></li>
 <li><a href="ding/utils/data/structure/cache.html">ding.utils.data.structure.cache</a></li>
+<li><a href="ding/utils/data/structure/lifo_deque.html">ding.utils.data.structure.lifo_deque</a></li>
 <li><a href="ding/utils/default_helper.html">ding.utils.default_helper</a></li>
 <li><a href="ding/utils/design_helper.html">ding.utils.design_helper</a></li>
+<li><a href="ding/utils/fake_linklink.html">ding.utils.fake_linklink</a></li>
+<li><a href="ding/utils/fast_copy.html">ding.utils.fast_copy</a></li>
+<li><a href="ding/utils/file_helper.html">ding.utils.file_helper</a></li>
+<li><a href="ding/utils/import_helper.html">ding.utils.import_helper</a></li>
+<li><a href="ding/utils/k8s_helper.html">ding.utils.k8s_helper</a></li>
+<li><a href="ding/utils/linklink_dist_helper.html">ding.utils.linklink_dist_helper</a></li>
+<li><a href="ding/utils/loader/base.html">ding.utils.loader.base</a></li>
+<li><a href="ding/utils/loader/collection.html">ding.utils.loader.collection</a></li>
+<li><a href="ding/utils/loader/dict.html">ding.utils.loader.dict</a></li>
+<li><a href="ding/utils/loader/exception.html">ding.utils.loader.exception</a></li>
+<li><a href="ding/utils/loader/mapping.html">ding.utils.loader.mapping</a></li>
+<li><a href="ding/utils/loader/norm.html">ding.utils.loader.norm</a></li>
+<li><a href="ding/utils/loader/number.html">ding.utils.loader.number</a></li>
+<li><a href="ding/utils/loader/string.html">ding.utils.loader.string</a></li>
+<li><a href="ding/utils/loader/types.html">ding.utils.loader.types</a></li>
+<li><a href="ding/utils/loader/utils.html">ding.utils.loader.utils</a></li>
 <li><a href="ding/utils/lock_helper.html">ding.utils.lock_helper</a></li>
+<li><a href="ding/utils/log_helper.html">ding.utils.log_helper</a></li>
+<li><a href="ding/utils/log_writer_helper.html">ding.utils.log_writer_helper</a></li>
+<li><a href="ding/utils/normalizer_helper.html">ding.utils.normalizer_helper</a></li>
+<li><a href="ding/utils/orchestrator_launcher.html">ding.utils.orchestrator_launcher</a></li>
+<li><a href="ding/utils/profiler_helper.html">ding.utils.profiler_helper</a></li>
+<li><a href="ding/utils/pytorch_ddp_dist_helper.html">ding.utils.pytorch_ddp_dist_helper</a></li>
+<li><a href="ding/utils/registry.html">ding.utils.registry</a></li>
+<li><a href="ding/utils/render_helper.html">ding.utils.render_helper</a></li>
+<li><a href="ding/utils/scheduler_helper.html">ding.utils.scheduler_helper</a></li>
 <li><a href="ding/utils/segment_tree.html">ding.utils.segment_tree</a></li>
+<li><a href="ding/utils/slurm_helper.html">ding.utils.slurm_helper</a></li>
 <li><a href="ding/utils/system_helper.html">ding.utils.system_helper</a></li>
 <li><a href="ding/utils/time_helper.html">ding.utils.time_helper</a></li>
 <li><a href="ding/utils/time_helper_base.html">ding.utils.time_helper_base</a></li>
+<li><a href="ding/utils/time_helper_cuda.html">ding.utils.time_helper_cuda</a></li>
 <li><a href="ding/worker/collector/base_serial_collector.html">ding.worker.collector.base_serial_collector</a></li>
 <li><a href="ding/worker/collector/base_serial_evaluator.html">ding.worker.collector.base_serial_evaluator</a></li>
 <li><a href="ding/worker/collector/comm/base_comm_collector.html">ding.worker.collector.comm.base_comm_collector</a></li>
@@ -520,9 +592,8 @@
   <script type="text/javascript" id="documentation_options" data-url_root="../"
     src="../_static/documentation_options.js"></script>
   <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-  <script src="../_static/jquery.js"></script>
-  <script src="../_static/underscore.js"></script>
   <script src="../_static/doctools.js"></script>
+  <script src="../_static/sphinx_highlight.js"></script>
   
 
   

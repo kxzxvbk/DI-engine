@@ -99,6 +99,16 @@
                   <p>OpenDILab Decision AI Engine</p>
                 </a>
                 <a class="doc-dropdown-option nav-dropdown-item"
+                  href="https://github.com/opendilab/LightZero" target="_blank">
+                  <span class="dropdown-title">LightZero </span>
+                  <p>OpenDILab Decision Monte Carlo Tree Search Framework</p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item"
+                  href="https://github.com/opendilab/GenerativeRL" target="_blank">
+                  <span class="dropdown-title">GenerativeRL </span>
+                  <p>OpenDILab Generative AI Framework</p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item"
                   href="https://github.com/opendilab/DI-star" target="_blank">
                   <span class="dropdown-title">DI-star </span>
                   <p>OpenDILab Decision AI in StarCraftII</p>
@@ -349,11 +359,9 @@
 <span class="sd">           | ``done``                                   | calculation.                           | fake termination env</span>
 <span class="sd">        15 ``collect.n_sample`` int      [8, 128]       | The number of training samples of a    | It varies from</span>
 <span class="sd">                                                        | call of collector.                     | different envs</span>
-<span class="sd">        16 | ``collect.unroll`` int      25             | unroll length of an iteration          | unroll_len&gt;1</span>
+<span class="sd">        16 | ``collect.seq``    int      20             | Training sequence length               | unroll_len&gt;=seq_len&gt;1</span>
 <span class="sd">           | ``_len``</span>
-<span class="sd">        17 | ``collect.seq``    int      20             | Training sequence length               | unroll_len&gt;=seq_len&gt;1</span>
-<span class="sd">           | ``_len``</span>
-<span class="sd">        18 | ``learn.init_``    str      zero           | &#39;zero&#39; or &#39;old&#39;, how to initialize the |</span>
+<span class="sd">        17 | ``learn.init_``    str      zero           | &#39;zero&#39; or &#39;old&#39;, how to initialize the |</span>
 <span class="sd">           | ``memory``                                 | memory before each training iteration. |</span>
 <span class="sd">        == ==================== ======== ============== ======================================== =======================</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -375,7 +383,7 @@
         <span class="n">discount_factor</span><span class="o">=</span><span class="mf">0.99</span><span class="p">,</span>
         <span class="c1"># (int) N-step reward for target q_value estimation</span>
         <span class="n">nstep</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
-        <span class="c1"># how many steps to use as burnin</span>
+        <span class="c1"># (int) How many steps to use in burnin phase</span>
         <span class="n">burnin_step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
         <span class="c1"># (int) trajectory length</span>
         <span class="n">unroll_len</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span>
@@ -452,7 +460,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_seq_len</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cfg</span><span class="o">.</span><span class="n">seq_len</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_value_rescale</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cfg</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">value_rescale</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_init_memory</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cfg</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">init_memory</span>
-        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">_init_memory</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;zero&#39;</span><span class="p">,</span> <span class="s1">&#39;old&#39;</span><span class="p">]</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">_init_memory</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;zero&#39;</span><span class="p">,</span> <span class="s1">&#39;old&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">_init_memory</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_target_model</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="p">)</span>
 
@@ -646,7 +654,6 @@
 <span class="sd">            Collect mode init method. Called by ``self.__init__``.</span>
 <span class="sd">            Init unroll length and sequence len, collect model.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">assert</span> <span class="s1">&#39;unroll_len&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cfg</span><span class="o">.</span><span class="n">collect</span><span class="p">,</span> <span class="s2">&quot;Use default unroll_len&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_nstep</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cfg</span><span class="o">.</span><span class="n">nstep</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_gamma</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cfg</span><span class="o">.</span><span class="n">discount_factor</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_unroll_len</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cfg</span><span class="o">.</span><span class="n">unroll_len</span>
@@ -814,9 +821,8 @@
   <script type="text/javascript" id="documentation_options" data-url_root="../../../"
     src="../../../_static/documentation_options.js"></script>
   <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-  <script src="../../../_static/jquery.js"></script>
-  <script src="../../../_static/underscore.js"></script>
   <script src="../../../_static/doctools.js"></script>
+  <script src="../../../_static/sphinx_highlight.js"></script>
   
 
   

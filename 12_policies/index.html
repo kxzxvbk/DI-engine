@@ -9,7 +9,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
@@ -100,6 +100,16 @@
                   href="https://github.com/opendilab/DI-engine" target="_blank">
                   <span class="dropdown-title">DI-engine </span>
                   <p>OpenDILab Decision AI Engine</p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item"
+                  href="https://github.com/opendilab/LightZero" target="_blank">
+                  <span class="dropdown-title">LightZero </span>
+                  <p>OpenDILab Decision Monte Carlo Tree Search Framework</p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item"
+                  href="https://github.com/opendilab/GenerativeRL" target="_blank">
+                  <span class="dropdown-title">GenerativeRL </span>
+                  <p>OpenDILab Generative AI Framework</p>
                 </a>
                 <a class="doc-dropdown-option nav-dropdown-item"
                   href="https://github.com/opendilab/DI-star" target="_blank">
@@ -297,7 +307,7 @@
               <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
                 
   <section id="rl-algorithms-cheat-sheet">
-<h1>RL Algorithms Cheat Sheet<a class="headerlink" href="#rl-algorithms-cheat-sheet" title="Permalink to this headline">¶</a></h1>
+<h1>RL Algorithms Cheat Sheet<a class="headerlink" href="#rl-algorithms-cheat-sheet" title="Permalink to this heading">¶</a></h1>
 <p>In this page you can find the algorithms that are currently implemented in DI-engine.
 All pages relative to our algorithms are grouped by category and follow the structure below:</p>
 <ul class="simple">
@@ -413,6 +423,17 @@ All pages relative to our algorithms are grouped by category and follow the stru
 <li class="toctree-l2"><a class="reference internal" href="mdqn.html#implementations">Implementations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mdqn.html#benchmark">Benchmark</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mdqn.html#reference">Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="averaged_dqn.html">Averaged-DQN</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="averaged_dqn.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="averaged_dqn.html#quick-facts">Quick Facts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="averaged_dqn.html#key-equations-or-key-graphs">Key Equations or Key Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="averaged_dqn.html#pseudo-code">Pseudo-code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="averaged_dqn.html#extensions">Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="averaged_dqn.html#implementation">Implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="averaged_dqn.html#benchmark">Benchmark</a></li>
+<li class="toctree-l2"><a class="reference internal" href="averaged_dqn.html#reference">Reference</a></li>
 </ul>
 </li>
 </ul>
@@ -665,6 +686,26 @@ All pages relative to our algorithms are grouped by category and follow the stru
 <li class="toctree-l2"><a class="reference internal" href="dt.html#reference">Reference</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="qgpo.html">QGPO</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="qgpo.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qgpo.html#quick-facts">Quick Facts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qgpo.html#key-equations-or-key-graphs">Key Equations or Key Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qgpo.html#implementations">Implementations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qgpo.html#benchmark">Benchmark</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qgpo.html#references">References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qgpo.html#other-public-implementations">Other Public Implementations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="diffuser.html">Diffuser (Plan Diffuser)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="diffuser.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diffuser.html#quick-facts">Quick Facts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diffuser.html#key-equations-or-key-graphs">Key Equations or Key Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diffuser.html#implementations">Implementations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diffuser.html#benchmark">Benchmark</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diffuser.html#references">References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diffuser.html#other-public-implementations">Other Public Implementations</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
@@ -865,9 +906,8 @@ All pages relative to our algorithms are grouped by category and follow the stru
   <script type="text/javascript" id="documentation_options" data-url_root="../"
     src="../_static/documentation_options.js"></script>
   <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-  <script src="../_static/jquery.js"></script>
-  <script src="../_static/underscore.js"></script>
   <script src="../_static/doctools.js"></script>
+  <script src="../_static/sphinx_highlight.js"></script>
   
 
   

@@ -99,6 +99,16 @@
                   <p>OpenDILab Decision AI Engine</p>
                 </a>
                 <a class="doc-dropdown-option nav-dropdown-item"
+                  href="https://github.com/opendilab/LightZero" target="_blank">
+                  <span class="dropdown-title">LightZero </span>
+                  <p>OpenDILab Decision Monte Carlo Tree Search Framework</p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item"
+                  href="https://github.com/opendilab/GenerativeRL" target="_blank">
+                  <span class="dropdown-title">GenerativeRL </span>
+                  <p>OpenDILab Generative AI Framework</p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item"
                   href="https://github.com/opendilab/DI-star" target="_blank">
                   <span class="dropdown-title">DI-star </span>
                   <p>OpenDILab Decision AI in StarCraftII</p>
@@ -346,6 +356,11 @@
             <span class="n">batch_size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>
             <span class="c1"># (float) The step size of gradient descent.</span>
             <span class="n">learning_rate</span><span class="o">=</span><span class="mf">3e-4</span><span class="p">,</span>
+            <span class="c1"># (dict or None) The learning rate decay.</span>
+            <span class="c1"># If not None, should contain key &#39;epoch_num&#39; and &#39;min_lr_lambda&#39;.</span>
+            <span class="c1"># where &#39;epoch_num&#39; is the total epoch num to decay the learning rate to min value,</span>
+            <span class="c1"># &#39;min_lr_lambda&#39; is the final decayed learning rate.</span>
+            <span class="n">lr_scheduler</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
             <span class="c1"># (float) The loss weight of value network, policy network weight is set to 1.</span>
             <span class="n">value_weight</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
             <span class="c1"># (float) The loss weight of entropy regularization, policy network weight is set to 1.</span>
@@ -462,6 +477,16 @@
             <span class="n">grad_clip_type</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_cfg</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">grad_clip_type</span><span class="p">,</span>
             <span class="n">clip_value</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_cfg</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">grad_clip_value</span>
         <span class="p">)</span>
+
+        <span class="c1"># Define linear lr scheduler</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cfg</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">lr_scheduler</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">epoch_num</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cfg</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">lr_scheduler</span><span class="p">[</span><span class="s1">&#39;epoch_num&#39;</span><span class="p">]</span>
+            <span class="n">min_lr_lambda</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cfg</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">lr_scheduler</span><span class="p">[</span><span class="s1">&#39;min_lr_lambda&#39;</span><span class="p">]</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">_lr_scheduler</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">lr_scheduler</span><span class="o">.</span><span class="n">LambdaLR</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_optimizer</span><span class="p">,</span>
+                <span class="n">lr_lambda</span><span class="o">=</span><span class="k">lambda</span> <span class="n">epoch</span><span class="p">:</span> <span class="nb">max</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">epoch</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">min_lr_lambda</span><span class="p">)</span> <span class="o">/</span> <span class="n">epoch_num</span><span class="p">,</span> <span class="n">min_lr_lambda</span><span class="p">)</span>
+            <span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_learn_model</span> <span class="o">=</span> <span class="n">model_wrap</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="p">,</span> <span class="n">wrapper_name</span><span class="o">=</span><span class="s1">&#39;base&#39;</span><span class="p">)</span>
 
@@ -608,8 +633,13 @@
                 <span class="n">total_loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
 
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cfg</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">lr_scheduler</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">cur_lr</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_lr_scheduler</span><span class="o">.</span><span class="n">get_last_lr</span><span class="p">())</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_lr_scheduler</span><span class="o">.</span><span class="n">get_last_lr</span><span class="p">())</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">cur_lr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_optimizer</span><span class="o">.</span><span class="n">defaults</span><span class="p">[</span><span class="s1">&#39;lr&#39;</span><span class="p">]</span>
+
                 <span class="n">return_info</span> <span class="o">=</span> <span class="p">{</span>
-                    <span class="s1">&#39;cur_lr&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_optimizer</span><span class="o">.</span><span class="n">defaults</span><span class="p">[</span><span class="s1">&#39;lr&#39;</span><span class="p">],</span>
+                    <span class="s1">&#39;cur_lr&#39;</span><span class="p">:</span> <span class="n">cur_lr</span><span class="p">,</span>
                     <span class="s1">&#39;total_loss&#39;</span><span class="p">:</span> <span class="n">total_loss</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span>
                     <span class="s1">&#39;policy_loss&#39;</span><span class="p">:</span> <span class="n">ppo_loss</span><span class="o">.</span><span class="n">policy_loss</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span>
                     <span class="s1">&#39;value_loss&#39;</span><span class="p">:</span> <span class="n">ppo_loss</span><span class="o">.</span><span class="n">value_loss</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span>
@@ -630,6 +660,10 @@
                         <span class="p">}</span>
                     <span class="p">)</span>
                 <span class="n">return_infos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">return_info</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cfg</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">lr_scheduler</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_lr_scheduler</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+
         <span class="k">return</span> <span class="n">return_infos</span></div>
 
 <div class="viewcode-block" id="PPOPolicy._init_collect"><a class="viewcode-back" href="../../../05_api_doc/policy.html#ding.policy.PPOPolicy._init_collect">[docs]</a>    <span class="k">def</span> <span class="nf">_init_collect</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -2180,9 +2214,8 @@
   <script type="text/javascript" id="documentation_options" data-url_root="../../../"
     src="../../../_static/documentation_options.js"></script>
   <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-  <script src="../../../_static/jquery.js"></script>
-  <script src="../../../_static/underscore.js"></script>
   <script src="../../../_static/doctools.js"></script>
+  <script src="../../../_static/sphinx_highlight.js"></script>
   
 
   

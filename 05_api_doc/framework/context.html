@@ -9,7 +9,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
@@ -100,6 +100,16 @@
                   href="https://github.com/opendilab/DI-engine" target="_blank">
                   <span class="dropdown-title">DI-engine </span>
                   <p>OpenDILab Decision AI Engine</p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item"
+                  href="https://github.com/opendilab/LightZero" target="_blank">
+                  <span class="dropdown-title">LightZero </span>
+                  <p>OpenDILab Decision Monte Carlo Tree Search Framework</p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item"
+                  href="https://github.com/opendilab/GenerativeRL" target="_blank">
+                  <span class="dropdown-title">GenerativeRL </span>
+                  <p>OpenDILab Generative AI Framework</p>
                 </a>
                 <a class="doc-dropdown-option nav-dropdown-item"
                   href="https://github.com/opendilab/DI-star" target="_blank">
@@ -301,14 +311,14 @@
               <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
                 
   <section id="framework-context">
-<h1>framework.context<a class="headerlink" href="#framework-context" title="Permalink to this headline">¶</a></h1>
+<h1>framework.context<a class="headerlink" href="#framework-context" title="Permalink to this heading">¶</a></h1>
 <section id="context">
-<h2>context<a class="headerlink" href="#context" title="Permalink to this headline">¶</a></h2>
+<h2>context<a class="headerlink" href="#context" title="Permalink to this heading">¶</a></h2>
 <section id="id1">
-<h3>Context<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3>Context<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="ding.framework.context.Context">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ding.framework.context.</span></span><span class="sig-name descname"><span class="pre">Context</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">_kept_keys:</span> <span class="pre">set</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></em>, <em class="sig-param"><span class="pre">total_step:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ding/framework/context.html#Context"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.framework.context.Context" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ding.framework.context.</span></span><span class="sig-name descname"><span class="pre">Context</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_kept_keys:</span> <span class="pre">set</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_step:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ding/framework/context.html#Context"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.framework.context.Context" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>Context is an object that pass contextual data between middlewares, whose life cycle
 is only one training iteration. It is a dict that reflect itself, so you can set
@@ -318,7 +328,7 @@ Note that the initial value of the property must be equal to False.</p>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="ding.framework.context.Context.keep">
-<span class="sig-name descname"><span class="pre">keep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">keys</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../_modules/ding/framework/context.html#Context.keep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.framework.context.Context.keep" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">keep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">keys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../_modules/ding/framework/context.html#Context.keep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.framework.context.Context.keep" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>Keep this key/keys until next iteration.</p>
 </dd>
@@ -327,7 +337,7 @@ Note that the initial value of the property must be equal to False.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ding.framework.context.Context.renew">
-<span class="sig-name descname"><span class="pre">renew</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#ding.framework.context.Context" title="ding.framework.context.Context"><span class="pre">ding.framework.context.Context</span></a></span></span><a class="reference internal" href="../../_modules/ding/framework/context.html#Context.renew"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.framework.context.Context.renew" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">renew</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#ding.framework.context.Context" title="ding.framework.context.Context"><span class="pre">Context</span></a></span></span><a class="reference internal" href="../../_modules/ding/framework/context.html#Context.renew"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.framework.context.Context.renew" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>Renew context from self, add total_step and shift kept properties to the new instance.</p>
 </dd>
@@ -385,7 +395,14 @@ Note that the initial value of the property must be equal to False.</p>
               <ul>
 <li><a class="reference internal" href="#">framework.context</a><ul>
 <li><a class="reference internal" href="#context">context</a><ul>
-<li><a class="reference internal" href="#id1">Context</a></li>
+<li><a class="reference internal" href="#id1">Context</a><ul>
+<li><a class="reference internal" href="#ding.framework.context.Context"><code class="docutils literal notranslate"><span class="pre">Context</span></code></a><ul>
+<li><a class="reference internal" href="#ding.framework.context.Context.keep"><code class="docutils literal notranslate"><span class="pre">Context.keep()</span></code></a></li>
+<li><a class="reference internal" href="#ding.framework.context.Context.renew"><code class="docutils literal notranslate"><span class="pre">Context.renew()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -407,9 +424,8 @@ Note that the initial value of the property must be equal to False.</p>
   <script type="text/javascript" id="documentation_options" data-url_root="../../"
     src="../../_static/documentation_options.js"></script>
   <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-  <script src="../../_static/jquery.js"></script>
-  <script src="../../_static/underscore.js"></script>
   <script src="../../_static/doctools.js"></script>
+  <script src="../../_static/sphinx_highlight.js"></script>
   
 
   

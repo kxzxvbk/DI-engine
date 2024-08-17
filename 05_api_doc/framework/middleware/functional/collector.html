@@ -9,7 +9,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
@@ -100,6 +100,16 @@
                   href="https://github.com/opendilab/DI-engine" target="_blank">
                   <span class="dropdown-title">DI-engine </span>
                   <p>OpenDILab Decision AI Engine</p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item"
+                  href="https://github.com/opendilab/LightZero" target="_blank">
+                  <span class="dropdown-title">LightZero </span>
+                  <p>OpenDILab Decision Monte Carlo Tree Search Framework</p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item"
+                  href="https://github.com/opendilab/GenerativeRL" target="_blank">
+                  <span class="dropdown-title">GenerativeRL </span>
+                  <p>OpenDILab Generative AI Framework</p>
                 </a>
                 <a class="doc-dropdown-option nav-dropdown-item"
                   href="https://github.com/opendilab/DI-star" target="_blank">
@@ -305,14 +315,14 @@
               <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
                 
   <section id="framework-middleware-functional-collector">
-<h1>framework.middleware.functional.collector<a class="headerlink" href="#framework-middleware-functional-collector" title="Permalink to this headline">¶</a></h1>
+<h1>framework.middleware.functional.collector<a class="headerlink" href="#framework-middleware-functional-collector" title="Permalink to this heading">¶</a></h1>
 <section id="collector">
-<h2>collector<a class="headerlink" href="#collector" title="Permalink to this headline">¶</a></h2>
+<h2>collector<a class="headerlink" href="#collector" title="Permalink to this heading">¶</a></h2>
 <section id="inferencer">
-<h3>inferencer<a class="headerlink" href="#inferencer" title="Permalink to this headline">¶</a></h3>
+<h3>inferencer<a class="headerlink" href="#inferencer" title="Permalink to this heading">¶</a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ding.framework.middleware.functional.collector.inferencer">
-<span class="sig-prename descclassname"><span class="pre">ding.framework.middleware.functional.collector.</span></span><span class="sig-name descname"><span class="pre">inferencer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../../policy.html#ding.policy.Policy" title="ding.policy.base_policy.Policy"><span class="pre">ding.policy.base_policy.Policy</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../../env.html#ding.envs.BaseEnvManager" title="ding.envs.env_manager.base_env_manager.BaseEnvManager"><span class="pre">ding.envs.env_manager.base_env_manager.BaseEnvManager</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Callable</span></span></span><a class="reference internal" href="../../../../_modules/ding/framework/middleware/functional/collector.html#inferencer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.framework.middleware.functional.collector.inferencer" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ding.framework.middleware.functional.collector.</span></span><span class="sig-name descname"><span class="pre">inferencer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../../../policy.html#ding.policy.Policy" title="ding.policy.base_policy.Policy"><span class="pre">Policy</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../../../env.html#ding.envs.BaseEnvManager" title="ding.envs.env_manager.base_env_manager.BaseEnvManager"><span class="pre">BaseEnvManager</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Callable</span></span></span><a class="reference internal" href="../../../../_modules/ding/framework/middleware/functional/collector.html#inferencer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.framework.middleware.functional.collector.inferencer" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>The middleware that executes the inference process.</p>
 </dd>
@@ -327,10 +337,10 @@
 
 </section>
 <section id="rolloutor">
-<h3>rolloutor<a class="headerlink" href="#rolloutor" title="Permalink to this headline">¶</a></h3>
+<h3>rolloutor<a class="headerlink" href="#rolloutor" title="Permalink to this heading">¶</a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ding.framework.middleware.functional.collector.rolloutor">
-<span class="sig-prename descclassname"><span class="pre">ding.framework.middleware.functional.collector.</span></span><span class="sig-name descname"><span class="pre">rolloutor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../../policy.html#ding.policy.Policy" title="ding.policy.base_policy.Policy"><span class="pre">ding.policy.base_policy.Policy</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../../env.html#ding.envs.BaseEnvManager" title="ding.envs.env_manager.base_env_manager.BaseEnvManager"><span class="pre">ding.envs.env_manager.base_env_manager.BaseEnvManager</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">transitions</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">ding.framework.middleware.functional.collector.TransitionList</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">collect_print_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Callable</span></span></span><a class="reference internal" href="../../../../_modules/ding/framework/middleware/functional/collector.html#rolloutor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.framework.middleware.functional.collector.rolloutor" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ding.framework.middleware.functional.collector.</span></span><span class="sig-name descname"><span class="pre">rolloutor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../../../policy.html#ding.policy.Policy" title="ding.policy.base_policy.Policy"><span class="pre">Policy</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../../../env.html#ding.envs.BaseEnvManager" title="ding.envs.env_manager.base_env_manager.BaseEnvManager"><span class="pre">BaseEnvManager</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">transitions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">TransitionList</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">collect_print_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Callable</span></span></span><a class="reference internal" href="../../../../_modules/ding/framework/middleware/functional/collector.html#rolloutor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.framework.middleware.functional.collector.rolloutor" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>The middleware that executes the transition process in the env.</p>
 </dd>
@@ -392,8 +402,14 @@
               <ul>
 <li><a class="reference internal" href="#">framework.middleware.functional.collector</a><ul>
 <li><a class="reference internal" href="#collector">collector</a><ul>
-<li><a class="reference internal" href="#inferencer">inferencer</a></li>
-<li><a class="reference internal" href="#rolloutor">rolloutor</a></li>
+<li><a class="reference internal" href="#inferencer">inferencer</a><ul>
+<li><a class="reference internal" href="#ding.framework.middleware.functional.collector.inferencer"><code class="docutils literal notranslate"><span class="pre">inferencer()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rolloutor">rolloutor</a><ul>
+<li><a class="reference internal" href="#ding.framework.middleware.functional.collector.rolloutor"><code class="docutils literal notranslate"><span class="pre">rolloutor()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -415,9 +431,8 @@
   <script type="text/javascript" id="documentation_options" data-url_root="../../../../"
     src="../../../../_static/documentation_options.js"></script>
   <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-  <script src="../../../../_static/jquery.js"></script>
-  <script src="../../../../_static/underscore.js"></script>
   <script src="../../../../_static/doctools.js"></script>
+  <script src="../../../../_static/sphinx_highlight.js"></script>
   
 
   

@@ -99,6 +99,16 @@
                   <p>OpenDILab Decision AI Engine</p>
                 </a>
                 <a class="doc-dropdown-option nav-dropdown-item"
+                  href="https://github.com/opendilab/LightZero" target="_blank">
+                  <span class="dropdown-title">LightZero </span>
+                  <p>OpenDILab Decision Monte Carlo Tree Search Framework</p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item"
+                  href="https://github.com/opendilab/GenerativeRL" target="_blank">
+                  <span class="dropdown-title">GenerativeRL </span>
+                  <p>OpenDILab Generative AI Framework</p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item"
                   href="https://github.com/opendilab/DI-star" target="_blank">
                   <span class="dropdown-title">DI-star </span>
                   <p>OpenDILab Decision AI in StarCraftII</p>
@@ -296,33 +306,32 @@
 
 
 <div class="viewcode-block" id="value_transform"><a class="viewcode-back" href="../../../05_api_doc/rl_utils.html#ding.rl_utils.value_rescale.value_transform">[docs]</a><span class="k">def</span> <span class="nf">value_transform</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">eps</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1e-2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
-<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Overview:</span>
 <span class="sd">        A function to reduce the scale of the action-value function.</span>
-<span class="sd">        :math: `h(x) = sign(x)(\sqrt{(abs(x)+1)} - 1) + \eps * x` .</span>
+<span class="sd">        :math: `h(x) = sign(x)(\sqrt{(abs(x)+1)} - 1) + \epsilon * x` .</span>
 <span class="sd">    Arguments:</span>
 <span class="sd">        - x: (:obj:`torch.Tensor`) The input tensor to be normalized.</span>
 <span class="sd">        - eps: (:obj:`float`) The coefficient of the additive regularization term \</span>
-<span class="sd">            to ensure h^{-1} is Lipschitz continuous</span>
+<span class="sd">            to ensure inverse function is Lipschitz continuous</span>
 <span class="sd">    Returns:</span>
 <span class="sd">        - (:obj:`torch.Tensor`) Normalized tensor.</span>
 
 <span class="sd">    .. note::</span>
-<span class="sd">        Observe and Look Further: Achieving Consistent Performance on Atari</span>
-<span class="sd">         (https://arxiv.org/abs/1805.11593)</span>
+<span class="sd">        Observe and Look Further: Achieving Consistent Performance on Atari (https://arxiv.org/abs/1805.11593).</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">eps</span> <span class="o">*</span> <span class="n">x</span></div>
 
 
 <div class="viewcode-block" id="value_inv_transform"><a class="viewcode-back" href="../../../05_api_doc/rl_utils.html#ding.rl_utils.value_rescale.value_inv_transform">[docs]</a><span class="k">def</span> <span class="nf">value_inv_transform</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">eps</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1e-2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
-<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Overview:</span>
 <span class="sd">        The inverse form of value rescale.</span>
-<span class="sd">        :math: `h^{-1}(x) = sign(x)({(\frac{\sqrt{1+4\eps(|x|+1+\eps)}-1}{2\eps})}^2-1)` .</span>
+<span class="sd">        :math: `h^{-1}(x) = sign(x)({(\frac{\sqrt{1+4\epsilon(|x|+1+\epsilon)}-1}{2\epsilon})}^2-1)` .</span>
 <span class="sd">    Arguments:</span>
 <span class="sd">        - x: (:obj:`torch.Tensor`) The input tensor to be unnormalized.</span>
 <span class="sd">        - eps: (:obj:`float`) The coefficient of the additive regularization term \</span>
-<span class="sd">            to ensure h^{-1} is Lipschitz continuous</span>
+<span class="sd">            to ensure inverse function is Lipschitz continuous</span>
 <span class="sd">    Returns:</span>
 <span class="sd">        - (:obj:`torch.Tensor`) Unnormalized tensor.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -330,7 +339,7 @@
 
 
 <div class="viewcode-block" id="symlog"><a class="viewcode-back" href="../../../05_api_doc/rl_utils.html#ding.rl_utils.value_rescale.symlog">[docs]</a><span class="k">def</span> <span class="nf">symlog</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
-<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Overview:</span>
 <span class="sd">        A function to normalize the targets.</span>
 <span class="sd">        :math: `symlog(x) = sign(x)(\ln{|x|+1})` .</span>
@@ -340,14 +349,13 @@
 <span class="sd">        - (:obj:`torch.Tensor`) Normalized tensor.</span>
 
 <span class="sd">    .. note::</span>
-<span class="sd">        Mastering Diverse Domains through World Models</span>
-<span class="sd">         (https://arxiv.org/abs/2301.04104)</span>
+<span class="sd">        Mastering Diverse Domains through World Models (https://arxiv.org/abs/2301.04104)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span></div>
 
 
 <div class="viewcode-block" id="inv_symlog"><a class="viewcode-back" href="../../../05_api_doc/rl_utils.html#ding.rl_utils.value_rescale.inv_symlog">[docs]</a><span class="k">def</span> <span class="nf">inv_symlog</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
-<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Overview:</span>
 <span class="sd">        The inverse form of symlog.</span>
 <span class="sd">        :math: `symexp(x) = sign(x)(\exp{|x|}-1)` .</span>
@@ -404,9 +412,8 @@
   <script type="text/javascript" id="documentation_options" data-url_root="../../../"
     src="../../../_static/documentation_options.js"></script>
   <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-  <script src="../../../_static/jquery.js"></script>
-  <script src="../../../_static/underscore.js"></script>
   <script src="../../../_static/doctools.js"></script>
+  <script src="../../../_static/sphinx_highlight.js"></script>
   
 
   

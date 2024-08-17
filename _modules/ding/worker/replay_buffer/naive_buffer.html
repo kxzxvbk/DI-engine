@@ -99,6 +99,16 @@
                   <p>OpenDILab Decision AI Engine</p>
                 </a>
                 <a class="doc-dropdown-option nav-dropdown-item"
+                  href="https://github.com/opendilab/LightZero" target="_blank">
+                  <span class="dropdown-title">LightZero </span>
+                  <p>OpenDILab Decision Monte Carlo Tree Search Framework</p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item"
+                  href="https://github.com/opendilab/GenerativeRL" target="_blank">
+                  <span class="dropdown-title">GenerativeRL </span>
+                  <p>OpenDILab Generative AI Framework</p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item"
                   href="https://github.com/opendilab/DI-star" target="_blank">
                   <span class="dropdown-title">DI-star </span>
                   <p>OpenDILab Decision AI in StarCraftII</p>
@@ -358,7 +368,7 @@
         <span class="c1"># Point to the tail position where next data can be inserted, i.e. latest inserted data&#39;s next position.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_tail</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="c1"># Lock to guarantee thread safe</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span> <span class="o">=</span> <span class="n">LockContext</span><span class="p">(</span><span class="n">type_</span><span class="o">=</span><span class="n">LockContextType</span><span class="o">.</span><span class="n">THREAD_LOCK</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span> <span class="o">=</span> <span class="n">LockContext</span><span class="p">(</span><span class="n">lock_type</span><span class="o">=</span><span class="n">LockContextType</span><span class="o">.</span><span class="n">THREAD_LOCK</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_end_flag</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_enable_track_used_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cfg</span><span class="o">.</span><span class="n">enable_track_used_data</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_enable_track_used_data</span><span class="p">:</span>
@@ -904,9 +914,8 @@
   <script type="text/javascript" id="documentation_options" data-url_root="../../../../"
     src="../../../../_static/documentation_options.js"></script>
   <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-  <script src="../../../../_static/jquery.js"></script>
-  <script src="../../../../_static/underscore.js"></script>
   <script src="../../../../_static/doctools.js"></script>
+  <script src="../../../../_static/sphinx_highlight.js"></script>
   
 
   

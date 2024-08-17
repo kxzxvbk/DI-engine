@@ -9,7 +9,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
@@ -100,6 +100,16 @@
                   href="https://github.com/opendilab/DI-engine" target="_blank">
                   <span class="dropdown-title">DI-engine </span>
                   <p>OpenDILab Decision AI Engine</p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item"
+                  href="https://github.com/opendilab/LightZero" target="_blank">
+                  <span class="dropdown-title">LightZero </span>
+                  <p>OpenDILab Decision Monte Carlo Tree Search Framework</p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item"
+                  href="https://github.com/opendilab/GenerativeRL" target="_blank">
+                  <span class="dropdown-title">GenerativeRL </span>
+                  <p>OpenDILab Generative AI Framework</p>
                 </a>
                 <a class="doc-dropdown-option nav-dropdown-item"
                   href="https://github.com/opendilab/DI-star" target="_blank">
@@ -299,7 +309,7 @@
               <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
                 
   <section id="id1">
-<h1>随机种子<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>随机种子<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
 <p>在强化学习中，不同的随机数作为种子对算法的结果会有影响。为了复现或者公平比较其他算法的实验结果，我们需要使用相同的随机种子。</p>
 <p>首先，在每个入口函数中，我们有一个全局的随机“种子”参数。例如在 <code class="docutils literal notranslate"><span class="pre">ding/entry/serial_entry.py</span></code> 中,</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">serial_pipeline</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">seed</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
@@ -425,9 +435,8 @@ episode 不同。 并且可以通过设置这个随机生成器的种子来保�
   <script type="text/javascript" id="documentation_options" data-url_root="../"
     src="../_static/documentation_options.js"></script>
   <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-  <script src="../_static/jquery.js"></script>
-  <script src="../_static/underscore.js"></script>
   <script src="../_static/doctools.js"></script>
+  <script src="../_static/sphinx_highlight.js"></script>
   
 
   

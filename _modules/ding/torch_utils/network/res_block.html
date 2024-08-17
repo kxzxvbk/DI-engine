@@ -99,6 +99,16 @@
                   <p>OpenDILab Decision AI Engine</p>
                 </a>
                 <a class="doc-dropdown-option nav-dropdown-item"
+                  href="https://github.com/opendilab/LightZero" target="_blank">
+                  <span class="dropdown-title">LightZero </span>
+                  <p>OpenDILab Decision Monte Carlo Tree Search Framework</p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item"
+                  href="https://github.com/opendilab/GenerativeRL" target="_blank">
+                  <span class="dropdown-title">GenerativeRL </span>
+                  <p>OpenDILab Generative AI Framework</p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item"
                   href="https://github.com/opendilab/DI-star" target="_blank">
                   <span class="dropdown-title">DI-star </span>
                   <p>OpenDILab Decision AI in StarCraftII</p>
@@ -300,7 +310,7 @@
 <span class="kn">from</span> <span class="nn">.nn_module</span> <span class="kn">import</span> <span class="n">conv2d_block</span><span class="p">,</span> <span class="n">fc_block</span>
 
 
-<div class="viewcode-block" id="ResBlock"><a class="viewcode-back" href="../../../../05_api_doc/torch_utils/torch_utils_network.html#ding.torch_utils.network.res_block.ResBlock">[docs]</a><span class="k">class</span> <span class="nc">ResBlock</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<div class="viewcode-block" id="ResBlock"><a class="viewcode-back" href="../../../../05_api_doc/torch_utils.html#ding.torch_utils.network.res_block.ResBlock">[docs]</a><span class="k">class</span> <span class="nc">ResBlock</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Overview:</span>
 <span class="sd">        Residual Block with 2D convolution layers, including 3 types:</span>
@@ -315,13 +325,16 @@
 <span class="sd">                input channel: C</span>
 <span class="sd">                x -&gt; 3*3*C -&gt; norm -&gt; act -&gt; 3*3*C -&gt; norm -&gt; act -&gt; out</span>
 <span class="sd">                \__________________ 3*3*C ____________________/+</span>
-<span class="sd">        For more details, please refer to `Deep Residual Learning for Image Recognition</span>
-<span class="sd">        &lt;https://arxiv.org/abs/1512.03385&gt;`_.</span>
+
+<span class="sd">    .. note::</span>
+<span class="sd">        You can refer to `Deep Residual Learning for Image Recognition &lt;https://arxiv.org/abs/1512.03385&gt;`_ for more \</span>
+<span class="sd">        details.</span>
+
 <span class="sd">    Interfaces:</span>
-<span class="sd">        ``forward``</span>
+<span class="sd">        ``__init__``, ``forward``</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<div class="viewcode-block" id="ResBlock.__init__"><a class="viewcode-back" href="../../../../05_api_doc/torch_utils.html#ding.torch_utils.network.res_block.ResBlock.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">in_channels</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
         <span class="n">activation</span><span class="p">:</span> <span class="n">nn</span><span class="o">.</span><span class="n">Module</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
@@ -374,9 +387,9 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">conv2</span> <span class="o">=</span> <span class="n">conv2d_block</span><span class="p">(</span>
                 <span class="n">out_channels</span><span class="p">,</span> <span class="n">out_channels</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">norm_type</span><span class="o">=</span><span class="n">norm_type</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="n">bias</span>
             <span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">conv3</span> <span class="o">=</span> <span class="n">conv2d_block</span><span class="p">(</span><span class="n">in_channels</span><span class="p">,</span> <span class="n">out_channels</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">norm_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="n">bias</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">conv3</span> <span class="o">=</span> <span class="n">conv2d_block</span><span class="p">(</span><span class="n">in_channels</span><span class="p">,</span> <span class="n">out_channels</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">norm_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="n">bias</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ResBlock.forward"><a class="viewcode-back" href="../../../../05_api_doc/torch_utils/torch_utils_network.html#ding.torch_utils.network.res_block.ResBlock.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
+<div class="viewcode-block" id="ResBlock.forward"><a class="viewcode-back" href="../../../../05_api_doc/torch_utils.html#ding.torch_utils.network.res_block.ResBlock.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Overview:</span>
 <span class="sd">            Return the redisual block output.</span>
@@ -396,7 +409,7 @@
         <span class="k">return</span> <span class="n">x</span></div></div>
 
 
-<div class="viewcode-block" id="ResFCBlock"><a class="viewcode-back" href="../../../../05_api_doc/torch_utils/torch_utils_network.html#ding.torch_utils.network.res_block.ResFCBlock">[docs]</a><span class="k">class</span> <span class="nc">ResFCBlock</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<div class="viewcode-block" id="ResFCBlock"><a class="viewcode-back" href="../../../../05_api_doc/torch_utils.html#ding.torch_utils.network.res_block.ResFCBlock">[docs]</a><span class="k">class</span> <span class="nc">ResFCBlock</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Overview:</span>
 <span class="sd">        Residual Block with 2 fully connected layers.</span>
@@ -404,10 +417,10 @@
 <span class="sd">        \_____________________________________/+</span>
 
 <span class="sd">    Interfaces:</span>
-<span class="sd">        ``forward``</span>
+<span class="sd">        ``__init__``, ``forward``</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<div class="viewcode-block" id="ResFCBlock.__init__"><a class="viewcode-back" href="../../../../05_api_doc/torch_utils.html#ding.torch_utils.network.res_block.ResFCBlock.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">in_channels</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">activation</span><span class="p">:</span> <span class="n">nn</span><span class="o">.</span><span class="n">Module</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span> <span class="n">norm_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;BN&#39;</span><span class="p">,</span> <span class="n">dropout</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -426,9 +439,9 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">dropout</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fc1</span> <span class="o">=</span> <span class="n">fc_block</span><span class="p">(</span><span class="n">in_channels</span><span class="p">,</span> <span class="n">in_channels</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">act</span><span class="p">,</span> <span class="n">norm_type</span><span class="o">=</span><span class="n">norm_type</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">fc2</span> <span class="o">=</span> <span class="n">fc_block</span><span class="p">(</span><span class="n">in_channels</span><span class="p">,</span> <span class="n">in_channels</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">norm_type</span><span class="o">=</span><span class="n">norm_type</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fc2</span> <span class="o">=</span> <span class="n">fc_block</span><span class="p">(</span><span class="n">in_channels</span><span class="p">,</span> <span class="n">in_channels</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">norm_type</span><span class="o">=</span><span class="n">norm_type</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ResFCBlock.forward"><a class="viewcode-back" href="../../../../05_api_doc/torch_utils/torch_utils_network.html#ding.torch_utils.network.res_block.ResFCBlock.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
+<div class="viewcode-block" id="ResFCBlock.forward"><a class="viewcode-back" href="../../../../05_api_doc/torch_utils.html#ding.torch_utils.network.res_block.ResFCBlock.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Overview:</span>
 <span class="sd">            Return the output of the redisual block.</span>
@@ -444,6 +457,50 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dropout</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dropout</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">x</span></div></div>
+
+
+<span class="k">class</span> <span class="nc">TemporalSpatialResBlock</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Overview:</span>
+<span class="sd">        Residual Block using MLP layers for both temporal and spatial input.</span>
+<span class="sd">        t → time_mlp  →  h1 → dense2 → h2 → out</span>
+<span class="sd">                       ↗+                ↗+</span>
+<span class="sd">        x →  dense1 →                  ↗</span>
+<span class="sd">          ↘                          ↗</span>
+<span class="sd">            → modify_x →   →   →   →</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_dim</span><span class="p">,</span> <span class="n">output_dim</span><span class="p">,</span> <span class="n">t_dim</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">SiLU</span><span class="p">()):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Overview:</span>
+<span class="sd">            Init the temporal spatial residual block.</span>
+<span class="sd">        Arguments:</span>
+<span class="sd">            - input_dim (:obj:`int`): The number of channels in the input tensor.</span>
+<span class="sd">            - output_dim (:obj:`int`): The number of channels in the output tensor.</span>
+<span class="sd">            - t_dim (:obj:`int`): The dimension of the temporal input.</span>
+<span class="sd">            - activation (:obj:`nn.Module`): The optional activation function.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="c1"># temporal input is the embedding of time, which is a Gaussian Fourier Feature tensor</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">time_mlp</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+            <span class="n">activation</span><span class="p">,</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">t_dim</span><span class="p">,</span> <span class="n">output_dim</span><span class="p">),</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dense1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">input_dim</span><span class="p">,</span> <span class="n">output_dim</span><span class="p">),</span> <span class="n">activation</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dense2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">output_dim</span><span class="p">,</span> <span class="n">output_dim</span><span class="p">),</span> <span class="n">activation</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">modify_x</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">input_dim</span><span class="p">,</span> <span class="n">output_dim</span><span class="p">)</span> <span class="k">if</span> <span class="n">input_dim</span> <span class="o">!=</span> <span class="n">output_dim</span> <span class="k">else</span> <span class="n">nn</span><span class="o">.</span><span class="n">Identity</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Overview:</span>
+<span class="sd">            Return the redisual block output.</span>
+<span class="sd">        Arguments:</span>
+<span class="sd">            - x (:obj:`torch.Tensor`): The input tensor.</span>
+<span class="sd">            - t (:obj:`torch.Tensor`): The temporal input tensor.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">h1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dense1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_mlp</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+        <span class="n">h2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dense2</span><span class="p">(</span><span class="n">h1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">h2</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">modify_x</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 
               </article>
@@ -491,9 +548,8 @@
   <script type="text/javascript" id="documentation_options" data-url_root="../../../../"
     src="../../../../_static/documentation_options.js"></script>
   <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-  <script src="../../../../_static/jquery.js"></script>
-  <script src="../../../../_static/underscore.js"></script>
   <script src="../../../../_static/doctools.js"></script>
+  <script src="../../../../_static/sphinx_highlight.js"></script>
   
 
   

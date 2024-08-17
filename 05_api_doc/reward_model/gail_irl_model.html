@@ -9,7 +9,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
@@ -100,6 +100,16 @@
                   href="https://github.com/opendilab/DI-engine" target="_blank">
                   <span class="dropdown-title">DI-engine </span>
                   <p>OpenDILab Decision AI Engine</p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item"
+                  href="https://github.com/opendilab/LightZero" target="_blank">
+                  <span class="dropdown-title">LightZero </span>
+                  <p>OpenDILab Decision Monte Carlo Tree Search Framework</p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item"
+                  href="https://github.com/opendilab/GenerativeRL" target="_blank">
+                  <span class="dropdown-title">GenerativeRL </span>
+                  <p>OpenDILab Generative AI Framework</p>
                 </a>
                 <a class="doc-dropdown-option nav-dropdown-item"
                   href="https://github.com/opendilab/DI-star" target="_blank">
@@ -301,14 +311,14 @@
               <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
                 
   <section id="gail">
-<h1>Gail<a class="headerlink" href="#gail" title="Permalink to this headline">¶</a></h1>
+<h1>Gail<a class="headerlink" href="#gail" title="Permalink to this heading">¶</a></h1>
 <section id="gail-irl-model">
-<h2>gail_irl_model<a class="headerlink" href="#gail-irl-model" title="Permalink to this headline">¶</a></h2>
+<h2>gail_irl_model<a class="headerlink" href="#gail-irl-model" title="Permalink to this heading">¶</a></h2>
 <section id="gailrewardmodel">
-<h3>GailRewardModel<a class="headerlink" href="#gailrewardmodel" title="Permalink to this headline">¶</a></h3>
+<h3>GailRewardModel<a class="headerlink" href="#gailrewardmodel" title="Permalink to this heading">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="ding.reward_model.gail_irl_model.BaseRewardModel">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ding.reward_model.gail_irl_model.</span></span><span class="sig-name descname"><span class="pre">BaseRewardModel</span></span><a class="reference internal" href="../../_modules/ding/reward_model/base_reward_model.html#BaseRewardModel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.reward_model.gail_irl_model.BaseRewardModel" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ding.reward_model.gail_irl_model.</span></span><span class="sig-name descname"><span class="pre">BaseRewardModel</span></span><a class="reference internal" href="../../_modules/ding/reward_model/base_reward_model.html#BaseRewardModel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.reward_model.gail_irl_model.BaseRewardModel" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>the base class of reward model</p>
 </dd>
@@ -322,7 +332,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ding.reward_model.gail_irl_model.BaseRewardModel.clear_data">
-<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">clear_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../_modules/ding/reward_model/base_reward_model.html#BaseRewardModel.clear_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.reward_model.gail_irl_model.BaseRewardModel.clear_data" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">clear_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../_modules/ding/reward_model/base_reward_model.html#BaseRewardModel.clear_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.reward_model.gail_irl_model.BaseRewardModel.clear_data" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>Clearing training data.             This can be a side effect function which clears the data attribute in <code class="docutils literal notranslate"><span class="pre">self</span></code></p>
 </dd>
@@ -331,7 +341,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ding.reward_model.gail_irl_model.BaseRewardModel.collect_data">
-<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">collect_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../_modules/ding/reward_model/base_reward_model.html#BaseRewardModel.collect_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.reward_model.gail_irl_model.BaseRewardModel.collect_data" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">collect_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../_modules/ding/reward_model/base_reward_model.html#BaseRewardModel.collect_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.reward_model.gail_irl_model.BaseRewardModel.collect_data" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>Collecting training data in designated formate or with designated transition.</p>
 </dd>
@@ -348,7 +358,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ding.reward_model.gail_irl_model.BaseRewardModel.estimate">
-<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">estimate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="reference internal" href="../../_modules/ding/reward_model/base_reward_model.html#BaseRewardModel.estimate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.reward_model.gail_irl_model.BaseRewardModel.estimate" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">estimate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="reference internal" href="../../_modules/ding/reward_model/base_reward_model.html#BaseRewardModel.estimate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.reward_model.gail_irl_model.BaseRewardModel.estimate" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>estimate reward</p>
 </dd>
@@ -381,7 +391,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ding.reward_model.gail_irl_model.BaseRewardModel.train">
-<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../_modules/ding/reward_model/base_reward_model.html#BaseRewardModel.train"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.reward_model.gail_irl_model.BaseRewardModel.train" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../_modules/ding/reward_model/base_reward_model.html#BaseRewardModel.train"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ding.reward_model.gail_irl_model.BaseRewardModel.train" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Overview:</dt><dd><p>Training the reward model</p>
 </dd>
@@ -447,7 +457,18 @@
               <ul>
 <li><a class="reference internal" href="#">Gail</a><ul>
 <li><a class="reference internal" href="#gail-irl-model">gail_irl_model</a><ul>
-<li><a class="reference internal" href="#gailrewardmodel">GailRewardModel</a></li>
+<li><a class="reference internal" href="#gailrewardmodel">GailRewardModel</a><ul>
+<li><a class="reference internal" href="#ding.reward_model.gail_irl_model.BaseRewardModel"><code class="docutils literal notranslate"><span class="pre">BaseRewardModel</span></code></a><ul>
+<li><a class="reference internal" href="#ding.reward_model.gail_irl_model.BaseRewardModel.__init__"><code class="docutils literal notranslate"><span class="pre">BaseRewardModel.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#ding.reward_model.gail_irl_model.BaseRewardModel.clear_data"><code class="docutils literal notranslate"><span class="pre">BaseRewardModel.clear_data()</span></code></a></li>
+<li><a class="reference internal" href="#ding.reward_model.gail_irl_model.BaseRewardModel.collect_data"><code class="docutils literal notranslate"><span class="pre">BaseRewardModel.collect_data()</span></code></a></li>
+<li><a class="reference internal" href="#ding.reward_model.gail_irl_model.BaseRewardModel.estimate"><code class="docutils literal notranslate"><span class="pre">BaseRewardModel.estimate()</span></code></a></li>
+<li><a class="reference internal" href="#ding.reward_model.gail_irl_model.BaseRewardModel.load_expert_data"><code class="docutils literal notranslate"><span class="pre">BaseRewardModel.load_expert_data()</span></code></a></li>
+<li><a class="reference internal" href="#ding.reward_model.gail_irl_model.BaseRewardModel.train"><code class="docutils literal notranslate"><span class="pre">BaseRewardModel.train()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -469,9 +490,8 @@
   <script type="text/javascript" id="documentation_options" data-url_root="../../"
     src="../../_static/documentation_options.js"></script>
   <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-  <script src="../../_static/jquery.js"></script>
-  <script src="../../_static/underscore.js"></script>
   <script src="../../_static/doctools.js"></script>
+  <script src="../../_static/sphinx_highlight.js"></script>
   
 
   

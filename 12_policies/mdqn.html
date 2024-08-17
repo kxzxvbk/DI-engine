@@ -9,7 +9,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="../_static/css/style.css" type="text/css" />
   <link rel="index" title="Index" href="../genindex.html" />
   <link rel="search" title="Search" href="../search.html" />
-  <link rel="next" title="A2C" href="a2c.html" />
+  <link rel="next" title="Averaged-DQN" href="averaged_dqn.html" />
   <link rel="prev" title="SQN" href="sqn.html" />
     <link href="../_static/css/style.css" rel="stylesheet" type="text/css">
 
@@ -100,6 +100,16 @@
                   href="https://github.com/opendilab/DI-engine" target="_blank">
                   <span class="dropdown-title">DI-engine </span>
                   <p>OpenDILab Decision AI Engine</p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item"
+                  href="https://github.com/opendilab/LightZero" target="_blank">
+                  <span class="dropdown-title">LightZero </span>
+                  <p>OpenDILab Decision Monte Carlo Tree Search Framework</p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item"
+                  href="https://github.com/opendilab/GenerativeRL" target="_blank">
+                  <span class="dropdown-title">GenerativeRL </span>
+                  <p>OpenDILab Generative AI Framework</p>
                 </a>
                 <a class="doc-dropdown-option nav-dropdown-item"
                   href="https://github.com/opendilab/DI-star" target="_blank">
@@ -299,15 +309,15 @@
               <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
                 
   <section id="mdqn">
-<h1>MDQN<a class="headerlink" href="#mdqn" title="Permalink to this headline">¶</a></h1>
+<h1>MDQN<a class="headerlink" href="#mdqn" title="Permalink to this heading">¶</a></h1>
 <section id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">¶</a></h2>
 <p>MDQN was proposed in <a class="reference external" href="https://arxiv.org/abs/2007.14430">Munchausen Reinforcement Learning</a>. They call this general approach “Munchausen Reinforcement Learning”
 (M-RL), as a reference to a famous passage of The Surprising Adventures of Baron Munchausen by Raspe, where the Baron pulls himself out of a swamp by pulling on his own hair.
 From a practical point of view, the key difference between MDQN and DQN is that MDQN adding a scaled log-policy to the immediate reward on the Soft-DQN which is is an extension of the traditional DQN algorithm with max entropy.</p>
 </section>
 <section id="quick-facts">
-<h2>Quick Facts<a class="headerlink" href="#quick-facts" title="Permalink to this headline">¶</a></h2>
+<h2>Quick Facts<a class="headerlink" href="#quick-facts" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>MDQN is a <strong>model-free</strong> and <strong>value-based</strong> RL algorithm.</p></li>
 <li><p>MDQN only support <strong>discrete</strong> action spaces.</p></li>
@@ -317,7 +327,7 @@ From a practical point of view, the key difference between MDQN and DQN is that 
 </ol>
 </section>
 <section id="key-equations-or-key-graphs">
-<h2>Key Equations or Key Graphs<a class="headerlink" href="#key-equations-or-key-graphs" title="Permalink to this headline">¶</a></h2>
+<h2>Key Equations or Key Graphs<a class="headerlink" href="#key-equations-or-key-graphs" title="Permalink to this heading">¶</a></h2>
 <p>The target Q value used in MDQN is:</p>
 <div class="math notranslate nohighlight">
 \[\hat{q}_{\mathrm{m} \text {-dqn }}\left(r_t, s_{t+1}\right)=r_t+\alpha \tau \ln \pi_{\bar{\theta}}\left(a_t \mid s_t\right)+\gamma \sum_{a^{\prime} \in A} \pi_{\bar{\theta}}\left(a^{\prime} \mid s_{t+1}\right)\left(q_{\bar{\theta}}\left(s_{t+1}, a^{\prime}\right)-\tau \ln \pi_{\bar{\theta}}\left(a^{\prime} \mid s_{t+1}\right)\right)\]</div>
@@ -325,41 +335,33 @@ From a practical point of view, the key difference between MDQN and DQN is that 
 <div class="math notranslate nohighlight">
 \[\tau \ln \pi_{k}=q_k-v_k-\tau \ln \left\langle 1, \exp \frac{q_k-v_k}{\tau}\right\rangle\]</div>
 <p>where  <span class="math notranslate nohighlight">\(q_k\)</span>  is the  <cite>target_q_current</cite> in our code. For the max entropy part  <span class="math notranslate nohighlight">\(\tau \ln \pi_{\bar{\theta}}\left(a^{\prime} \mid s_{t+1}\right)\)</span> , we use the same formula to calculate where the  where  <span class="math notranslate nohighlight">\(q_{k+1}\)</span> is the  <cite>target_q</cite>  in our code</p>
-<p>And we replace  <span class="math notranslate nohighlight">\(\tau \ln \pi(a \mid s)\)</span> by <span class="math notranslate nohighlight">\([\tau \ln \pi(a \mid s)]_{l_0}^0\)</span> because log-policy term is not bounded, and can cause numerical issues if the policy becomes too close to
+<p>And we replace  <span class="math notranslate nohighlight">\(\tau \ln \pi(a \mid s)\)</span> by <span class="math notranslate nohighlight">\([\tau \ln \pi(a \mid s)]_{l_0}^0`\)</span> because log-policy term is not bounded, and can cause numerical issues if the policy becomes too close to
 deterministic.</p>
 <p>And we replace  <span class="math notranslate nohighlight">\(\pi_{\bar{\theta}}\left(a^{\prime} \mid s_{t+1}\right)\)</span> by <span class="math notranslate nohighlight">\(softmax(q-v)\)</span> which official implementations used but not mentationed in their paper.</p>
 <p>And we test action at asterix and get the same result as paper that MDQN could increase the action gap.</p>
 <img alt="../_images/action_gap.png" class="align-center" src="../_images/action_gap.png" />
 </section>
 <section id="pseudo-code">
-<h2>Pseudo-code<a class="headerlink" href="#pseudo-code" title="Permalink to this headline">¶</a></h2>
+<h2>Pseudo-code<a class="headerlink" href="#pseudo-code" title="Permalink to this heading">¶</a></h2>
 <img alt="../_images/mdqn.png" class="align-center" src="../_images/mdqn.png" />
 </section>
 <section id="extension">
-<h2>Extension<a class="headerlink" href="#extension" title="Permalink to this headline">¶</a></h2>
+<h2>Extension<a class="headerlink" href="#extension" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>TBD</p></li>
 </ul>
 </section>
 <section id="implementations">
-<h2>Implementations<a class="headerlink" href="#implementations" title="Permalink to this headline">¶</a></h2>
+<h2>Implementations<a class="headerlink" href="#implementations" title="Permalink to this heading">¶</a></h2>
 <p>The default config of MDQNPolicy is defined as follows:</p>
 <dl class="py class">
 <dt class="sig sig-object py">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ding.policy.mdqn.</span></span><span class="sig-name descname"><span class="pre">MDQNPolicy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">easydict.EasyDict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">torch.nn.modules.module.Module</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enable_field</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ding/policy/mdqn.html#MDQNPolicy"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ding.policy.mdqn.</span></span><span class="sig-name descname"><span class="pre">MDQNPolicy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">EasyDict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Module</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enable_field</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ding/policy/mdqn.html#MDQNPolicy"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><dl>
 <dt>Overview:</dt><dd><p>Policy class of Munchausen DQN algorithm, extended by auxiliary objectives.
 Paper link: <a class="reference external" href="https://arxiv.org/abs/2007.14430">https://arxiv.org/abs/2007.14430</a>.</p>
 </dd>
 <dt>Config:</dt><dd><table class="docutils align-default">
-<colgroup>
-<col style="width: 2%" />
-<col style="width: 19%" />
-<col style="width: 7%" />
-<col style="width: 13%" />
-<col style="width: 37%" />
-<col style="width: 21%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>ID</p></th>
 <th class="head"><p>Symbol</p></th>
@@ -701,7 +703,7 @@ Paper link: <a class="reference external" href="https://arxiv.org/abs/2007.14430
 <p>The td error interface MDQN used is defined as follows:</p>
 <dl class="py function">
 <dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">ding.rl_utils.td.</span></span><span class="sig-name descname"><span class="pre">m_q_1step_td_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">data:</span> <span class="pre">collections.namedtuple</span></em>, <em class="sig-param"><span class="pre">gamma:</span> <span class="pre">float</span></em>, <em class="sig-param"><span class="pre">tau:</span> <span class="pre">float</span></em>, <em class="sig-param"><span class="pre">alpha:</span> <span class="pre">float</span></em>, <em class="sig-param"><span class="pre">criterion:</span> <span class="pre">&lt;module</span> <span class="pre">'torch.nn.modules'</span> <span class="pre">from</span> <span class="pre">'/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/torch/nn/modules/__init__.py'&gt;</span> <span class="pre">=</span> <span class="pre">MSELoss()</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">torch.Tensor</span></span></span><a class="reference internal" href="../_modules/ding/rl_utils/td.html#m_q_1step_td_error"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<span class="sig-prename descclassname"><span class="pre">ding.rl_utils.td.</span></span><span class="sig-name descname"><span class="pre">m_q_1step_td_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data:</span> <span class="pre">~collections.namedtuple</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma:</span> <span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tau:</span> <span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha:</span> <span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">criterion:</span> <span class="pre">&lt;module</span> <span class="pre">'torch.nn.modules'</span> <span class="pre">from</span> <span class="pre">'/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/torch/nn/modules/__init__.py'&gt;</span> <span class="pre">=</span> <span class="pre">MSELoss()</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="reference internal" href="../_modules/ding/rl_utils/td.html#m_q_1step_td_error"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><dl>
 <dt>Overview:</dt><dd><p>Munchausen td_error for DQN algorithm, support 1 step td error.</p>
 </dd>
@@ -747,15 +749,15 @@ Paper link: <a class="reference external" href="https://arxiv.org/abs/2007.14430
 
 </section>
 <section id="benchmark">
-<h2>Benchmark<a class="headerlink" href="#benchmark" title="Permalink to this headline">¶</a></h2>
-<table class="colwidths-given docutils align-default" id="id1">
+<h2>Benchmark<a class="headerlink" href="#benchmark" title="Permalink to this heading">¶</a></h2>
+<table class="docutils align-default" id="id1">
 <caption><span class="caption-text">Benchmark and comparison of mdqn algorithm</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col style="width: 25%" />
-<col style="width: 15%" />
-<col style="width: 30%" />
-<col style="width: 15%" />
-<col style="width: 15%" />
+<col style="width: 25.0%" />
+<col style="width: 15.0%" />
+<col style="width: 30.0%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>environment</p></th>
@@ -823,7 +825,7 @@ Paper link: <a class="reference external" href="https://arxiv.org/abs/2007.14430
 </ul>
 </section>
 <section id="reference">
-<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Vieillard, Nino, Olivier Pietquin, and Matthieu Geist. “Munchausen reinforcement learning.” Advances in Neural Information Processing Systems 33 (2020): 4235-4246.</p></li>
 </ul>
@@ -838,7 +840,7 @@ Paper link: <a class="reference external" href="https://arxiv.org/abs/2007.14430
   
   <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
     
-    <a href="a2c.html" class="btn btn-neutral float-right" title="A2C" accesskey="n"
+    <a href="averaged_dqn.html" class="btn btn-neutral float-right" title="Averaged-DQN" accesskey="n"
       rel="next">Next <img src="../_static/images/chevron-right-blue.svg"
         class="next-page"></a>
     
@@ -901,9 +903,8 @@ Paper link: <a class="reference external" href="https://arxiv.org/abs/2007.14430
   <script type="text/javascript" id="documentation_options" data-url_root="../"
     src="../_static/documentation_options.js"></script>
   <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-  <script src="../_static/jquery.js"></script>
-  <script src="../_static/underscore.js"></script>
   <script src="../_static/doctools.js"></script>
+  <script src="../_static/sphinx_highlight.js"></script>
   <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   
 
